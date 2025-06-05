@@ -18,7 +18,7 @@
 }
 
 .heroOverlay {
-  background-color: #F2EBF2; /* Light Lavender/Pink from our palette */
+  background-color: #f1e6d2; /* Light Lavender/Pink from our palette */
   padding: 2.5rem 3rem; /* Generous padding inside the box */
   border-radius: 8px;
   max-width: 550px; /* Max width of the text box */
@@ -446,7 +446,7 @@
 /* Testimonials Section Styles */
 .testimonialsSection {
   padding: 3rem 5%;
-  background-color: #F2EBF2; /* Using the Light Lavender/Pink for a soft background */
+  background-color: #f1e6d2; /* Using the Light Lavender/Pink for a soft background */
   /* Or keep #FAF7F5 and style items individually */
 }
 

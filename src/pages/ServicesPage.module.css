@@ -35,12 +35,12 @@
 }
 
 .columnText.pinkBg {
-  background-color: #F2EBF2; /* Light Lavender/Pink */
+  background-color: #f1e6d2; /* Light Lavender/Pink */
 }
 
 /* Modifier for text on the left, image on the right */
 .textLeftPinkBg .columnText {
-  background-color: #F2EBF2; /* Light Lavender/Pink */
+  background-color: #f1e6d2; /* Light Lavender/Pink */
   /* order: 1; */ /* Default order */
 }
 .textLeftPinkBg .columnImage {
@@ -53,7 +53,7 @@
 }
 .imageLeftPinkBg .columnText {
   order: 2;
-  background-color: #F2EBF2; /* Light Lavender/Pink */
+  background-color: #f1e6d2; /* Light Lavender/Pink */
 }
 
 /* Modifier for image on the left, text on the right (default/no background on text) */
@@ -117,6 +117,9 @@
 .serviceCtaButton {
   margin-top: 1rem;
   font-size: 1rem;
+  /* Ensuring it inherits text-align: center from .button-style or parent if needed */
+  /* It might be beneficial for this button to be slightly wider by default on larger screens if text is long */
+  /* padding-left: 25px; padding-right: 25px; */ /* Example if more default padding was desired */
 }
 
 .columnImage img {
@@ -150,6 +153,11 @@
   .columnText h2 {
     font-size: 2rem;
   }
+
+  .serviceCtaButton {
+    padding-left: 15px; /* Reduced padding for tablet */
+    padding-right: 15px;
+  }
 }
 
 @media (max-width: 576px) { /* Mobile */
@@ -169,5 +177,11 @@
   }
   .columnText p, .columnText .listItem {
     font-size: 0.95rem;
+  }
+
+  .serviceCtaButton {
+    font-size: 0.9rem; /* Slightly smaller font */
+    padding: 8px 12px; /* Further reduced padding for mobile */
+    /* white-space: normal; */ /* Allow wrapping if absolutely necessary, but try to avoid for buttons */
   }
 } 
