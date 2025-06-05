@@ -1,0 +1,85 @@
+/* Import a serif font for headings and a sans-serif for body from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap'); /* Added Quicksand with various weights */
+
+html {
+  height: 100%; /* Ensure html element takes full height */
+}
+
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: 'Nunito Sans', sans-serif; /* Body text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAF7F5; /* NEW: Soft Off-White */
+  color: #4A4A4A; /* NEW: Dark Gray */
+  line-height: 1.6;
+  min-height: 100%; /* Ensure body takes at least full viewport height */
+  display: flex; /* Allow #root to flex-grow */
+  flex-direction: column;
+}
+
+#root {
+  flex: 1; /* Make #root fill the body */
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', sans-serif; /* NEW: Headings changed to Quicksand */
+  color: #333333; /* NEW: Slightly darker gray */
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+a {
+  color: #8F9E8B; /* NEW: Muted Green/Olive */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #707e6c; /* Darker shade of Muted Green/Olive for hover */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background-color: #f0f0f0; /* Keeping this light for contrast */
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: #335765; /* Ensure code text is readable */
+}
+
+/* General button styling */
+button, .button-style {
+  background-color: #8F9E8B; /* NEW: Muted Green/Olive */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+button:hover, .button-style:hover {
+  background-color: #707e6c; /* Darker shade for hover */
+}
+
+/* Utility class to hide scrollbar when mobile menu is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Basic responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra space below image */
+}

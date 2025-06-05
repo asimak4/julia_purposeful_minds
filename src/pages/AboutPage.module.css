@@ -1,0 +1,175 @@
+/* src/pages/AboutPage.module.css */
+
+.pageContainer {
+  padding: 1rem 0;
+}
+
+.section {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section h1, /* Page title might be h1 here */
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #74A8A4; /* NEW: Muted Teal/Green accent */
+  padding-bottom: 0.75rem;
+}
+
+.profileContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profileText { /* Now the first child, taking more space */
+  flex: 3; /* Takes up more space relative to image, approx 60% if image is flex: 2 */
+  min-width: 300px; /* Ensure text has enough space */
+  /* order: 1; /* Explicitly first, though default by document order now */
+}
+
+.therapistName { /* Styling for Julia's name */
+  font-size: 2.2rem; /* Large font size */
+  font-weight: bold;
+  margin-top: 0; /* Remove default margin if any */
+  margin-bottom: 0.5rem;
+  color: #333; /* Adjust color as needed */
+}
+
+.bioIntro { /* Styling for the introductory bio line */
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  /* font-style: italic; /* Optional */
+}
+
+.profileImagePlaceholder { /* Now the second child */
+  flex: 2; /* Takes up less space, approx 40% */
+  min-width: 250px; /* Minimum width before wrapping/stacking */
+  /* order: 2; /* Explicitly second */
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image respects border-radius */
+  /* background-color: #B6D9E0; Removed */
+  align-self: stretch; /* Make it stretch to the height of the text if possible, or use fixed aspect ratio */
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%; /* Changed to 100% to fill placeholder */
+  object-fit: cover; /* Crop image to fill, maintaining aspect ratio */
+  display: block; /* Remove extra space below image */
+  border-radius: 8px; /* Keep rounded corners on the image itself */
+}
+
+.licensingInfo {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9; /* Slightly different background */
+  border-left: 4px solid #B6D9E0; /* NEW: Light Sky Blue accent */
+  border-radius: 4px;
+}
+
+.licensingInfo h3 {
+  color: #335765; /* NEW: Dark Blue/Teal */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem; /* Ensure it's smaller than section h2 */
+}
+
+.experienceList {
+  list-style-type: none;
+  padding-left: 0; /* Remove default list padding */
+  margin-top: 1rem;
+}
+
+.experienceItemContainer { /* New class for the li container */
+  background-color: #f9f9f9; /* Light background for each item block */
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #74A8A4; /* Accent color border */
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.25rem; /* Space between items */
+}
+
+.experienceItemHeader {
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: #335765;
+  display: block; /* Ensure it takes full width */
+  margin-bottom: 0.5rem;
+}
+
+.experienceItemSubContent {
+  padding-left: 0.5rem; /* Slight indent for sub-content */
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.experienceItemSubContent p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 0.75rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .section h1,
+  .section h2 {
+    font-size: 1.75rem;
+  }
+  .therapistName {
+    font-size: 1.8rem; /* Adjust for smaller screens */
+  }
+  .profileContainer {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    align-items: center; /* Center items when stacked */
+  }
+  .profileText {
+    order: 2; /* Text below image when stacked */
+  }
+  .profileImagePlaceholder {
+    order: 1; /* Image above text when stacked */
+    width: 80%; /* Adjust width when stacked */
+    max-width: 300px; /* Max width for stacked image */
+    margin-bottom: 1.5rem;
+    height: auto; /* Let height be auto when stacked */
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1rem 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+  .section h1,
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .therapistName {
+    font-size: 1.6rem; /* Further adjust for very small screens */
+  }
+  .profileImagePlaceholder {
+    width: 100%;
+    max-width: 280px;
+  }
+  .experienceItemHeader {
+    font-size: 1.1rem;
+  }
+  .experienceItemSubContent {
+    font-size: 0.9rem;
+  }
+  .licensingInfo h3 {
+    font-size: 1.1rem;
+  }
+} 

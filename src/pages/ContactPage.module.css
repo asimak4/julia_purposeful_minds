@@ -1,0 +1,117 @@
+/* src/pages/ContactPage.module.css */
+
+.pageContainer {
+  padding: 1rem 0;
+}
+
+.section {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section h1, /* Page title */
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #74A8A4; /* NEW: Muted Teal/Green accent */
+  padding-bottom: 0.75rem;
+}
+
+.contactIntro p {
+  margin-bottom: 0.5rem;
+}
+
+.contactIntro strong {
+  color: #335765; /* NEW: Dark Blue/Teal */
+}
+
+.contactForm {
+  margin-top: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #335765; /* NEW: Dark Blue/Teal to match other text */
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #B6D9E0; /* NEW: Light Sky Blue border */
+  border-radius: 4px;
+  font-family: 'Nunito Sans', sans-serif; /* Match body font */
+  font-size: 1rem;
+  box-sizing: border-box; /* Important for width: 100% and padding */
+  background-color: #F8FAFB; /* Very light bg for inputs */
+  color: #335765; /* Text color inside input */
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup textarea:focus {
+  border-color: #74A8A4; /* Muted Teal/Green on focus */
+  box-shadow: 0 0 0 2px rgba(116, 168, 164, 0.2);
+  outline: none;
+}
+
+.formGroup textarea {
+  min-height: 120px;
+  resize: vertical; /* Allow vertical resize, not horizontal */
+}
+
+.submitButton {
+  /* Uses global button styles from index.css by default */
+  /* Add specific overrides here if needed, e.g., width */
+  padding: 0.75rem 1.5rem; /* Adjust padding if desired */
+  font-weight: bold;
+  /* Uses global button styles from index.css for background and text color */
+}
+
+.formNote {
+  margin-top: 1.5rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #335765; /* Darker for better readability */
+  opacity: 0.8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 0.75rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .section h1,
+  .section h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1rem 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+  .section h1,
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .formGroup input[type="text"],
+  .formGroup input[type="email"],
+  .formGroup textarea {
+    padding: 0.6rem;
+  }
+} 

@@ -1,0 +1,190 @@
+/* src/components/Layout.module.css */
+
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #FDFCFB; /* NEW: Very Light Cream */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EAEAEA; /* NEW: Subtle border */
+  position: relative; /* For positioning mobile menu */
+}
+
+.logoLink {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333; /* NEW: Dark Gray for logo */
+  text-decoration: none;
+}
+
+/* Wrapper for nav and CTA button */
+.navWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between nav and CTA button */
+}
+
+.nav {
+  display: flex; /* For desktop */
+}
+
+.navList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.navLink {
+  color: #4A4A4A; /* NEW: Dark Gray for nav links */
+  text-decoration: none;
+  font-weight: 500; /* Juniper has slightly bolder nav links */
+  padding: 0.5rem 0;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #8F9E8B; /* NEW: Muted Green/Olive on hover */
+  /* text-decoration: none; removed underline */
+}
+
+.ctaButton {
+  /* Uses .button-style from index.css for base styling */
+  /* Specific adjustments if needed */
+  padding: 8px 16px; /* Slightly smaller padding for header button */
+  font-size: 0.9rem;
+}
+
+/* Mobile Menu Styles */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #333333; /* NEW: Dark Gray */
+  font-size: 2rem;
+  cursor: pointer;
+  order: 3; /* Ensure it comes after navWrapper in flex order on mobile if not hidden */
+}
+
+.mainContent {
+  padding: 2rem;
+  flex-grow: 1;
+  background-color: #FAF7F5; /* Ensuring main content also has the base background */
+}
+
+.footer {
+  background-color: #8F9E8B; /* NEW: Muted Green/Olive */
+  color: #FFFFFF; /* NEW: White text on green background */
+  text-align: center;
+  padding: 2rem 2rem; /* Increased padding */
+  /* border-top: 1px solid #A1C8D4; removed */
+}
+
+.footerLink {
+  color: #F0E8F0; /* NEW: Light Lavender/Pink for footer links on green bg */
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footerLink:hover {
+  color: #FFFFFF; /* White on hover */
+  text-decoration: underline;
+}
+
+/* Medium screens and down (e.g., tablets and mobiles) */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .navWrapper {
+    /* On mobile, the navWrapper will contain the nav (which becomes full width) 
+       and the CTA button. The button might need to be part of the mobile menu itself, 
+       or styled to appear appropriately if it remains outside. */
+    flex-direction: column; /* Stack nav and CTA if shown outside collapsed menu */
+    align-items: flex-start; /* Align to left if stacked */
+    width: 100%; /* Take full width for mobile menu behavior */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #FDFCFB; /* Mobile menu background */
+    z-index: 1000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0; /* Remove padding when hidden */
+    border-bottom: 1px solid #EAEAEA;
+  }
+
+  .navWrapper.active { /* Applied when mobile menu is open */
+    max-height: 500px; /* Or enough to show all items */
+    padding: 1rem 0; /* Padding when open */
+  }
+
+  .nav {
+    /* display: none; /* Handled by navWrapper */
+    width: 100%;
+    flex-direction: column;
+    align-items: center; /* Center nav items in mobile menu */
+  }
+  
+  .navList {
+    flex-direction: column;
+    gap: 0; /* Remove gap, rely on navLink padding */
+    width: 100%;
+    text-align: center;
+  }
+
+  .navLink {
+    padding: 0.75rem 1rem;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0; /* Separator for mobile links */
+  }
+  .navLink:last-child {
+    border-bottom: none;
+  }
+
+  .ctaButton {
+    /* How the CTA button appears in mobile view */
+    display: block; /* Make it full width for tapping */
+    text-align: center;
+    margin: 1rem auto; /* Center it if it's part of the expanded mobile menu flow */
+    width: calc(100% - 2rem); /* Full width with some padding */
+  }
+
+  .navWrapper:not(.active) .ctaButton {
+    display: none; /* Hide CTA button if navWrapper is not active (mobile menu closed) if it's part of the wrapper */
+  }
+
+  /* Adjust mobileMenuButton to be before navWrapper in source for better flex reordering if needed, 
+     or ensure its z-index is high enough. Current structure should be okay. */
+  .mobileMenuButton {
+    display: block;
+  }
+}
+
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+  .logoLink {
+    font-size: 1.25rem;
+  }
+  .mainContent {
+    padding: 1.5rem 1rem;
+  }
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+  .ctaButton {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+} 

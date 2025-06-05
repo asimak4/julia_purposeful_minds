@@ -1,0 +1,574 @@
+/* src/pages/HomePage.module.css */
+
+.pageWrapper {
+  /* Styles for the main page container if needed, e.g., max-width and centering for overall page content */
+  /* For now, specific sections will manage their own width and padding */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.heroSection {
+  min-height: 70vh; /* Adjust as needed, gives height to the section */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center; /* Vertically center the overlay box */
+  justify-content: flex-start; /* Align overlay box to the left */
+  padding: 2rem 5%; /* Padding on the sides, e.g., 5% of viewport width */
+  position: relative; /* For potential pseudo-elements or advanced positioning if needed later */
+}
+
+.heroOverlay {
+  background-color: #F2EBF2; /* Light Lavender/Pink from our palette */
+  padding: 2.5rem 3rem; /* Generous padding inside the box */
+  border-radius: 8px;
+  max-width: 550px; /* Max width of the text box */
+  /* margin-left: 5%; /* Optional: if further offset from the left edge is desired than padding provides */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.heroOverlay h1 {
+  font-size: 2.8rem; /* Large, prominent heading */
+  color: #333333; /* Ensure it uses the primary heading color */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heroOverlay p {
+  font-size: 1.1rem;
+  color: #4A4A4A; /* Body text color */
+  line-height: 1.7;
+  margin-bottom: 0; /* Remove bottom margin if no button follows immediately */
+}
+
+/* Optional: Styles for a CTA button within the hero overlay */
+.heroCtaButton {
+  margin-top: 1.5rem;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 992px) { /* Tablet and below */
+  .heroSection {
+    min-height: 60vh;
+    padding: 2rem 3%;
+    justify-content: center; /* Center overlay on tablets */
+    text-align: center;
+  }
+  .heroOverlay {
+    max-width: 90%; /* Allow overlay to be wider */
+    margin-left: 0; /* Remove specific margin if centered */
+    padding: 2rem;
+  }
+  .heroOverlay h1 {
+    font-size: 2.2rem;
+  }
+  .heroOverlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) { /* Mobile */
+  .heroSection {
+    min-height: 50vh;
+    padding: 1.5rem 5%; /* Keep some side padding for mobile */
+  }
+  .heroOverlay h1 {
+    font-size: 1.8rem;
+  }
+  .heroOverlay p {
+    font-size: 0.95rem;
+  }
+  .heroCtaButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Styles for Three-Column Feature Section */
+.featureSection {
+  background-color: #8F9E8B; /* Muted Green/Olive */
+  padding: 3rem 5%; /* Padding top/bottom and sides */
+  color: #FAF7F5; /* Soft Off-White text for contrast */
+  text-align: center; /* Center align the text within the section */
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 2.5rem; /* Gap between columns */
+}
+
+.featureColumn h3 {
+  font-size: 1.5rem;
+  color: #FFFFFF; /* White or very light headings */
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Subtle underline for headings */
+  display: inline-block; /* To make border-bottom only as wide as text */
+}
+
+.featureColumn p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #F0E8F0; /* Slightly less bright than pure white for paragraphs, or use #FAF7F5 */
+}
+
+/* Responsive adjustments for Feature Section */
+@media (max-width: 992px) { /* Tablet */
+  .featureGrid {
+    grid-template-columns: 1fr; /* Stack to single column */
+    gap: 2rem;
+  }
+  .featureColumn h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) { /* Mobile */
+  .featureSection {
+    padding: 2rem 5%;
+  }
+  .featureColumn h3 {
+    font-size: 1.3rem;
+  }
+  .featureColumn p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Styles for "Welcome" Text & Image Section */
+.welcomeSection {
+  padding: 4rem 5%; /* Generous padding */
+  background-color: #FAF7F5; /* Ensuring it's on the main soft off-white */
+}
+
+.welcomeGrid {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* Text column wider (e.g., 60%), image column (e.g., 40%) */
+  gap: 3rem; /* Gap between text and image columns */
+  align-items: center; /* Vertically align items if columns have different heights */
+}
+
+.welcomeTextColumn .welcomeIntro {
+  font-size: 0.9rem;
+  color: #8F9E8B; /* Muted Green/Olive for the intro line */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.welcomeTextColumn h2 {
+  font-size: 2.5rem; /* Large heading */
+  color: #333333; /* Standard heading color */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.welcomeTextColumn p {
+  font-size: 1rem;
+  color: #4A4A4A; /* Standard body text */
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.welcomeCtaButton {
+  /* Uses .button-style from index.css */
+  margin-top: 1rem; /* Space above the button */
+  padding: 12px 25px; /* Consistent with hero CTA if we add one */
+  font-size: 1.1rem;
+}
+
+.welcomeImageColumn img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Softer shadow for images */
+}
+
+/* Responsive adjustments for Welcome Section */
+@media (max-width: 992px) { /* Tablet */
+  .welcomeGrid {
+    grid-template-columns: 1fr; /* Stack to single column */
+    gap: 2.5rem;
+    text-align: center; /* Center text content when stacked */
+  }
+  .welcomeTextColumn .welcomeIntro {
+    text-align: center;
+  }
+  .welcomeTextColumn h2 {
+    font-size: 2.2rem;
+  }
+  .welcomeImageColumn {
+    order: -1; /* Optional: move image above text on tablet/mobile */
+    margin-bottom: 2rem; /* Add space if image is moved above */
+  }
+}
+
+@media (max-width: 576px) { /* Mobile */
+  .welcomeSection {
+    padding: 2.5rem 5%;
+  }
+  .welcomeTextColumn h2 {
+    font-size: 1.8rem;
+  }
+  .welcomeTextColumn p {
+    font-size: 0.95rem;
+  }
+   .welcomeImageColumn img {
+    max-width: 350px; /* Limit image width on mobile when stacked */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.pageContainer {
+  padding: 1rem 0; /* Add some padding at the top and bottom of the page content */
+}
+
+.section {
+  padding: 2rem 1rem; /* Padding within each section */
+  margin-bottom: 2rem; /* Space between sections */
+  background-color: #ffffff; /* White background for sections to stand out slightly from cream body */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+}
+
+.section h2 {
+  margin-top: 0; /* Remove default top margin for section titles */
+  margin-bottom: 1.5rem; /* Space below section titles */
+  border-bottom: 2px solid #74A8A4; /* NEW: Muted Teal/Green accent */
+  padding-bottom: 0.75rem;
+}
+
+.list {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0;
+}
+
+.listItem {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* Custom bullet using pseudo-element */
+.listItem::before {
+  content: '\2713'; /* Checkmark icon */
+  color: #74A8A4; /* NEW: Muted Teal/Green */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0.5rem; /* Adjust vertical alignment */
+  font-size: 1em;
+}
+
+.testimonial {
+  font-style: italic;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #B6D9E0; /* NEW: Light Sky Blue accent */
+  background-color: #f9f9f9; /* Slightly different background for testimonials */
+}
+
+.testimonialCite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #335765; /* NEW: Dark Blue/Teal */
+}
+
+/* Two-column layout for hero/feature sections */
+.twoColumnSection {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  align-items: center; /* Vertically align items in the center */
+  gap: 2rem; /* Space between columns */
+}
+
+.column {
+  flex: 1; /* Each column takes equal space by default */
+  min-width: 280px; /* Minimum width before wrapping */
+  max-width: 100%; /* Ensure columns don't overflow their container */
+}
+
+.textColumn {
+  /* Specific styles for text column if needed, e.g., text alignment */
+  /* We could also set a flex-basis or max-width here if we want to explicitly control its size */
+  /* For example: flex-basis: 50%; or max-width: 50%; */
+}
+
+.imageColumn {
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center;   /* Center image vertically if column is taller */
+  /* Let's explicitly set a flex-basis or max-width to constrain it */
+  flex-basis: 30%; /* Example: aim for image column to be around 30% of the container width */
+  max-width: 350px; /* Added explicit max-width for the column */
+  /* Or use max-width: 400px; (or whatever pixel value you prefer) if flex-basis is tricky */
+  /* max-width: 400px; */ 
+  /* Ensure it doesn't shrink too much if text is very short */
+  flex-shrink: 0; 
+}
+
+.imagePlaceholder {
+  width: 100%;
+  max-width: 400px; /* Max width for the image placeholder */
+  height: 300px;    /* Fixed height for placeholder */
+  background-color: #e0e0e0; /* Light gray placeholder */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #335765; /* Darker text for placeholder */
+  font-style: italic;
+  text-align: center;
+}
+
+/* Style for the actual image replacing the placeholder */
+.responsiveImage {
+  max-width: 100%; /* Image will be at most the width of .imageColumn */
+  width: 100%; /* Force image to fill the constrained .imageColumn width */
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Parallax Section Styles */
+.parallaxSection {
+  /* background-image will be set via inline style in the component */
+  min-height: 45vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.parallaxContent {
+  background-color: rgba(51, 87, 101, 0.7); /* Overlay using Dark Blue/Teal with alpha */
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.parallaxContent h2 {
+  color: white; /* Ensure heading color is white against dark overlay */
+  border-bottom: 1px solid rgba(255,255,255,0.5); /* Lighter border for white text */
+  margin-top: 0;
+}
+
+/* Responsive adjustments for sections */
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 0.75rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .section h2 {
+    font-size: 1.75rem; /* Slightly smaller section titles on mobile */
+  }
+  .twoColumnSection {
+    flex-direction: column; /* Stack columns on smaller screens */
+  }
+  .column {
+    min-width: 100%; /* Allow columns to take full width when stacked */
+    max-width: 100%; /* Reset max-width for stacked layout */
+    flex-basis: auto; /* Reset flex-basis for stacked layout */
+  }
+  .imageColumn {
+    flex-basis: auto; /* Reset for stacked layout */
+    /* max-width: 100%; /* Ensure it can go full width if needed when stacked */
+  }
+  .responsiveImage {
+    max-width: 350px; /* You might want to cap the width on mobile when stacked */
+    width: auto; /* Let aspect ratio control width based on max-width */
+    margin: 1rem auto 0; /* Center the image and add top margin when stacked */
+  }
+  .imagePlaceholder {
+    height: 250px; /* Adjust placeholder height for mobile */
+    margin-top: 1rem; /* Add some space above image when stacked */
+  }
+  .parallaxSection {
+    min-height: 35vh; /* Adjusted for mobile */
+    /* background-attachment: scroll; /* Consider uncommenting if parallax is poor on mobile */
+    background-size: cover; /* Revert to cover on mobile if 100% auto doesn't look good or is too small */
+  }
+  .parallaxContent {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1rem 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    border-radius: 4px;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  .listItem::before {
+    top: 0.4rem;
+  }
+  .imagePlaceholder {
+    height: 200px;
+  }
+  .responsiveImage {
+    max-width: 100%; /* Allow full width on very small screens within padding */
+  }
+  .parallaxSection {
+    min-height: 30vh; /* Adjusted for small mobile */
+  }
+  .parallaxContent {
+    padding: 1rem;
+  }
+  .parallaxContent h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Testimonials Section Styles */
+.testimonialsSection {
+  padding: 3rem 5%;
+  background-color: #F2EBF2; /* Using the Light Lavender/Pink for a soft background */
+  /* Or keep #FAF7F5 and style items individually */
+}
+
+.testimonialsTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #333333;
+  margin-bottom: 2.5rem;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 2rem;
+}
+
+.testimonialItem {
+  background-color: #FFFFFF; /* White background for each testimonial card */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes cite to the bottom if varying text lengths */
+}
+
+.testimonialQuote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #4A4A4A;
+  line-height: 1.7;
+  margin-bottom: 1.5rem; /* Space between quote and cite */
+  flex-grow: 1; /* Allows quote to take available space */
+}
+
+.testimonialQuote::before {
+  content: '\201C'; /* Opening quote mark */
+  font-size: 2.5rem;
+  color: #8F9E8B; /* Muted Green/Olive accent */
+  display: block;
+  margin-bottom: -0.5rem; /* Adjust spacing with quote text */
+  line-height: 1;
+}
+
+.testimonialCite {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333;
+  text-align: right;
+  font-style: normal;
+}
+
+/* Responsive adjustments for Testimonials Section */
+@media (max-width: 768px) {
+  .testimonialsTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .testimonialQuote {
+    font-size: 1rem;
+  }
+  .testimonialQuote::before {
+    font-size: 2rem;
+  }
+  .testimonialCite {
+    font-size: 0.9rem;
+  }
+}
+
+/* Final CTA Section Styles */
+.finalCtaSection {
+  padding: 3rem 5%;
+  background-color: #FAF7F5; /* Main soft off-white background */
+  text-align: center;
+}
+
+.finalCtaSection h2 {
+  font-size: 2.2rem;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.finalCtaSection p {
+  font-size: 1.1rem;
+  color: #4A4A4A;
+  max-width: 700px; /* Constrain paragraph width for readability */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.finalCtaButton {
+  /* Uses .button-style from index.css */
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Responsive adjustments for Final CTA Section */
+@media (max-width: 768px) {
+  .finalCtaSection h2 {
+    font-size: 1.8rem;
+  }
+  .finalCtaSection p {
+    font-size: 1rem;
+  }
+  .finalCtaButton {
+    font-size: 1.1rem; /* Adjusted font size for tablets */
+    padding: 12px 28px; /* Adjusted padding for tablets */
+  }
+}
+
+@media (max-width: 480px) { /* Further adjustments for smaller mobile screens */
+  .finalCtaSection h2 {
+    font-size: 1.6rem;
+  }
+  .finalCtaSection p {
+    font-size: 0.95rem;
+  }
+  .finalCtaButton {
+    font-size: 1rem; /* Further reduced font size */
+    padding: 10px 20px; /* Further reduced padding */
+    /* Consider width: 90%; max-width: 300px; if it still breaks, to allow it to fit better */
+  }
+} 

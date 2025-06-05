@@ -1,0 +1,173 @@
+/* src/pages/ServicesPage.module.css */
+
+.pageWrapper {
+  padding-bottom: 2rem; /* Space at the bottom of the page */
+}
+
+.pageHeader {
+  background-color: #8F9E8B; /* Muted Green/Olive, like screenshot 1 header */
+  color: #FFFFFF;
+  padding: 2.5rem 5%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageHeader h1 {
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Two-Column Layout for Service Sections */
+.serviceSectionTwoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Default to two equal columns */
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem 5%; /* Padding for sections */
+  margin-bottom: 3rem; /* Space between service sections */
+}
+
+.columnText {
+  padding: 2rem; /* Padding within the text column */
+  border-radius: 8px;
+}
+
+.columnText.pinkBg {
+  background-color: #F2EBF2; /* Light Lavender/Pink */
+}
+
+/* Modifier for text on the left, image on the right */
+.textLeftPinkBg .columnText {
+  background-color: #F2EBF2; /* Light Lavender/Pink */
+  /* order: 1; */ /* Default order */
+}
+.textLeftPinkBg .columnImage {
+  /* order: 2; */ /* Default order */
+}
+
+/* Modifier for image on the left, text on the right (pink background on text) */
+.imageLeftPinkBg .columnImage {
+   order: 1; 
+}
+.imageLeftPinkBg .columnText {
+  order: 2;
+  background-color: #F2EBF2; /* Light Lavender/Pink */
+}
+
+/* Modifier for image on the left, text on the right (default/no background on text) */
+.imageLeftDefaultBg .columnImage {
+   order: 1; 
+}
+.imageLeftDefaultBg .columnText {
+  order: 2;
+  background-color: transparent; /* Or #FAF7F5 if sections need explicit default bg */
+  padding: 0; /* Remove padding if no background */
+}
+
+.columnText .sectionIntro {
+  font-size: 0.9rem;
+  color: #8F9E8B; /* Muted Green/Olive for the intro line */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.columnText h2 {
+  font-size: 2.2rem; /* Large heading for service */
+  color: #333333; /* Standard heading color */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.columnText p {
+  font-size: 1rem;
+  color: #4A4A4A; /* Standard body text */
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.columnText .list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.columnText .listItem {
+  padding: 0.3rem 0;
+  padding-left: 1.8rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.columnText .listItem::before {
+  content: '\2022'; /* Bullet point */
+  color: #8F9E8B; /* Muted Green/Olive */
+  font-weight: bold;
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+  top: 0.3rem; /* Adjust vertical alignment */
+}
+
+.serviceCtaButton {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.columnImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Responsive adjustments for Service Sections */
+@media (max-width: 992px) { /* Tablet */
+  .pageHeader h1 {
+    font-size: 2.4rem;
+  }
+  .serviceSectionTwoCol {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 2rem;
+    padding: 2rem 3%;
+  }
+  .imageLeftPinkBg .columnImage,
+  .imageLeftDefaultBg .columnImage {
+    order: -1; /* Image first when stacked */
+  }
+  .columnText {
+    padding: 1.5rem; 
+    text-align: center; /* Center text on mobile */
+  }
+  .imageLeftDefaultBg .columnText {
+    padding: 0; /* Remove padding if no background */
+  }
+  .columnText h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) { /* Mobile */
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  .pageHeader {
+    padding: 2rem 5%;
+    margin-bottom: 2rem;
+  }
+  .serviceSectionTwoCol {
+    padding: 1.5rem 5%;
+    margin-bottom: 2rem;
+  }
+  .columnText h2 {
+    font-size: 1.8rem;
+  }
+  .columnText p, .columnText .listItem {
+    font-size: 0.95rem;
+  }
+} 
