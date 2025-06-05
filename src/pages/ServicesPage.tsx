@@ -32,7 +32,7 @@ export default function ServicesPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6 }}
       >
         <motion.div
@@ -71,7 +71,7 @@ export default function ServicesPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.2 }} // Stagger section entrance slightly
       >
         <motion.div
@@ -109,7 +109,7 @@ export default function ServicesPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.2 }} // Stagger section entrance slightly
       >
         <motion.div

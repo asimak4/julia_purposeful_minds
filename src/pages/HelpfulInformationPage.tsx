@@ -42,7 +42,7 @@ export default function HelpfulInformationPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.2, staggerChildren: 0.15, delayChildren: 0.3 }}
       >
         <h2>Frequently Asked Questions (FAQs)</h2>
@@ -99,7 +99,7 @@ export default function HelpfulInformationPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <h2>Why Choose a Speech-Language Pathologist (SLP)?</h2>
@@ -122,7 +122,7 @@ export default function HelpfulInformationPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <h2>How We Target Spelling</h2>

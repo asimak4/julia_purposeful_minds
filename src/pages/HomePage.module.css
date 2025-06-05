@@ -3,7 +3,7 @@
 .pageWrapper {
   /* Styles for the main page container if needed, e.g., max-width and centering for overall page content */
   /* For now, specific sections will manage their own width and padding */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow: hidden; /* Prevent all overflow, was overflow-x: hidden */
 }
 
 .heroSection {
@@ -24,6 +24,7 @@
   max-width: 550px; /* Max width of the text box */
   /* margin-left: 5%; /* Optional: if further offset from the left edge is desired than padding provides */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Add this to clip animating children */
 }
 
 .heroOverlay h1 {

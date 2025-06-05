@@ -32,7 +32,7 @@ export default function AboutPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6 }}
       >
         <h1>Meet Your Therapist</h1>
@@ -78,12 +78,12 @@ export default function AboutPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.3 }} // Slight delay for the second section
       >
         <h2>Experience</h2>
         <p>Previously worked with esteemed organizations including:</p>
-        <motion.ul className={styles.experienceList} initial="hidden" whileInView="visible" viewport={{ amount: 0.2 }} transition={{ staggerChildren: 0.2, delayChildren: 0.4 }}>
+        <motion.ul className={styles.experienceList} initial="hidden" whileInView="visible" viewport={{ amount: 0.1 }} transition={{ staggerChildren: 0.2, delayChildren: 0.4 }}>
           <motion.li className={styles.experienceItemContainer} variants={itemVariants}>
             <span className={styles.experienceItemHeader}>LMB</span>
             <motion.div className={styles.experienceItemSubContent} variants={itemVariants} transition={{delay: 0.1}}>
@@ -114,7 +114,7 @@ export default function AboutPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6, delay: 0.3 }} // Adjust delay if needed for flow
       >
         <h2>My Approach to Therapy</h2>

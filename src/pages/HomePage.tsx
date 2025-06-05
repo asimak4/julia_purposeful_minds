@@ -78,7 +78,7 @@ export default function HomePage() {
         className={styles.featureSection}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }} // Trigger when 20% of the section is visible
+        viewport={{ amount: 0.1 }} // Trigger when 10% of the section is visible
         variants={sectionVariants}
         transition={{ duration: 0.6 }}
       >
@@ -103,7 +103,7 @@ export default function HomePage() {
         className={styles.welcomeSection}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }} // Trigger when 10% of the section is visible
         variants={sectionVariants}
         transition={{ duration: 0.6, delay: 0.2 }} // Added a slight delay for this section itself
       >
@@ -135,7 +135,7 @@ export default function HomePage() {
         className={styles.testimonialsSection}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }} // Trigger when 10% of the section is visible
         variants={sectionVariants}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
@@ -158,7 +158,7 @@ export default function HomePage() {
         className={styles.finalCtaSection}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.2 }}
+        viewport={{ amount: 0.1 }} // Trigger when 10% of the section is visible
         variants={sectionVariants}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
