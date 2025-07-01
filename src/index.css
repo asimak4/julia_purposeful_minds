@@ -1,5 +1,7 @@
 /* Import a serif font for headings and a sans-serif for body from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap'); /* Added Quicksand with various weights */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap'); /* Added Quicksand with various weights */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 html {
   height: 100%; /* Ensure html element takes full height */
@@ -10,7 +12,7 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-  font-family: 'Nunito Sans', sans-serif; /* Body text */
+  font-family: 'Noto Sans', sans-serif; /* Body text */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FAF7F5; /* NEW: Soft Off-White */
@@ -28,7 +30,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quicksand', sans-serif; /* NEW: Headings changed to Quicksand */
+  font-family: 'Noto Sans', sans-serif; /* NEW: Headings changed to Quicksand */
   color: #333333; /* NEW: Slightly darker gray */
   margin-top: 1.5em;
   margin-bottom: 0.75em;
@@ -45,7 +47,7 @@ a:hover {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: Noto Sans, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
   background-color: #f0f0f0; /* Keeping this light for contrast */
   padding: 2px 4px;
@@ -60,7 +62,7 @@ button, .button-style {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;

@@ -39,7 +39,7 @@ const Layout = () => {
     <div className={styles.layoutContainer}>
       <header className={styles.header}>
         <Link to="/" className={styles.logoLink} onClick={handleNavLinkClick}>
-          Purposeful Minds
+          <i>Purposeful Minds LLC</i>
         </Link>
         
         <button className={styles.mobileMenuButton} onClick={toggleMobileMenu} aria-label="Toggle menu" aria-expanded={isMobileMenuOpen}>
@@ -58,7 +58,7 @@ const Layout = () => {
             </ul>
           </nav>
           <Link to="/contact" className={`${styles.ctaButton} button-style`} onClick={handleNavLinkClick}>
-            Free Consultation
+            Free 15 Minute Consultation
           </Link>
         </div>
       </header>

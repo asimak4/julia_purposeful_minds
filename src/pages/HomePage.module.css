@@ -87,7 +87,7 @@
   }
 }
 
-/* Styles for Three-Column Feature Section */
+/* Styles for Feature Section */
 .featureSection {
   background-color: #8F9E8B; /* Muted Green/Olive */
   padding: 3rem 5%; /* Padding top/bottom and sides */
@@ -97,7 +97,7 @@
 
 .featureGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
   gap: 2.5rem; /* Gap between columns */
 }
 
@@ -175,6 +175,60 @@
   line-height: 1.7;
 }
 
+.stepsList {
+  list-style: none;
+  padding-left: 0;
+  /* margin-top: 2rem; */
+  /* margin-bottom: 2.5rem; */
+  counter-reset: steps-counter;
+}
+
+.stepItem {
+  position: relative;
+  padding-left: 55px; /* Space for the counter */
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.stepItem:last-child {
+  margin-bottom: 0;
+}
+
+.stepItem::before {
+  content: counter(steps-counter);
+  counter-increment: steps-counter;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8F9E8B; /* Muted Green/Olive */
+  background-color: #f1e6d2; /* Light accent color */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.stepItem h4 {
+  font-size: 1.2rem;
+  color: #333333;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.stepItem p {
+  font-size: 1rem;
+  color: #4A4A4A;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
 .welcomeCtaButton {
   /* Uses .button-style from index.css */
   margin-top: 1rem; /* Space above the button */
@@ -195,6 +249,9 @@
     grid-template-columns: 1fr; /* Stack to single column */
     gap: 2.5rem;
     text-align: center; /* Center text content when stacked */
+  }
+  .stepItem {
+    padding-left: 50px; /* Adjust padding for smaller screens */
   }
   .welcomeTextColumn .welcomeIntro {
     text-align: center;

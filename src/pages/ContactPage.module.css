@@ -50,7 +50,7 @@
   padding: 0.75rem;
   border: 1px solid #B6D9E0; /* NEW: Light Sky Blue border */
   border-radius: 4px;
-  font-family: 'Nunito Sans', sans-serif; /* Match body font */
+  font-family: 'Noto Sans', sans-serif; /* Match body font */
   font-size: 1rem;
   box-sizing: border-box; /* Important for width: 100% and padding */
   background-color: #F8FAFB; /* Very light bg for inputs */

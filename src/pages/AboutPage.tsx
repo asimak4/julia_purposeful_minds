@@ -35,7 +35,7 @@ export default function AboutPage() {
         viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Meet Your Therapist</h1>
+        <h1>Our Story</h1>
         
         <div className={styles.profileContainer}>
           <motion.div
@@ -43,23 +43,45 @@ export default function AboutPage() {
             variants={slideInLeftVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <h2 className={styles.therapistName}>Julia Simak, MS, CCC-SLP</h2>
             <p className={styles.bioIntro}>
-              This will be a much more in-depth bio. Here you can talk about your education and experience.
+              <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP, out of a deep passion for helping students who were falling through the cracks—not due to a lack of potential, but because of challenges with organization, executive functioning, and language.
             </p>
             <p>
-              At mei quis eius quas, mei ea lucilius qualisque explicari. Ne mel choro option. Ne per altera iriure concludaturque. Affert alterum repudiare at vis, apeirian gubergren an quo, soleat possit id his. Et nec vero modus vulputate, qui ex exerci nullam utamur, iuvaret invenire interesset et pro. Te sit everti euismod docendi, at per solum posse.
+              In her work as a Speech-Language Pathologist, Julia saw firsthand how many bright, capable students were overwhelmed by disorganization. Misplaced assignments, missed deadlines, and chaotic study habits often led to frustration, academic struggles, and a loss of confidence. Over time, she recognized a pattern: difficulties with executive functioning weren't isolated—they created a ripple effect, impacting every part of a student's life.
             </p>
             <p>
-              Lorem ridens alterum pro te, vis te mucius corpora adversarium. Mazim verear virtute nec ne, luptatum recteque ei mel. Ex omnium docendi liberavisse sed, mel id doctus audiam regione, virtute mediocritatem sed ut. Vix accusam vivendum in. In has tritani epicuri eloquentiam, vix sumo iudico eripuit no.
+            But she also saw the transformation that could happen when students were given the right systems and strategies. With structured routines, visual tools, and personalized approaches, those same students began to experience clarity, consistency, and a renewed sense of control. The pieces started to fall into place—improved academics, better emotional regulation, and most importantly, growing self-confidence.
             </p>
             <p>
-              Per ea ubique adipisci gubergren. Vis cu mazim dictas, per congue civibus cu. Dico labitur lobortis duo at, id ius movet doctus. His ea lorem dolorum delicata, ne consul atomorum liberavisse sed, at purto unum his.
+              Language plays a central role in this journey. Many students who struggle with executive functioning also face challenges in organizing their thoughts, writing clearly, or making sense of what they read. These difficulties are deeply rooted in language processing. At <i>Purposeful Minds</i>, Julia bridges the gap between executive functioning and language, supporting students in building the skills to comprehend, express, and succeed.
             </p>
+            <p>
+              What began as a desire to support individual students has grown into a broader mission: to help learners thrive through purposeful, individualized support that empowers them to reach their goals—academically, emotionally, and beyond.
+            </p>
+
+            <div className={styles.founderSection}>
+              <h2>Founder of Purposeful Minds</h2>
+              <p>
+                Julia Simak, M.S., CCC-SLP, began her career as a Speech-Language Pathologist in public elementary schools, where she provided speech and language therapy to students with diverse communication needs. Early on, she collaborated closely with reading specialists, which sparked her interest in literacy development, dyslexia, and structured spelling interventions such as the Orton-Gillingham approach.
+              </p>
+              <p>
+                During this time, Julia also gained valuable experience at Lindamood-Bell Learning Processes, where she provided intensive one-on-one intervention using programs such as <i>Visualizing and Verbalizing</i> (V&V) for reading comprehension and <i>Seeing Stars</i> for phonemic awareness and decoding. This work deepened her understanding of the connection between language processing and reading success, especially for students with dyslexia, ADHD, and other language-based learning differences.
+              </p>
+              <p>
+                As she continued her work with students, Julia became increasingly aware of how executive functioning challenges—such as disorganization, time management, and difficulty initiating tasks—often coexisted with language and literacy difficulties. These needs were often underserved, yet they had a significant impact on students' academic performance and emotional well-being.
+              </p>
+              <p>
+                Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning support. There, she worked with students from elementary through college, integrating speech-language therapy, reading intervention, and executive functioning strategies tailored to each student's strengths and needs.
+              </p>
+              <p>
+                Through this journey, Julia also discovered the importance of partnering with families and schools to create supportive routines and consistent expectations at home and in the classroom. Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded Purposeful Minds—a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.
+              </p>
+            </div>
+
             <div className={styles.licensingInfo}>
               <h3>Licensing Information</h3>
               <p>
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                <b>Julia holds active licensure in Maryland, Washington, D.C., and Virginia, and is certified by the American Speech-Language-Hearing Association (ASHA).</b>
               </p>
             </div>
           </motion.div>
@@ -72,7 +94,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </motion.section>
-
+{/* 
       <motion.section
         className={styles.section}
         variants={sectionVariants}
@@ -105,10 +127,10 @@ export default function AboutPage() {
               <p>Successfully integrated new AAC technologies for several non-verbal students, significantly improving their ability to communicate and participate in classroom activities.</p>
             </motion.div>
           </motion.li>
-          {/* Add more as needed */}
         </motion.ul>
-      </motion.section>
+      </motion.section> */}
 
+{/* 
       <motion.section
         className={styles.section}
         variants={sectionVariants}
@@ -124,9 +146,8 @@ export default function AboutPage() {
         <p>
           Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor.
         </p>
-        {/* You can add more paragraphs or bullet points here */}
       </motion.section>
-
+*/}
     </div>
   );
 } 
