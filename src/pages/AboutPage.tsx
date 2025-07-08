@@ -27,6 +27,12 @@ export default function AboutPage() {
 
   return (
     <div className={styles.pageContainer}>
+      <motion.div
+          variants={slideInRightVariants}
+          transition={{ duration: 0.7, delay: 0.2 }}
+      >
+            <img src={`${process.env.PUBLIC_URL}/PurposefulMindsLogo.png`} alt="Purposeful Minds logo" className={styles.logoImage}/>
+      </motion.div>
       <motion.section
         className={styles.section}
         variants={sectionVariants}

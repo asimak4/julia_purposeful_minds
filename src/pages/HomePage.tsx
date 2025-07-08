@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'; // Import motion
 
 // Placeholder for HomePage component
 export default function HomePage() {
-  const heroBgImage = `${process.env.PUBLIC_URL}/childInTherapy1.jpg`; // Swapped: now childInTherapy.jpg
+  const heroBgImage = `${process.env.PUBLIC_URL}/childInTherapy1.png`; // Swapped: now childInTherapy.jpg
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 75, scale: 0.95 },

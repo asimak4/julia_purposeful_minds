@@ -123,12 +123,23 @@
   background-color: #fdfcfa; /* Slightly different background for variety if needed */
 }
 
-.founderTitle {
+  .founderTitle {
   font-size: 1.1rem;
   font-style: italic;
   color: #555;
   margin-top: -1rem; /* Pull it closer to the h2 */
   margin-bottom: 1.5rem;
+}
+
+/* Logo Image - General styling for all screen sizes */
+.logoImage {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 1rem auto;
+  display: block;
 }
 
 /* Responsive adjustments */
@@ -158,6 +169,9 @@
     max-width: 300px; /* Max width for stacked image */
     margin-bottom: 1.5rem;
     height: auto; /* Let height be auto when stacked */
+  }
+  .logoImage {
+    width: 150px; /* Smaller on mobile */
   }
 }
 
