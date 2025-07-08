@@ -55,9 +55,6 @@ export default function AboutPage() {
             <p>
               Language plays a central role in this journey. Many students who struggle with executive functioning also face challenges in organizing their thoughts, writing clearly, or making sense of what they read. These difficulties are deeply rooted in language processing. At <i>Purposeful Minds</i>, Julia bridges the gap between executive functioning and language, supporting students in building the skills to comprehend, express, and succeed.
             </p>
-            <p>
-              What began as a desire to support individual students has grown into a broader mission: to help learners thrive through purposeful, individualized support that empowers them to reach their goals—academically, emotionally, and beyond.
-            </p>
 
             <div className={styles.founderSection}>
               <h2>Founder of Purposeful Minds</h2>
@@ -74,14 +71,14 @@ export default function AboutPage() {
                 Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning support. There, she worked with students from elementary through college, integrating speech-language therapy, reading intervention, and executive functioning strategies tailored to each student's strengths and needs.
               </p>
               <p>
-                Through this journey, Julia also discovered the importance of partnering with families and schools to create supportive routines and consistent expectations at home and in the classroom. Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded Purposeful Minds—a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.
+                Through this journey, Julia also discovered the importance of partnering with families and schools to create supportive routines and consistent expectations at home and in the classroom. Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded <i>Purposeful Minds</i>—a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.
               </p>
             </div>
 
             <div className={styles.licensingInfo}>
               <h3>Licensing Information</h3>
               <p>
-                <b>Julia holds active licensure in Maryland, Washington, D.C., and Virginia, and is certified by the American Speech-Language-Hearing Association (ASHA).</b>
+                Julia holds active licensure in Maryland, Washington, D.C., and Virginia, and is certified by the American Speech-Language-Hearing Association (ASHA).
               </p>
             </div>
           </motion.div>
@@ -90,7 +87,7 @@ export default function AboutPage() {
             variants={slideInRightVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <img src={`${process.env.PUBLIC_URL}/JuliaPhoto.jpg`} alt="Julia Simak" className={styles.profileImage} />
+            <img src={`${process.env.PUBLIC_URL}/JuliaPhoto1.png`} alt="Julia Simak" className={styles.profileImage} />
           </motion.div>
         </div>
       </motion.section>

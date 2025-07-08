@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'; // Import motion
 
 // Placeholder for HomePage component
 export default function HomePage() {
-  const heroBgImage = `${process.env.PUBLIC_URL}/childInTherapy.jpg`; // Swapped: now childInTherapy.jpg
+  const heroBgImage = `${process.env.PUBLIC_URL}/childInTherapy1.jpg`; // Swapped: now childInTherapy.jpg
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 75, scale: 0.95 },
@@ -90,33 +90,21 @@ export default function HomePage() {
             <p>Purposeful Minds supports learners at every stage—from early elementary to college. 
               We partner with families to address early speech and language development, strengthen literacy and 
               organizational skills in middle and high school, and guide college students as they tackle more
-              complex academic challenges. Our individualized approach meets students where they are, helping them 
-              build the skills they need to confidently move forward.
+              complex academic challenges.
             </p> 
           </motion.div>
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.4 }} className={styles.featureColumn}>
             <h3>Areas of Focus</h3>
             <p>We specialize in helping students overcome a variety of challenges, including difficulties with executive 
-              functioning skills, ADHD, expressive and receptive language and dyslexia. Whether your child 
-              struggles with organizing thoughts, processing language, managing attention, or improving reading and
-               writing abilities, our goal-driven sessions provide targeted strategies tailored to their unique needs, 
-               setting them up for success in school and beyond.</p>
+              functioning skills, ADHD, expressive and receptive language and dyslexia. We support clients in organizing thoughts, processing language, managing attention, and building reading and writing skills.</p>
           </motion.div>
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.6 }} className={styles.featureColumn}>
-            <h3>Our Approach</h3> {/* Or keep "Why Work With Us" or similar */}
-            <p>At Purposeful Minds, we believe meaningful progress begins with truly understanding your child
-               We invest time getting to know their strengths, challenges, and what motivates them. Using proven,
-                research-based methods in structured literacy, executive functioning, and speech and language support, 
-                we design personalized sessions that foster confidence and skill development, all within a nurturing
-                 and encouraging environment.</p> {/* Placeholder */}
-          </motion.div>
+
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
             <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
             <p>At Purposeful Minds, all consultations and comprehensive evaluations are conducted virtually for your convenience. 
               Following the evaluation, we work closely with you to determine the best fit for ongoing 
               services—whether that's continuing virtually or, depending on your location, scheduling, 
-              and individual needs, arranging in-home visits on a case-by-case basis. No matter the format, our focus 
-              remains on providing purposeful, goal-driven support tailored to your child's success.</p> {/* Placeholder */}
+              and individual needs, arranging in-home visits on a case-by-case basis.</p> {/* Placeholder */}
           </motion.div>
         </div>
       </motion.section>
@@ -145,7 +133,7 @@ export default function HomePage() {
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 2: Comprehensive Virtual Evaluation</h4>
-                   <p>Complete a detailed virtual evaluation to assess strengths, challenges, and areas of focus.</p>
+                   <p>Before the initial consultation, provide any formal evaluations or standardized assessments. The therapist will carefully review all existing documentation and complete a virtual consultation to identify your child’s strengths and areas of need before beginning treatment.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 3: Individualized Plan of Care</h4>
@@ -161,7 +149,7 @@ export default function HomePage() {
                </li>
              </ol>
              
-             <button className={`button-style ${styles.welcomeCtaButton}`}>Get Started Today</button>
+             <Link to="/contact" className={`button-style ${styles.welcomeCtaButton}`}>Get Started Today</Link>
           </motion.div>
           <motion.div
             className={styles.welcomeImageColumn}

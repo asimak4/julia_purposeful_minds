@@ -68,7 +68,7 @@ const Layout = () => {
       </main>
       
       <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} Purposeful Minds. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} <i>Purposeful Minds LLC.</i> All rights reserved.</p>
         <p>
           <Link to="/legal" className={styles.footerLink} onClick={handleNavLinkClick}>
             Legal Terms

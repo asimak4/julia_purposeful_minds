@@ -26,8 +26,8 @@ export default function ContactPage() {
         <h1>Contact Us</h1>
         <div className={styles.contactIntro}>
             <p>If you have any questions or would like to schedule a consultation, please reach out to us.</p>
-            <p><strong>Email:</strong> [Your Sister's Email Address - to be created]</p>
-            <p><strong>Phone:</strong> [Your Sister's Phone Number]</p>
+            <p><strong>Email:</strong> [juliasimak@gmail.com]</p>
+            <p><strong>Phone:</strong> [123-456-7890]</p>
         </div>
 
         <h2>Send Us a Message</h2>
