@@ -149,7 +149,7 @@ export default function HomePage() {
                </li>
              </ol>
              
-             <Link to="/contact" className={`button-style ${styles.welcomeCtaButton}`}>Get Started Today</Link>
+             {/* <Link to="/contact" className={`button-style ${styles.welcomeCtaButton}`}>Get Started Today</Link> */}
           </motion.div>
           <motion.div
             className={styles.welcomeImageColumn}

@@ -1,5 +1,4 @@
 import styles from './ServicesPage.module.css'; // Import CSS Module
-import { Link } from 'react-router-dom'; // For the button
 import { motion } from 'framer-motion'; // Import motion
 
 // Placeholder for ServicesPage component
@@ -22,6 +21,14 @@ export default function ServicesPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      <motion.div
+          variants={slideInRightVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        <img src={`${process.env.PUBLIC_URL}/PurposefulMindsLogo.png`} alt="Purposeful Minds logo" className={styles.logoImage}/>
+      </motion.div>
       <header className={styles.pageHeader}>
         <h1>Our Services</h1>
       </header>
@@ -31,15 +38,16 @@ export default function ServicesPage() {
         className={styles.topSectionsGrid}
         variants={sectionVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 0.6 }}
+        animate="visible"
+        transition={{ duration: 0.6, delay: 0.3 }}
       >
         {/* Introduction Section */}
         <motion.section
           className={styles.introSection}
           variants={slideInLeftVariants}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 0.5 }}
         >
           <motion.div className={styles.introContent}>
             <h2>Our Approach & Services</h2>
@@ -52,7 +60,9 @@ export default function ServicesPage() {
         <motion.section
           className={styles.consultationSection}
           variants={slideInRightVariants}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 0.6 }}
         >
           <motion.div className={styles.consultationContent}>
             <h2>Consultations</h2>
@@ -67,15 +77,16 @@ export default function ServicesPage() {
         className={styles.servicesGrid}
         variants={sectionVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        animate="visible"
+        transition={{ duration: 0.6, delay: 0.8 }}
       >
         {/* Executive Functioning Card */}
         <motion.div
           className={styles.serviceCard}
           variants={slideInLeftVariants}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 1.0 }}
         >
           <div className={styles.cardImage}>
             <img src={`${process.env.PUBLIC_URL}/todolist.png`} alt="Children happily engaged in a play-based activity" />
@@ -99,61 +110,42 @@ export default function ServicesPage() {
         <motion.div
           className={styles.serviceCard}
           variants={slideInRightVariants}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 1.2 }}
         >
           <div className={styles.cardImage}>
             <img src={`${process.env.PUBLIC_URL}/speak.png`} alt="Scrabble tiles spelling out words, representing language" />
           </div>
           <div className={styles.cardContent}>
             <h3>Speech-Language Services</h3>
-            <p><i>Purposeful Minds</i> offers speech and language services that target the following:</p>
+            <p><i>Purposeful Minds</i> offers comprehensive speech and language services focusing on communication development and language processing skills.</p>
             
-            <h4>Receptive Language</h4>
-            <ul className={styles.list}>
-              <li className={styles.listItem}>Understanding spoken and written language</li>
-              <li className={styles.listItem}>Following directions and instructions</li>
-              <li className={styles.listItem}>Comprehending questions and responding appropriately</li>
-              <li className={styles.listItem}>Processing and interpreting vocabulary and grammar</li>
-               { /* <li className={styles.listItem}>Grasping the meaning of stories or conversations</li>
-              <li className={styles.listItem}>Recognizing nonverbal cues like tone, facial expressions, and body language</li>
-              <li className={styles.listItem}>Making inferences and understanding implied information</li>
-              <li className={styles.listItem}>Remembering and recalling heard information</li>
-              <li className={styles.listItem}>Understanding multiple-step or complex commands</li> */}
-            </ul>
-
-            <div className={styles.languageGrid}>
-              <div>
-                <h4>Expressive Language</h4>
+            <div className={styles.serviceAreas}>
+              <div className={styles.serviceArea}>
+                <h4>Receptive Language</h4>
                 <ul className={styles.list}>
-                  <li className={styles.listItem}>Forming words and sentences to communicate thoughts and ideas</li>
-                  <li className={styles.listItem}>Using appropriate vocabulary and grammar</li>
-                  <li className={styles.listItem}>Organizing thoughts logically when speaking or writing</li>
-                  <li className={styles.listItem}>Telling stories or describing events clearly and coherently</li>
-                  {/* <li className={styles.listItem}>Initiating and maintaining conversations</li>
-                  <li className={styles.listItem}>Adjusting language based on the listener or social context</li>
-                  <li className={styles.listItem}>Using language to solve problems or explain reasoning</li> */}
-                </ul>
-
-                <h4>Written Language</h4>
-                <ul className={styles.list}>
-                  <li className={styles.listItem}>Organizing ideas logically and coherently</li>
-                  <li className={styles.listItem}>Using proper grammar, punctuation, and spelling</li>
-                  <li className={styles.listItem}>Structuring sentences and paragraphs effectively</li>
-                  <li className={styles.listItem}>Developing clear introductions, bodies, and conclusions</li>
-                  {/* <li className={styles.listItem}>Applying appropriate vocabulary and tone for the audience</li>
-                  <li className={styles.listItem}>Using transition words to connect ideas smoothly</li>
-                  <li className={styles.listItem}>Editing and revising for clarity and correctness</li>
-                  <li className={styles.listItem}>Expressing thoughts, arguments, or narratives effectively in writing</li>
-                  <li className={styles.listItem}>Following writing conventions</li> */}
+                  <li className={styles.listItem}>Understanding spoken and written language</li>
+                  <li className={styles.listItem}>Following directions and instructions</li>
+                  <li className={styles.listItem}>Processing vocabulary and grammar</li>
                 </ul>
               </div>
-              <div className={styles.highlightedList}>
-                <h4>Additional Areas of Speech and Language Support</h4>
+              
+              <div className={styles.serviceArea}>
+                <h4>Expressive Language</h4>
                 <ul className={styles.list}>
-                  <li className={styles.listItem}>Articulation</li>
-                  <li className={styles.listItem}>Phonology</li>
-                  <li className={styles.listItem}>Fluency</li>
-                  <li className={styles.listItem}>Pragmatics</li>
+                  <li className={styles.listItem}>Forming clear sentences and thoughts</li>
+                  <li className={styles.listItem}>Using appropriate vocabulary and grammar</li>
+                  <li className={styles.listItem}>Organizing ideas logically</li>
+                </ul>
+              </div>
+              
+              <div className={styles.serviceArea}>
+                <h4>Written Language & Additional Support</h4>
+                <ul className={styles.list}>
+                  <li className={styles.listItem}>Grammar, punctuation, and spelling</li>
+                  <li className={styles.listItem}>Structuring paragraphs effectively</li>
+                  <li className={styles.listItem}>Articulation, phonology, fluency, and pragmatics</li>
                 </ul>
               </div>
             </div>
@@ -164,7 +156,9 @@ export default function ServicesPage() {
         <motion.div
           className={styles.serviceCard}
           variants={slideInLeftVariants}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.7, delay: 1.4 }}
         >
           <div className={styles.cardImage}>
             <img src={`${process.env.PUBLIC_URL}/openbook.png`} alt="Open book with colorful letters, representing literacy and dyslexia support" />

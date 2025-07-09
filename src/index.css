@@ -72,6 +72,7 @@ button, .button-style {
 
 button:hover, .button-style:hover {
   background-color: #707e6c; /* Darker shade for hover */
+  color: white; /* Ensure text remains white on hover */
 }
 
 /* Utility class to hide scrollbar when mobile menu is open */

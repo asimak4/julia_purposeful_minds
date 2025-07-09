@@ -10,14 +10,14 @@
 .pageHeader {
   background: linear-gradient(135deg, #8F9E8B 0%, #7A8975 100%);
   color: #FFFFFF;
-  padding: 2rem 2%;
+  padding: 1.5rem 2%;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .pageHeader h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #FFFFFF;
   margin: 0;
   line-height: 1.1;
@@ -28,18 +28,29 @@
 .topSectionsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1.2rem;
   padding: 0 2%;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
+
+.logoImage {
+  width: 200px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 1rem auto;
+  display: block;
+}
+
 
 /* Introduction Section */
 .introSection {
-  padding: 2rem;
+  padding: 1.5rem;
   margin: 0;
   background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
 .introContent {
@@ -49,37 +60,37 @@
 }
 
 .introContent h2 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #333333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .introContent p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #4A4A4A;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .pricing {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #8F9E8B;
   font-weight: 600;
   text-align: center;
-  padding: 1rem;
+  padding: 0.8rem;
   background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
-  margin-top: 1rem;
+  border-radius: 6px;
+  margin-top: 0.8rem;
 }
 
 /* Consultation Section */
 .consultationSection {
-  padding: 2rem;
+  padding: 1.5rem;
   margin: 0;
   background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
 .consultationContent {
@@ -89,17 +100,17 @@
 }
 
 .consultationContent h2 {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: #333333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .consultationContent p {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #4A4A4A;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 /* Services Grid */
@@ -108,15 +119,19 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   padding: 0 2%;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  align-items: start;
 }
 
 .serviceCard {
   background: #FFFFFF;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .serviceCard:hover {
@@ -125,51 +140,52 @@
 }
 
 .cardImage {
-  height: 100px;
+  height: 80px;
   overflow: hidden;
   background: linear-gradient(135deg, #c3d2bf 0%, #8F9E8B 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .cardImage img {
-  width: 60%;
+  width: 50%;
   height: auto;
-  max-height: 90px;
+  max-height: 60px;
   object-fit: contain;
-  /* border-radius: 8px; */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .cardContent {
-  padding: 2rem;
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardContent h3 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #333333;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   font-weight: 600;
   text-align: center;
   border-bottom: 2px solid #f1e6d2;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
 }
 
 .cardContent h4 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #8F9E8B;
-  margin-top: 1.5rem;
-  margin-bottom: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
   font-weight: 600;
 }
 
 .cardContent p {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #4A4A4A;
-  line-height: 1.6;
-  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
@@ -180,13 +196,13 @@
 }
 
 .listItem {
-  padding: 0.4rem 0;
-  padding-left: 1.8rem;
+  padding: 0.3rem 0;
+  padding-left: 1.5rem;
   position: relative;
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
   color: #4A4A4A;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .listItem::before {
@@ -199,37 +215,48 @@
   top: 0.4rem;
 }
 
-/* Language Grid for Speech-Language Services */
-.languageGrid {
+/* Service Areas Grid */
+.serviceAreas {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex: 1;
 }
 
-.highlightedList {
-  background: linear-gradient(135deg, #f4f1ed 0%, #f6f2f0 100%);
-  border-left: 4px solid #8F9E8B;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  max-height: fit-content;
+.serviceArea {
+  background: linear-gradient(135deg, #f8f6f3 0%, #f4f1ed 100%);
+  border-radius: 6px;
+  padding: 1rem;
+  border-left: 3px solid #8F9E8B;
 }
 
-.highlightedList h4 {
+.serviceArea h4 {
   color: #8F9E8B;
   margin-top: 0;
-  text-align: left;
-  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.highlightedList .listItem {
-  font-size: 0.9rem;
+.serviceArea .list {
+  margin-bottom: 0;
+}
+
+.serviceArea .listItem {
+  font-size: 0.8rem;
   padding: 0.2rem 0;
-  padding-left: 1.5rem;
+  padding-left: 1.3rem;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 992px) {
   .pageHeader h1 {
     font-size: 2rem;
@@ -249,7 +276,7 @@
     font-size: 1.5rem;
   }
   
-  .languageGrid {
+  .serviceAreas {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
@@ -301,7 +328,7 @@
   
   .servicesGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     margin-bottom: 2rem;
   }
   
@@ -352,5 +379,14 @@
   
   .pricing {
     font-size: 1rem;
+  }
+  
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .serviceArea {
+    padding: 1rem;
   }
 } 
