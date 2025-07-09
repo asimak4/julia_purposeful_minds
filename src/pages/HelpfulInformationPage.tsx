@@ -14,16 +14,6 @@ export default function HelpfulInformationPage() {
     visible: { opacity: 1, y: 0 },
   };
 
-  const slideInLeftVariants = {
-    hidden: { opacity: 0, x: -100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
-  };
-
-  const slideInRightVariants = {
-    hidden: { opacity: 0, x: 100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
-  };
-
   return (
     <div className={styles.pageContainer}>
       {/* <motion.section
@@ -47,13 +37,48 @@ export default function HelpfulInformationPage() {
       >
         <h2>Frequently Asked Questions (FAQs)</h2>
         
-        <motion.h3 variants={itemVariants}>About Dyslexia</motion.h3>
+        <motion.h3 variants={itemVariants}>About Our Services</motion.h3>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}>What is executive functioning?</summary>
+          <div className={styles.faqContent}>
+            <p>
+              Executive functioning is ...
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}>How does executive functioning impact language? </summary>
+          <div className={styles.faqContent}>
+          <p>Executive functioning and language skills are deeply interconnected, and challenges in one area can impact the other. Executive functioning involves cognitive processes such as planning, organizing, working memory, self-monitoring, and flexible thinking—skills that are essential for managing tasks and navigating daily life. Language skills include both understanding (receptive language) and expressing (expressive language) ideas clearly and effectively.</p>
+            <p>When a child experiences difficulties with executive functioning, they may struggle to organize their thoughts, follow multi-step directions, or maintain attention during conversations or classroom activities. These challenges can make it harder for them to process and use language efficiently. Conversely, language difficulties can affect executive functions by limiting a child's ability to internally verbalize steps for a task, self-regulate through self-talk, or comprehend instructions, which are all important for effective planning and problem-solving.</p>
+            <p>Together, these overlapping difficulties can create a cycle where struggles in language impact executive functioning, and vice versa, potentially leading to challenges in academic performance, social interactions, and daily tasks. Addressing both areas through integrated support helps build stronger communication skills and cognitive strategies, empowering the child to better manage tasks, express themselves, and succeed in multiple settings.
+            </p>
+
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}>What is a language disorder?</summary>
+          <div className={styles.faqContent}>
+            <p>
+              A language disorder is ...
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}>What are the differences between receptive and expressive language disorders?</summary>
+          <div className={styles.faqContent}>
+            <p>
+              A receptive language disorder involves difficulty understanding language (e.g., following directions, understanding questions). An expressive language disorder involves difficulty communicating thoughts and ideas (e.g., limited vocabulary, incorrect grammar, difficulty forming sentences).
+            </p>
+          </div>
+        </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
           <summary className={styles.faqSummary}>What is dyslexia?</summary>
           <div className={styles.faqContent}>
             <p>
-              Dyslexia is a specific learning disability that is neurobiological in origin. It is characterized by difficulties with accurate and/or fluent word recognition and by poor spelling and decoding abilities. These difficulties typically result from a deficit in the phonological component of language that is often unexpected in relation to other cognitive abilities and the provision of effective classroom instruction. (Source: International Dyslexia Association)
+            Dyslexia is a language-based learning disability. Dyslexia refers to a cluster of symptoms, which result in people having difficulties with specific language skills, particularly reading. Students with dyslexia usually experience difficulties with other language skills such as spelling, writing, and pronouncing words. 
             </p>
+            <a href="https://dyslexiaida.org/dyslexia-basics/" target="_blank" rel="noopener noreferrer">Learn more about dyslexia</a>
           </div>
         </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
@@ -72,29 +97,69 @@ export default function HelpfulInformationPage() {
             </ul>
           </div>
         </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}>Why a Speech-Language Pathologist? </summary>
+          <div className={styles.faqContent}>
+            <p>
+            While speech-language pathologists (SLPs) are well known for supporting articulation and expressive/receptive language, their expertise extends much further. SLPs also address challenges related to communication, executive functioning, literacy, and social interactions. For example, they may help a child recall key details from a story, organize their writing, or enhance their phonological awareness.
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> What is the youngest age we work with?  </summary>
+          <div className={styles.faqContent}>
+            <p>
+            Age 4 - We work with children ages 4 and up, when they’re better able to engage in structured, goal-focused sessions. For children under 3, we recommend early intervention services that specialize in supporting toddlers through play-based, parent-guided approaches. We’re happy to refer families of younger children to trusted early intervention providers who are better equipped to meet their needs at that stage.
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> Do we see college students?  </summary>
+          <div className={styles.faqContent}>
+            <p>
+              Yes! At Purposeful Minds, college and graduate students build skills like time management, setting and maintaining priorities, handling intensive reading demands, studying effectively, and improving analytical writing.
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> Are virtual and in-home sessions billed at the same rate?  </summary>
+          <div className={styles.faqContent}>
+            <p>
+              Virtual sessions include a flat rate of $175. In-home sessions include an additional travel fee depending on your location. (Please refer to our FAQs for more information on travel fees).  
+            </p>
+            <p>
+              In-home sessions include an additional travel fee depending on your location. (Please refer to our FAQs for more information on travel fees).  
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> How much are the travel fees?  </summary>
+          <div className={styles.faqContent}>
+            <p>
+            For in-home services, there will be an additional travel fee of: 
+            <ul>
+              <li>$8 per visit - 20 min drive round trip (10 min one way)</li>
+              <li>$12 per visit - 30 min drive round trip (15 min one way)</li>
+              <li>$16 per visit - 40 min drive round trip (20 min one way)</li>
+              <li>$23 per visit - 50 min drive round trip (25 min one way)</li>
+            </ul>
+            <p>Travel fees are calculated based on distance from North Bethesda, near Grosvenor Metro station.</p>
+            </p>
+          </div>
+        </motion.details>
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> Do we accept insurance? </summary>
+          <div className={styles.faqContent}>
+            <p>
+            No. Purposeful Minds provides services as an out-of-network provider, which means our sessions are paid privately rather than through insurance. This approach gives us the flexibility to offer customized care tailored to your child’s needs without the constraints of insurance requirements. While we don’t submit claims on your behalf, many insurance policies allow clients to seek reimbursement for out-of-network services. We can provide a detailed statement of services, known as a superbill, which you can use to file a claim with your insurance company. Please note that it’s your responsibility to submit the superbill and communicate directly with your insurance provider about coverage, reimbursement, and claim processes. We encourage you to verify your plan’s out-of-network benefits before beginning services.
+            </p>
+          </div>
+        </motion.details>
         {/* Add more dyslexia FAQs as needed, following the same structure */}
-
-        <motion.h3 variants={itemVariants} transition={{delay: 0.3}}>About Language Disorders</motion.h3>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}>What is a language disorder?</summary>
-          <div className={styles.faqContent}>
-            <p>
-              A language disorder is an impairment in the ability to understand and/or use words in context, both verbally and nonverbally. It can involve the form of language (phonology, morphology, syntax), the content of language (semantics), and/or the function of language in communication (pragmatics) in any combination.
-            </p>
-          </div>
-        </motion.details>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}>What are the differences between receptive and expressive language disorders?</summary>
-          <div className={styles.faqContent}>
-            <p>
-              A receptive language disorder involves difficulty understanding language (e.g., following directions, understanding questions). An expressive language disorder involves difficulty communicating thoughts and ideas (e.g., limited vocabulary, incorrect grammar, difficulty forming sentences).
-            </p>
-          </div>
-        </motion.details>
         {/* Add more language disorder FAQs as needed, following the same structure */}
       </motion.section>
 
-      <motion.section
+      {/* <motion.section
         className={`${styles.section} ${styles.twoColumnSection}`}
         variants={sectionVariants}
         initial="hidden"
@@ -141,7 +206,7 @@ export default function HelpfulInformationPage() {
             </p>
           </motion.div>
         </div>
-      </motion.section>
+      </motion.section> */}
     </div>
   );
 } 

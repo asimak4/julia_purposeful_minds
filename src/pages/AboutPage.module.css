@@ -59,8 +59,8 @@
 }
 
 .profileImage {
-  width: 50%;
-  height: 50%; /* Changed to 100% to fill placeholder */
+  width: 70%;
+  height: auto; /* Changed to 100% to fill placeholder */
   object-fit: cover; /* Crop image to fill, maintaining aspect ratio */
   display: block; /* Remove extra space below image */
   border-radius: 8px; /* Keep rounded corners on the image itself */

@@ -6,8 +6,6 @@ export default function ClientLoginPage() {
     <div className={styles.pageContainer}>
       <section className={styles.section}>
         <h1>Client Portal</h1>
-        <p className={styles.infoText}>Access your secure client portal to manage appointments, view documents, and communicate with us.</p>
-        
         <div> {/* Added a div for better control if needed, though button itself is inline-block */}
           {/* 
             Replace "#" with the actual URL for the client portal (e.g., Therapy Appointment link).
@@ -20,6 +18,7 @@ export default function ClientLoginPage() {
             Go to Client Portal
           </button>
         </div>
+        <p className={styles.infoText}>Access your secure client portal to manage appointments, view documents, and communicate with us.</p>
         
         <p className={styles.infoText}>
           If you have trouble accessing the portal or have not yet set up an account, please contact us for assistance.

@@ -29,7 +29,7 @@
 
 .faqItem {
   margin-bottom: 1.25rem; /* Slightly more space between FAQ items */
-  border: 1px solid #B6D9E0; /* NEW: Light Sky Blue border */
+  border: 1px solid #5a6e57; /* NEW: Light Sky Blue border */
   border-radius: 8px; /* More rounded corners */
   background-color: #fff; /* White background for the card */
   box-shadow: 0 3px 6px rgba(0,0,0,0.08); /* Softer, slightly larger shadow */
@@ -40,7 +40,7 @@
   padding: 1.25rem 1.5rem; /* Increased padding */
   font-weight: bold;
   cursor: pointer;
-  background-color: #f0f4f7; /* Lighter tint of Light Sky Blue or off-white */
+  background-color: #f1f2ef; /* Lighter tint of Light Sky Blue or off-white */
   /* border-radius: 3px; /* Remove if faqItem has overflow:hidden and rounded corners */
   display: flex; /* For custom arrow */
   justify-content: space-between; /* Push arrow to the right */
@@ -50,7 +50,7 @@
 }
 
 .faqItem[open] .faqSummary {
-  background-color: #e9eef1; /* Slightly darker when open */
+  background-color: #f1f2ef; /* Slightly darker when open */
 }
 
 .faqSummary::-webkit-details-marker,
@@ -72,7 +72,7 @@
 
 .faqContent {
   padding: 1.5rem; /* Increased padding */
-  border-top: 1px solid #B6D9E0; /* NEW: Light Sky Blue separator */
+  border-top: 1px solid #8fa17b; /* NEW: Light Sky Blue separator */
   background-color: #fdfdfd; /* Very light grey for content area */
 }
 

@@ -52,9 +52,9 @@ const Layout = () => {
               <li><Link to="/" className={styles.navLink} onClick={handleNavLinkClick}>Home</Link></li>
               <li><Link to="/about" className={styles.navLink} onClick={handleNavLinkClick}>About</Link></li>
               <li><Link to="/services" className={styles.navLink} onClick={handleNavLinkClick}>Services</Link></li>
-              <li><Link to="/helpful-information" className={styles.navLink} onClick={handleNavLinkClick}>Helpful Info</Link></li>
+              <li><Link to="/helpful-information" className={styles.navLink} onClick={handleNavLinkClick}>FAQS</Link></li>
               {/* <li><Link to="/contact" className={styles.navLink} onClick={handleNavLinkClick}>Contact</Link></li> */}
-              <li><Link to="/client-login" className={styles.navLink} onClick={handleNavLinkClick}>Client Login</Link></li>
+              <li><Link to="/client-login" className={styles.navLink} onClick={handleNavLinkClick}>Client Portal</Link></li>
             </ul>
           </nav>
           <Link to="/contact" className={`${styles.ctaButton} button-style`} onClick={handleNavLinkClick}>

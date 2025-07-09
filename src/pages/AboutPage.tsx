@@ -19,10 +19,10 @@ export default function AboutPage() {
     visible: { opacity: 1, x: 0, scale: 1 },
   };
 
-  const itemVariants = { // For list items or other general items
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
+  // const itemVariants = { // For list items or other general items
+  //   hidden: { opacity: 0, y: 50 },
+  //   visible: { opacity: 1, y: 0 },
+  // };
 
 
   return (

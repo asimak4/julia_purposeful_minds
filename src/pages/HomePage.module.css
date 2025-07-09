@@ -7,38 +7,38 @@
 }
 
 .heroSection {
-  min-height: 70vh; /* Adjust as needed, gives height to the section */
+  min-height: 50vh; /* Reduced from 70vh to 50vh */
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center; /* Vertically center the overlay box */
   justify-content: flex-start; /* Align overlay box to the left */
-  padding: 2rem 5%; /* Padding on the sides, e.g., 5% of viewport width */
+  padding: 1.5rem 5%; /* Reduced from 2rem to 1.5rem */
   position: relative; /* For potential pseudo-elements or advanced positioning if needed later */
 }
 
 .heroOverlay {
   background-color: #f1e6d2; /* Light Lavender/Pink from our palette */
-  padding: 2.5rem 3rem; /* Generous padding inside the box */
+  padding: 1.5rem 2rem; /* Reduced from 2.5rem 3rem */
   border-radius: 8px;
-  max-width: 550px; /* Max width of the text box */
+  max-width: 450px; /* Reduced from 550px to 450px */
   /* margin-left: 5%; /* Optional: if further offset from the left edge is desired than padding provides */
   box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   overflow: hidden; /* Add this to clip animating children */
 }
 
 .heroOverlay h1 {
-  font-size: 2.8rem; /* Large, prominent heading */
+  font-size: 2.2rem; /* Reduced from 2.8rem */
   color: #333333; /* Ensure it uses the primary heading color */
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem; /* Reduced from 1rem */
   line-height: 1.2;
 }
 
 .heroOverlay p {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reduced from 1.1rem */
   color: #4A4A4A; /* Body text color */
-  line-height: 1.7;
+  line-height: 1.6; /* Reduced from 1.7 */
   margin-bottom: 0; /* Remove bottom margin if no button follows immediately */
 }
 
@@ -52,45 +52,48 @@
 /* Responsive adjustments for Hero Section */
 @media (max-width: 992px) { /* Tablet and below */
   .heroSection {
-    min-height: 60vh;
-    padding: 2rem 3%;
+    min-height: 45vh; /* Reduced from 60vh */
+    padding: 1.5rem 3%;
     justify-content: center; /* Center overlay on tablets */
     text-align: center;
   }
   .heroOverlay {
-    max-width: 90%; /* Allow overlay to be wider */
+    max-width: 85%; /* Reduced from 90% */
     margin-left: 0; /* Remove specific margin if centered */
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced from 2rem */
   }
   .heroOverlay h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem; /* Reduced from 2.2rem */
   }
   .heroOverlay p {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced from 1rem */
   }
 }
 
 @media (max-width: 576px) { /* Mobile */
   .heroSection {
-    min-height: 50vh;
-    padding: 1.5rem 5%; /* Keep some side padding for mobile */
+    min-height: 40vh; /* Reduced from 50vh */
+    padding: 1rem 5%; /* Reduced from 1.5rem */
+  }
+  .heroOverlay {
+    padding: 1rem 1.5rem; /* Added overlay padding adjustment */
   }
   .heroOverlay h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduced from 1.8rem */
   }
   .heroOverlay p {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Reduced from 0.95rem */
   }
   .heroCtaButton {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 8px 16px; /* Reduced from 10px 20px */
+    font-size: 0.9rem; /* Reduced from 1rem */
   }
 }
 
 /* Styles for Feature Section */
 .featureSection {
   background-color: #8F9E8B; /* Muted Green/Olive */
-  padding: 3rem 5%; /* Padding top/bottom and sides */
+  padding: 2rem 5%; /* Reduced from 3rem to 2rem */
   color: #FAF7F5; /* Soft Off-White text for contrast */
   text-align: center; /* Center align the text within the section */
 }
@@ -98,57 +101,60 @@
 .featureGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 2.5rem; /* Gap between columns */
+  gap: 1.5rem; /* Reduced from 2.5rem to 1.5rem */
 }
 
 .featureColumn h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Reduced from 1.5rem */
   color: #FFFFFF; /* White or very light headings */
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Reduced from 0.75rem */
+  padding-bottom: 0.25rem; /* Reduced from 0.5rem */
   border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Subtle underline for headings */
   display: inline-block; /* To make border-bottom only as wide as text */
 }
 
 .featureColumn p {
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem; /* Reduced from 1rem */
+  line-height: 1.5; /* Reduced from 1.6 */
   color: #F0E8F0; /* Slightly less bright than pure white for paragraphs, or use #FAF7F5 */
 }
 
 /* Responsive adjustments for Feature Section */
 @media (max-width: 992px) { /* Tablet */
+  .featureSection {
+    padding: 1.5rem 5%; /* Reduced padding for tablet */
+  }
   .featureGrid {
     grid-template-columns: 1fr; /* Stack to single column */
-    gap: 2rem;
+    gap: 1.5rem; /* Reduced from 2rem */
   }
   .featureColumn h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Reduced from 1.4rem */
   }
 }
 
 @media (max-width: 576px) { /* Mobile */
   .featureSection {
-    padding: 2rem 5%;
+    padding: 1.5rem 5%; /* Reduced from 2rem */
   }
   .featureColumn h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem; /* Reduced from 1.3rem */
   }
   .featureColumn p {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Reduced from 0.95rem */
   }
 }
 
 /* Styles for "Welcome" Text & Image Section */
 .welcomeSection {
-  padding: 4rem 5%; /* Generous padding */
+  padding: 2.5rem 5%; /* Reduced from 4rem to 2.5rem */
   background-color: #FAF7F5; /* Ensuring it's on the main soft off-white */
 }
 
 .welcomeGrid {
   display: grid;
   grid-template-columns: 3fr 2fr; /* Text column wider (e.g., 60%), image column (e.g., 40%) */
-  gap: 3rem; /* Gap between text and image columns */
+  gap: 2rem; /* Reduced from 3rem to 2rem */
   align-items: center; /* Vertically align items if columns have different heights */
 }
 
@@ -161,18 +167,18 @@
 }
 
 .welcomeTextColumn h2 {
-  font-size: 2.5rem; /* Large heading */
+  font-size: 2rem; /* Reduced from 2.5rem */
   color: #333333; /* Standard heading color */
   margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
   line-height: 1.3;
 }
 
 .welcomeTextColumn p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reduced from 1rem */
   color: #4A4A4A; /* Standard body text */
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  line-height: 1.6; /* Reduced from 1.7 */
 }
 
 .stepsList {
@@ -185,8 +191,8 @@
 
 .stepItem {
   position: relative;
-  padding-left: 55px; /* Space for the counter */
-  margin-bottom: 1rem;
+  padding-left: 45px; /* Reduced from 55px */
+  margin-bottom: 0.75rem; /* Reduced from 1rem */
   text-align: left;
 }
 
@@ -201,12 +207,12 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* Reduced from 1.5rem */
   font-weight: bold;
   color: #8F9E8B; /* Muted Green/Olive */
   background-color: #f1e6d2; /* Light accent color */
-  width: 40px;
-  height: 40px;
+  width: 32px; /* Reduced from 40px */
+  height: 32px; /* Reduced from 40px */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -215,18 +221,18 @@
 }
 
 .stepItem h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem; /* Reduced from 1.2rem */
   color: #333333;
   margin-top: 0;
   margin-bottom: 0.25rem;
 }
 
 .stepItem p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Reduced from 1rem */
   color: #4A4A4A;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  line-height: 1.5; /* Reduced from 1.6 */
 }
 
 .welcomeCtaButton {
@@ -245,38 +251,44 @@
 
 /* Responsive adjustments for Welcome Section */
 @media (max-width: 992px) { /* Tablet */
+  .welcomeSection {
+    padding: 2rem 5%; /* Reduced from default */
+  }
   .welcomeGrid {
     grid-template-columns: 1fr; /* Stack to single column */
-    gap: 2.5rem;
+    gap: 1.5rem; /* Reduced from 2.5rem */
     text-align: center; /* Center text content when stacked */
   }
   .stepItem {
-    padding-left: 50px; /* Adjust padding for smaller screens */
+    padding-left: 40px; /* Reduced from 50px */
   }
   .welcomeTextColumn .welcomeIntro {
     text-align: center;
   }
   .welcomeTextColumn h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem; /* Reduced from 2.2rem */
   }
   .welcomeImageColumn {
     order: -1; /* Optional: move image above text on tablet/mobile */
-    margin-bottom: 2rem; /* Add space if image is moved above */
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
   }
 }
 
 @media (max-width: 576px) { /* Mobile */
   .welcomeSection {
-    padding: 2.5rem 5%;
+    padding: 1.5rem 5%; /* Reduced from 2.5rem */
+  }
+  .stepItem {
+    padding-left: 35px; /* Further reduced for mobile */
   }
   .welcomeTextColumn h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduced from 1.8rem */
   }
   .welcomeTextColumn p {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Reduced from 0.95rem */
   }
    .welcomeImageColumn img {
-    max-width: 350px; /* Limit image width on mobile when stacked */
+    max-width: 300px; /* Reduced from 350px */
     margin-left: auto;
     margin-right: auto;
   }
@@ -575,25 +587,25 @@
 
 /* Final CTA Section Styles */
 .finalCtaSection {
-  padding: 3rem 5%;
+  padding: 2rem 5%; /* Reduced from 3rem to 2rem */
   background-color: #FAF7F5; /* Main soft off-white background */
   text-align: center;
 }
 
 .finalCtaSection h2 {
-  font-size: 2.2rem;
+  font-size: 1.8rem; /* Reduced from 2.2rem */
   color: #333333;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem; /* Reduced from 1rem */
 }
 
 .finalCtaSection p {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Reduced from 1.1rem */
   color: #4A4A4A;
-  max-width: 700px; /* Constrain paragraph width for readability */
+  max-width: 600px; /* Reduced from 700px */
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
-  line-height: 1.7;
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
+  line-height: 1.6; /* Reduced from 1.7 */
 }
 
 .finalCtaButton {
@@ -605,28 +617,34 @@
 
 /* Responsive adjustments for Final CTA Section */
 @media (max-width: 768px) {
+  .finalCtaSection {
+    padding: 1.5rem 5%; /* Reduced padding for tablet */
+  }
   .finalCtaSection h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem; /* Reduced from 1.8rem */
   }
   .finalCtaSection p {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reduced from 1rem */
   }
   .finalCtaButton {
-    font-size: 1.1rem; /* Adjusted font size for tablets */
-    padding: 12px 28px; /* Adjusted padding for tablets */
+    font-size: 1rem; /* Reduced from 1.1rem */
+    padding: 10px 24px; /* Reduced from 12px 28px */
   }
 }
 
 @media (max-width: 480px) { /* Further adjustments for smaller mobile screens */
+  .finalCtaSection {
+    padding: 1.5rem 5%; /* Ensure consistent mobile padding */
+  }
   .finalCtaSection h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem; /* Reduced from 1.6rem */
   }
   .finalCtaSection p {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Reduced from 0.95rem */
   }
   .finalCtaButton {
-    font-size: 1rem; /* Further reduced font size */
-    padding: 10px 20px; /* Further reduced padding */
+    font-size: 0.9rem; /* Reduced from 1rem */
+    padding: 8px 16px; /* Further reduced padding */
     /* Consider width: 90%; max-width: 300px; if it still breaks, to allow it to fit better */
   }
 } 
