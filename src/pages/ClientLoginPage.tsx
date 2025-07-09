@@ -17,7 +17,7 @@ export default function ClientLoginPage() {
           >
             Go to Client Portal
           </button>
-        </div>
+        </div> 
         <p className={styles.infoText}>Access your secure client portal to manage appointments, view documents, and communicate with us.</p>
         
         <p className={styles.infoText}>
