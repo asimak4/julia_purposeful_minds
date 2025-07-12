@@ -27,12 +27,15 @@ export default function AboutPage() {
 
   return (
     <div className={styles.pageContainer}>
-      <motion.div
+      {/* <motion.div
+          className={styles.logoContainer}
           variants={slideInRightVariants}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial="hidden"
+          animate="visible"
+          transition={{ duration: 0.6, delay: 0.2 }}
       >
             <img src={`${process.env.PUBLIC_URL}/PurposefulMindsLogo.png`} alt="Purposeful Minds logo" className={styles.logoImage}/>
-      </motion.div>
+      </motion.div> */}
       <motion.section
         className={styles.section}
         variants={sectionVariants}
@@ -47,7 +50,6 @@ export default function AboutPage() {
           <motion.div
             className={styles.profileText}
             variants={slideInLeftVariants}
-            transition={{ duration: 0.7, delay: 0.2 }}
           >
             <p className={styles.bioIntro}>
               <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP, out of a deep passion for helping students who were falling through the cracks—not due to a lack of potential, but because of challenges with organization, executive functioning, and language.

@@ -7,6 +7,14 @@
   background-color: #FAF7F5;
 }
 
+.section {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
 .pageHeader {
   background: linear-gradient(135deg, #8F9E8B 0%, #7A8975 100%);
   color: #FFFFFF;
@@ -30,11 +38,19 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   padding: 0 2%;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  align-items: stretch;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .logoImage {
-  width: 200px;
+  width: 150px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
@@ -43,7 +59,6 @@
   display: block;
 }
 
-
 /* Introduction Section */
 .introSection {
   padding: 1.5rem;
@@ -51,27 +66,10 @@
   background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
   border-radius: 12px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.introContent {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.introContent h2 {
-  font-size: 1.6rem;
-  color: #333333;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.introContent p {
-  font-size: 0.95rem;
-  color: #4A4A4A;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
 
 .pricing {
   font-size: 1rem;
@@ -81,7 +79,10 @@
   padding: 0.8rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
-  margin-top: 0.8rem;
+  margin-top: auto;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Consultation Section */
@@ -91,26 +92,33 @@
   background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
   border-radius: 12px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.consultationContent {
-  max-width: 800px;
-  margin: 0 auto;
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-align: center;
+  height: 100%;
 }
 
-.consultationContent h2 {
+.contentWrapper h2 {
   font-size: 1.6rem;
   color: #333333;
-  margin-bottom: 1rem;
+  /* margin-bottom: 0.5rem; */
+  margin-top: 0;
   font-weight: 600;
 }
 
-.consultationContent p {
+.contentWrapper p {
   font-size: 0.95rem;
   color: #4A4A4A;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Services Grid */
@@ -186,7 +194,7 @@
   color: #4A4A4A;
   line-height: 1.5;
   margin-bottom: 1rem;
-  text-align: justify;
+  text-align: left;
 }
 
 .list {
@@ -249,6 +257,26 @@
   padding-left: 1.3rem;
 }
 
+/* Ensure equal heights when cards are side by side */
+@media (min-width: 993px) {
+  .topSectionsGrid {
+    align-items: stretch;
+  }
+  
+  .introSection,
+  .consultationSection {
+    height: 100%;
+  }
+  
+  .logoContainer {
+    padding: 1.5rem 0;
+  }
+  
+  .logoImage {
+    width: 250px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .servicesGrid {
@@ -265,11 +293,20 @@
   .topSectionsGrid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+    align-items: start;
   }
   
-  .introContent h2,
-  .consultationContent h2 {
-    font-size: 1.8rem;
+  .introSection,
+  .consultationSection {
+    height: auto;
+  }
+  
+  .contentWrapper h2 {
+    font-size: 1.7rem;
+  }
+  
+  .pricing {
+    font-size: 0.95rem;
   }
   
   .cardContent h3 {
@@ -308,22 +345,30 @@
   .topSectionsGrid {
     grid-template-columns: 1fr;
     gap: 1rem;
+    align-items: start;
   }
   
   .introSection,
   .consultationSection {
-    padding: 1.5rem;
+    padding: 1.3rem;
     margin: 0;
+    height: auto;
   }
   
-  .introContent h2,
-  .consultationContent h2 {
-    font-size: 1.6rem;
+  .contentWrapper h2 {
+    font-size: 1.5rem;
   }
   
-  .introContent p,
-  .consultationContent p {
-    font-size: 1rem;
+  .contentWrapper p {
+    font-size: 0.95rem;
+  }
+  
+  .pricing {
+    font-size: 0.9rem;
+  }
+  
+  .logoImage {
+    width: 180px;
   }
   
   .servicesGrid {
@@ -359,9 +404,21 @@
     font-size: 1.6rem;
   }
   
-  .introContent h2,
-  .consultationContent h2 {
-    font-size: 1.4rem;
+  .introSection,
+  .consultationSection {
+    padding: 1.2rem;
+  }
+  
+  .contentWrapper h2 {
+    font-size: 1.3rem;
+  }
+  
+  .contentWrapper p {
+    font-size: 0.9rem;
+  }
+  
+  .logoImage {
+    width: 140px;
   }
   
   .cardContent h3 {
@@ -372,13 +429,22 @@
     font-size: 1.1rem;
   }
   
-  .cardContent p,
-  .listItem {
+  .cardContent p {
     font-size: 0.9rem;
   }
   
+  .listItem {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .serviceArea .listItem {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
   .pricing {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   
   .servicesGrid {

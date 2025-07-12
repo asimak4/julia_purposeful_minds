@@ -39,7 +39,8 @@ const Layout = () => {
     <div className={styles.layoutContainer}>
       <header className={styles.header}>
         <Link to="/" className={styles.logoLink} onClick={handleNavLinkClick}>
-          <i>Purposeful Minds LLC</i>
+        <img src={`${process.env.PUBLIC_URL}/PurposefulMindsLogo.png`} alt="Purposeful Minds logo" className={styles.logoImage}/>
+          <i>Purposeful Minds LLC</i> 
         </Link>
         
         <button className={styles.mobileMenuButton} onClick={toggleMobileMenu} aria-label="Toggle menu" aria-expanded={isMobileMenuOpen}>
@@ -58,7 +59,7 @@ const Layout = () => {
             </ul>
           </nav>
           <Link to="/contact" className={`${styles.ctaButton} button-style`} onClick={handleNavLinkClick}>
-            Free 15 Minute Consultation
+            Contact Us
           </Link>
         </div>
       </header>

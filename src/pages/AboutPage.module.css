@@ -131,15 +131,21 @@
   margin-bottom: 1.5rem;
 }
 
+/* Logo Container */
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
 /* Logo Image - General styling for all screen sizes */
 .logoImage {
-  width: 200px;
+  width: 150px;
   height: auto;
   max-width: 100%;
   object-fit: contain;
   border-radius: 8px;
-  margin: 1rem auto;
-  display: block;
 }
 
 /* Responsive adjustments */
@@ -171,7 +177,7 @@
     height: auto; /* Let height be auto when stacked */
   }
   .logoImage {
-    width: 150px; /* Smaller on mobile */
+    width: 150px;
   }
 }
 

@@ -64,7 +64,7 @@ export default function HomePage() {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
-            At <i> Purposeful Minds</i>, every session is designed with intention—guided by purpose, and driven by goals. 
+            At <i> Purposeful Minds</i>, every session is designed with intention, guided by purpose, and driven by goals. 
             We provide specialized support in speech, language, literacy, and executive functioning for children 
             and adolescents. Our process begins with a comprehensive evaluation to understand each child's unique 
             strengths and challenges. From there, we create individualized plans that target specific areas of need, 

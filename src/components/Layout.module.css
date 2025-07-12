@@ -25,6 +25,9 @@
   font-weight: bold;
   color: #333333; /* NEW: Dark Gray for logo */
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Wrapper for nav and CTA button */
@@ -78,8 +81,16 @@
   order: 3; /* Ensure it comes after navWrapper in flex order on mobile if not hidden */
 }
 
+.logoImage {
+  width: 50px;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .mainContent {
-  padding: 4.5rem 2rem 2rem; /* Adjusted top padding for sticky header */
+  padding: 2rem 2rem 2rem; /* Adjusted top padding for sticky header */ 
   flex-grow: 1;
   background-color: #FAF7F5; /* Ensuring main content also has the base background */
 }
