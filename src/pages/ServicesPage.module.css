@@ -81,8 +81,8 @@
   border-radius: 6px;
   margin-top: auto;
   margin-bottom: 0;
-  white-space: nowrap;
-  overflow: hidden;
+  white-space: normal;
+  overflow: visible;
 }
 
 /* Consultation Section */
