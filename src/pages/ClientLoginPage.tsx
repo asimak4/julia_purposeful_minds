@@ -12,7 +12,7 @@ export default function ClientLoginPage() {
             It's good practice to have it open in a new tab using target="_blank".
           */}
           <button
-            onClick={() => window.open("#", "_blank", "noopener,noreferrer")}
+            onClick={() => window.open("https://www.therapyappointment.com/")}
             className={styles.portalButton} /* Apply button style */
           >
             Go to Client Portal
