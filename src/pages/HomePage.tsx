@@ -87,7 +87,7 @@ export default function HomePage() {
         <div className={styles.featureGrid}> {/* Using a grid for easy column layout */}
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.2 }} className={styles.featureColumn}>
             <h3>Who We Help</h3>
-            <p>Purposeful Minds supports learners at every stage—from early elementary to college. 
+            <p>Purposeful Minds supports learners at every stage, from early elementary to college. 
               We partner with families to address early speech and language development, strengthen literacy and 
               organizational skills in middle and high school, and guide college students as they tackle more
               complex academic challenges.
@@ -101,10 +101,7 @@ export default function HomePage() {
 
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
             <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
-            <p>At Purposeful Minds, all consultations and comprehensive evaluations are conducted virtually for your convenience. 
-              Following the evaluation, we work closely with you to determine the best fit for ongoing 
-              services—whether that's continuing virtually or, depending on your location, scheduling, 
-              and individual needs, arranging in-home visits on a case-by-case basis.</p> {/* Placeholder */}
+            <p>At Purposeful Minds, all consultations and comprehensive evaluations are conducted virtually for your convenience. Following the evaluation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at our Tenleytown-Friendship Heights location.</p> {/* Placeholder */}
           </motion.div>
         </div>
       </motion.section>
@@ -141,7 +138,7 @@ export default function HomePage() {
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 4: Service Arrangement &amp; Ongoing Sessions</h4>
-                   <p>Together, we determine the best format—virtual or in-home—and begin purposeful, goal-driven sessions.</p>
+                   <p>Together, we determine the best format, virtual or in-person, sand begin purposeful, goal-driven sessions.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 5: Progress Review &amp; Annual Reporting</h4>

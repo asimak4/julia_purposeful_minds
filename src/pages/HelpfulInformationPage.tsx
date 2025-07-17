@@ -49,7 +49,7 @@ export default function HelpfulInformationPage() {
         <motion.details className={styles.faqItem} variants={itemVariants}>
           <summary className={styles.faqSummary}>How does executive functioning impact language? </summary>
           <div className={styles.faqContent}>
-          <p>Executive functioning and language skills are deeply interconnected, and challenges in one area can impact the other. Executive functioning involves cognitive processes such as planning, organizing, working memory, self-monitoring, and flexible thinking—skills that are essential for managing tasks and navigating daily life. Language skills include both understanding (receptive language) and expressing (expressive language) ideas clearly and effectively.</p>
+          <p>Executive functioning and language skills are deeply interconnected, and challenges in one area can impact the other. Executive functioning involves cognitive processes such as planning, organizing, working memory, self-monitoring, and flexible thinking. Language skills include both understanding (receptive language) and expressing (expressive language) ideas clearly and effectively.</p>
             <p>When a child experiences difficulties with executive functioning, they may struggle to organize their thoughts, follow multi-step directions, or maintain attention during conversations or classroom activities. These challenges can make it harder for them to process and use language efficiently. Conversely, language difficulties can affect executive functions by limiting a child's ability to internally verbalize steps for a task, self-regulate through self-talk, or comprehend instructions, which are all important for effective planning and problem-solving.</p>
             <p>Together, these overlapping difficulties can create a cycle where struggles in language impact executive functioning, and vice versa, potentially leading to challenges in academic performance, social interactions, and daily tasks. Addressing both areas through integrated support helps build stronger communication skills and cognitive strategies, empowering the child to better manage tasks, express themselves, and succeed in multiple settings.
             </p>
@@ -106,7 +106,7 @@ export default function HelpfulInformationPage() {
           </div>
         </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}> What is the youngest age we work with?  </summary>
+          <summary className={styles.faqSummary}> What is the youngest age you work with?  </summary>
           <div className={styles.faqContent}>
             <p>
             Age 4 - We work with children ages 4 and up, when they’re better able to engage in structured, goal-focused sessions. For children under 3, we recommend early intervention services that specialize in supporting toddlers through play-based, parent-guided approaches. We’re happy to refer families of younger children to trusted early intervention providers who are better equipped to meet their needs at that stage.
@@ -114,7 +114,7 @@ export default function HelpfulInformationPage() {
           </div>
         </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}> Do we see college students?  </summary>
+          <summary className={styles.faqSummary}> Do you see college students?  </summary>
           <div className={styles.faqContent}>
             <p>
               Yes! At Purposeful Minds, college and graduate students build skills like time management, setting and maintaining priorities, handling intensive reading demands, studying effectively, and improving analytical writing.
@@ -122,33 +122,7 @@ export default function HelpfulInformationPage() {
           </div>
         </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}> Are virtual and in-home sessions billed at the same rate?  </summary>
-          <div className={styles.faqContent}>
-            <p>
-              Virtual sessions include a flat rate of $175. In-home sessions include an additional travel fee depending on your location. (Please refer to our FAQs for more information on travel fees).  
-            </p>
-            <p>
-              In-home sessions include an additional travel fee depending on your location. (Please refer to our FAQs for more information on travel fees).  
-            </p>
-          </div>
-        </motion.details>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}> How much are the travel fees?  </summary>
-          <div className={styles.faqContent}>
-            <p>
-            For in-home services, there will be an additional travel fee of: 
-            <ul>
-              <li>$8 per visit - 20 min drive round trip (10 min one way)</li>
-              <li>$12 per visit - 30 min drive round trip (15 min one way)</li>
-              <li>$16 per visit - 40 min drive round trip (20 min one way)</li>
-              <li>$23 per visit - 50 min drive round trip (25 min one way)</li>
-            </ul>
-            <p>Travel fees are calculated based on distance from North Bethesda, near Grosvenor Metro station.</p>
-            </p>
-          </div>
-        </motion.details>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}> Do we accept insurance? </summary>
+          <summary className={styles.faqSummary}> Do you accept insurance? </summary>
           <div className={styles.faqContent}>
             <p>
             No. Purposeful Minds provides services as an out-of-network provider, which means our sessions are paid privately rather than through insurance. This approach gives us the flexibility to offer customized care tailored to your child’s needs without the constraints of insurance requirements. While we don’t submit claims on your behalf, many insurance policies allow clients to seek reimbursement for out-of-network services. We can provide a detailed statement of services, known as a superbill, which you can use to file a claim with your insurance company. Please note that it’s your responsibility to submit the superbill and communicate directly with your insurance provider about coverage, reimbursement, and claim processes. We encourage you to verify your plan’s out-of-network benefits before beginning services.
