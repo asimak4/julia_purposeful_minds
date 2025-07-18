@@ -52,16 +52,12 @@ export default function AboutPage() {
             variants={slideInLeftVariants}
           >
             <p className={styles.bioIntro}>
-              <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP, out of a deep passion for helping students who were falling through the cracks, not due to a lack of potential, but because of challenges with organization, executive functioning, and language.
+              <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP. 
             </p>
             <p>
-              In her work as a Speech-Language Pathologist, Julia saw firsthand how many bright, capable students were overwhelmed by disorganization. Misplaced assignments, missed deadlines, and chaotic study habits often led to frustration, academic struggles, and a loss of confidence. Over time, she recognized a pattern: difficulties with executive functioning weren't isolated. They created a ripple effect, impacting every part of a student's life.
-            </p>
+              In her work as a Speech-Language Pathologist, Julia saw how many bright, capable students were overwhelmed by disorganization. Misplaced assignments, missed deadlines, and chaotic study habits often led to frustration, academic struggles, and a loss of confidence. She also saw the transformation that could happen when students were given the right systems and strategies. With structured routines, tools, and personalized approaches, those same students began to experience clarity, consistency, and a renewed sense of control. She saw an increase in improved academics, better emotional regulation, and most importantly, growing self-confidence.            </p>
             <p>
-            But she also saw the transformation that could happen when students were given the right systems and strategies. With structured routines, visual tools, and personalized approaches, those same students began to experience clarity, consistency, and a renewed sense of control. The pieces started to fall into place: improved academics, better emotional regulation, and most importantly, growing self-confidence.
-            </p>
-            <p>
-              Language plays a central role in this journey. Many students who struggle with executive functioning also face challenges in organizing their thoughts, writing clearly, or making sense of what they read. These difficulties are deeply rooted in language processing. At <i>Purposeful Minds</i>, Julia bridges the gap between executive functioning and language, supporting students in building the skills to comprehend, express, and succeed.
+              Language plays a central role in this journey. Many students who struggle with executive functioning also face challenges in organizing their thoughts, writing clearly, or making sense of what they read. These difficulties are deeply rooted in language processing. At Purposeful Minds, Julia bridges the gap between executive functioning and language, supporting students in building the skills to comprehend, express, and succeed.            
             </p>
 
             <div className={styles.founderSection}>
@@ -70,17 +66,13 @@ export default function AboutPage() {
                 Julia Simak, M.S., CCC-SLP, began her career as a Speech-Language Pathologist in public elementary schools, where she provided speech and language therapy to students with diverse communication needs. Early on, she collaborated closely with reading specialists, which sparked her interest in literacy development, dyslexia, and structured spelling interventions such as the Orton-Gillingham approach.
               </p>
               <p>
-                During this time, Julia also gained valuable experience at Lindamood-Bell Learning Processes, where she provided intensive one-on-one intervention using programs such as <i>Visualizing and Verbalizing</i> (V&V) for reading comprehension and <i>Seeing Stars</i> for phonemic awareness and decoding. This work deepened her understanding of the connection between language processing and reading success, especially for students with dyslexia, ADHD, and other language-based learning differences.
-              </p>
+                During this time, Julia also gained valuable experience at Lindamood-Bell Learning Processes, where she provided intensive one-on-one intervention using programs such as Visualizing and Verbalizing (V&V) for reading comprehension and Seeing Stars for phonemic awareness and decoding. This work highlighted the connection between language processing and reading success, especially for students with dyslexia and other language-based learning differences.              </p>
               <p>
-                As she continued her work with students, Julia became increasingly aware of how executive functioning challenges, such as disorganization, time management, and difficulty initiating tasks, often coexisted with language and literacy difficulties. These needs were often underserved, yet they had a significant impact on students' academic performance and emotional well-being.
-              </p>
+                As she continued her work with students, Julia became increasingly aware of how executive functioning challenges, such as disorganization, time management, and difficulty initiating tasks, often coexisted with language and literacy difficulties. These needs were often underserved, yet they had a significant impact on students' academic performance and emotional well-being.              </p>
               <p>
-                Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning support. There, she worked with students from elementary through college, integrating speech-language therapy, reading intervention, and executive functioning strategies tailored to each student's strengths and needs.
-              </p>
+                Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning support. There, she worked with students from elementary through college, integrating speech-language therapy, reading intervention, and executive functioning strategies tailored to each student's strengths and needs.              </p>
               <p>
-                Through this journey, Julia also discovered the importance of partnering with families and schools to create supportive routines and consistent expectations at home and in the classroom. Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded <i>Purposeful Minds</i>, a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.
-              </p>
+                Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded Purposeful Minds, a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.              </p>
             </div>
 
             <div className={styles.licensingInfo}>

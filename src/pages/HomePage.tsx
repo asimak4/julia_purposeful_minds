@@ -50,25 +50,22 @@ export default function HomePage() {
           variants={fadeInVariant} // Fade in the overlay box
           transition={{ duration: 0.7, delay: 0.5 }} // Delay slightly after background
         >
-          <motion.h1
+          <motion.h2
+            style={{ marginTop: '0em' }}
             initial="hidden"
             animate="visible"
             variants={itemVariants} // Using itemVariants for a slight upward motion + fade
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Speech, Language, Literacy, & Executive Functioning
-          </motion.h1> 
+            Executive Functioning, Speech, Language & Literacy
+          </motion.h2> 
           <motion.p
             initial="hidden"
             animate="visible"
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
-            At <i> Purposeful Minds</i>, every session is designed with intention, guided by purpose, and driven by goals. 
-            We provide specialized support in speech, language, literacy, and executive functioning for children 
-            and adolescents. Our process begins with a comprehensive evaluation to understand each child's unique 
-            strengths and challenges. From there, we create individualized plans that target specific areas of need, 
-            ensuring that every session is meaningful, focused, and aligned with long-term growth.
+            At <i> Purposeful Minds</i>, our sessions are driven by goals created to serve your child’s unique needs. After gathering information and learning about your child during a 1 hour consultation, we create an individualized plan targeting your child's specific areas of need. Then, we provide specialized support for your child in one or more of the following areas: executive functioning, speech, language, or literacy.
           </motion.p>
           {/* Optionally, a call to action button can be added here */}
           {/* <button className={`button-style ${styles.heroCtaButton}`}>Learn More</button> */}
@@ -87,10 +84,7 @@ export default function HomePage() {
         <div className={styles.featureGrid}> {/* Using a grid for easy column layout */}
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.2 }} className={styles.featureColumn}>
             <h3>Who We Help</h3>
-            <p>Purposeful Minds supports learners at every stage, from early elementary to college. 
-              We partner with families to address early speech and language development, strengthen literacy and 
-              organizational skills in middle and high school, and guide college students as they tackle more
-              complex academic challenges.
+            <p><i>Purposeful Minds</i> supports clients at every stage, from elementary to college. We address speech and language development, strengthen literacy and organizational skills in middle and high school, and support college students as they tackle more complex academic challenges.
             </p> 
           </motion.div>
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.4 }} className={styles.featureColumn}>
@@ -101,7 +95,7 @@ export default function HomePage() {
 
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
             <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
-            <p>At Purposeful Minds, all consultations and comprehensive evaluations are conducted virtually for your convenience. Following the evaluation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at our Tenleytown-Friendship Heights location.</p> {/* Placeholder */}
+            <p>At <i>Purposeful Minds</i>, all consultations are conducted virtually for your convenience. Following the consultation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at our Tenleytown-Friendship Heights location.</p> {/* Placeholder */}
           </motion.div>
         </div>
       </motion.section>
@@ -138,7 +132,7 @@ export default function HomePage() {
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 4: Service Arrangement &amp; Ongoing Sessions</h4>
-                   <p>Together, we determine the best format, virtual or in-person, sand begin purposeful, goal-driven sessions.</p>
+                   <p>Together, we determine the best format, virtual or in-person, and begin purposeful, goal-driven sessions.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 5: Progress Review &amp; Annual Reporting</h4>

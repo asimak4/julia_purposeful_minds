@@ -42,7 +42,7 @@ export default function HelpfulInformationPage() {
           <summary className={styles.faqSummary}>What is executive functioning?</summary>
           <div className={styles.faqContent}>
             <p>
-              Executive functioning is ...
+              Executive function skills allow us to organize plans, maintain focus, adapt to changes, and manage multiple tasks. These skills are crucial for success in academic, professional, and social settings.
             </p>
           </div>
         </motion.details>
@@ -60,7 +60,7 @@ export default function HelpfulInformationPage() {
           <summary className={styles.faqSummary}>What is a language disorder?</summary>
           <div className={styles.faqContent}>
             <p>
-              A language disorder is ...
+              Language disorders involve the processing of linguistic information. Challenges may be receptive (understanding language), expressive (expressing language), or a combination of both.
             </p>
           </div>
         </motion.details>
