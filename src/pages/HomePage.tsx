@@ -89,7 +89,7 @@ export default function HomePage() {
           </motion.div>
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.4 }} className={styles.featureColumn}>
             <h3>Areas of Focus</h3>
-            <p>We specialize in helping students overcome a variety of challenges, including difficulties with executive 
+            <p>Our therapists specialize in helping students overcome a variety of challenges, including difficulties with executive 
               functioning skills, ADHD, expressive and receptive language and dyslexia. We support clients in organizing thoughts, processing language, managing attention, and building reading and writing skills.</p>
           </motion.div>
 
