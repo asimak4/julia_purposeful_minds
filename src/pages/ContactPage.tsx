@@ -84,7 +84,7 @@ export default function ContactPage() {
         <section className={styles.section}>
           <h1>Thank You!</h1>
           <div className={styles.successMessage}>
-            <p>Your message has been sent successfully. We'll get back to you soon.</p>
+            <p> Thank you for reaching out to us. We have received your message and look forward to connecting! </p>
             <button 
               onClick={() => window.location.reload()} 
               className={styles.submitButton}
