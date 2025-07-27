@@ -119,12 +119,12 @@ export default function HomePage() {
             
             <ol className={styles.stepsList}>
                <li className={styles.stepItem}>
-                   <h4>Step 1: Initial Contact &amp; Brief Phone Consultation</h4>
+                   <h4>Step 1: Initial Contact &amp; Brief Phone Call</h4>
                    <p>Reach out via phone, email, or our website contact form to express interest or ask questions. We'll schedule a brief 15-minute phone call to learn more about your child's needs and answer any initial questions.</p>
                </li>
                <li className={styles.stepItem}>
-                   <h4>Step 2: Comprehensive Virtual Evaluation</h4>
-                   <p>Before the initial consultation, provide any formal evaluations or standardized assessments. The therapist will carefully review all existing documentation and complete a virtual consultation to identify your child’s strengths and areas of need before beginning treatment.</p>
+                   <h4>Step 2: Comprehensive Virtual Consultation</h4>
+                   <p>We ask that families provide any formal evaluations or standardized assessments at least 48 hours before the scheduled consultation. The therapist will carefully review all existing documentation and complete a virtual consultation to identify your child’s strengths and areas of need before beginning treatment.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 3: Individualized Plan of Care</h4>

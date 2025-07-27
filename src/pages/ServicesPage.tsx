@@ -83,7 +83,7 @@ export default function ServicesPage() {
             >
               <div className={styles.contentWrapper}>
                 <h2>Consultations</h2>
-                <p>Before the consultation, we ask that families provide any formal evaluations or standardized assessments they have. We will carefully review all existing documentation and hold a virtual 1 hour consultation to identify your child's strengths and areas of need before beginning treatment. Following the consultation, we create a personalized plan of care that outlines targeted areas for growth and guides our ongoing sessions.</p>
+                <p> We ask that families provide any formal evaluations or standardized assessments at least 48 hours before the scheduled consultation. We will carefully review all existing documentation and hold a virtual 1 hour consultation to identify your child's strengths and areas of need before beginning treatment. Following the consultation, we create a personalized plan of care that outlines targeted areas for growth and guides our ongoing sessions.</p>
               </div>
               <p className={styles.pricing}>1 hour consultation (including plan of care) is billed at $300</p>
             </motion.div>

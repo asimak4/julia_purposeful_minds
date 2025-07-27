@@ -79,25 +79,38 @@ export default function ContactPage() {
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         {
-          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_name:  `${formData.firstName} ${formData.lastName}`,
           from_email: formData.email,
+          message: formData.message,
           phone: formData.phone,
           hear_about: formData.hearAbout,
-          message: formData.message,
           to_name: 'Julia',
-          captcha_token: captchaToken, // Include captcha token for additional security
         },
         EMAILJS_PUBLIC_KEY
       );
 
       console.log('Email sent successfully:', result.text);
-      setSubmitStatus('success');
-      setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
-      resetForm();
-    } catch (error) {
+      
+      // Check if the email was actually delivered successfully
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
+        resetForm();
+      } else {
+        throw new Error(`Email service returned status: ${result.status}`);
+      }
+    } catch (error: any) {
       console.error('Failed to send email:', error);
       setSubmitStatus('error');
-      setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
+      
+      // Provide more specific error messages
+      if (error.text && error.text.includes('Invalid email')) {
+        setSubmitMessage('Please check your email address and try again.');
+      } else if (error.text && error.text.includes('rate limit')) {
+        setSubmitMessage('Too many requests. Please wait a moment and try again.');
+      } else {
+        setSubmitMessage('Sorry, there was an error sending your message. Please try again later or contact us directly at juliasimak@gmail.com.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -109,7 +122,7 @@ export default function ContactPage() {
         <h1>Contact Us</h1>
         <div className={styles.contactIntro}>
             <p>If you have any questions or would like to schedule a consultation, please reach out to us.</p>
-            {/* <p><strong>Email:</strong> [juliasimak@gmail.com]</p> */}
+            <p><strong>Email:</strong> juliasimak@gmail.com</p>
             {/* <p><strong>Phone:</strong> [123-456-7890]</p> */}
         </div>
 
