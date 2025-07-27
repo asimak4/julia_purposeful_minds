@@ -8,6 +8,7 @@ import HelpfulInformationPage from './pages/HelpfulInformationPage';
 import ContactPage from './pages/ContactPage';
 import ClientLoginPage from './pages/ClientLoginPage';
 import LegalTermsPage from './pages/LegalTermsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="contact" element={<ContactPage />} />
           <Route path="client-login" element={<ClientLoginPage />} />
           <Route path="legal" element={<LegalTermsPage />} />
+          <Route path="privacy" element={<PrivacyPolicyPage />} />
           {/* You can add a 404 Not Found route here if you like */}
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Route>

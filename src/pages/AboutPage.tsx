@@ -87,7 +87,7 @@ export default function AboutPage() {
             variants={slideInRightVariants}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <img src={`${process.env.PUBLIC_URL}/JuliaPhoto1.png`} alt="Julia Simak" className={styles.profileImage} />
+            <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
           </motion.div>
         </div>
       </motion.section>
