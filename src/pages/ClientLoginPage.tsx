@@ -12,7 +12,7 @@ export default function ClientLoginPage() {
             It's good practice to have it open in a new tab using target="_blank".
           */}
           <button
-            onClick={() => window.open("https://api.portal.therapyappointment.com/n/public/clientRegistration?therapistId=91A7A96EB7544925B14A133835750C13")}
+            onClick={() => window.open("https://portal.therapyappointment.com/index.cfm/public:auth?fw1pk=1")}
             className={styles.portalButton} /* Apply button style */
           >
             Go to Client Portal
