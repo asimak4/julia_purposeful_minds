@@ -1,12 +1,10 @@
 import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useForm, ValidationError } from '@formspree/react';
 import styles from './ContactPage.module.css';
 import ReCAPTCHA from "react-google-recaptcha";
 
 // Configuration from environment variables
-const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID!;
-const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID!;
-const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY!;
+const FORMSPREE_FORM_ID = process.env.REACT_APP_FORMSPREE_FORM_ID!;
 const RECAPTCHA_SITE_KEY = process.env.REACT_APP_RECAPTCHA_SITE_KEY!;
 
 interface FormData {
@@ -19,6 +17,8 @@ interface FormData {
 }
 
 export default function ContactPage() {
+  const [state, handleFormspreeSubmit] = useForm(FORMSPREE_FORM_ID);
+  
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -28,9 +28,6 @@ export default function ContactPage() {
     message: ''
   });
   
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [submitMessage, setSubmitMessage] = useState('');
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -43,10 +40,6 @@ export default function ContactPage() {
 
   const handleCaptchaChange = (token: string | null) => {
     setCaptchaToken(token);
-    // Clear any previous error messages when captcha is completed
-    if (token && submitStatus === 'error') {
-      setSubmitStatus('idle');
-    }
   };
 
   const resetForm = () => {
@@ -66,55 +59,43 @@ export default function ContactPage() {
     
     // Check if reCAPTCHA is completed
     if (!captchaToken) {
-      setSubmitStatus('error');
-      setSubmitMessage('Please complete the reCAPTCHA verification.');
+      alert('Please complete the reCAPTCHA verification.');
       return;
     }
 
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const result = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name:  `${formData.firstName} ${formData.lastName}`,
-          from_email: formData.email,
-          message: formData.message,
-          phone: formData.phone,
-          hear_about: formData.hearAbout,
-          to_name: 'Julia',
-        },
-        EMAILJS_PUBLIC_KEY
-      );
-
-      console.log('Email sent successfully:', result.text);
-      
-      // Check if the email was actually delivered successfully
-      if (result.status === 200) {
-        setSubmitStatus('success');
-        setSubmitMessage('Thank you! Your message has been sent successfully. We\'ll get back to you soon.');
-        resetForm();
-      } else {
-        throw new Error(`Email service returned status: ${result.status}`);
-      }
-    } catch (error: any) {
-      console.error('Failed to send email:', error);
-      setSubmitStatus('error');
-      
-      // Provide more specific error messages
-      if (error.text && error.text.includes('Invalid email')) {
-        setSubmitMessage('Please check your email address and try again.');
-      } else if (error.text && error.text.includes('rate limit')) {
-        setSubmitMessage('Too many requests. Please wait a moment and try again.');
-      } else {
-        setSubmitMessage('Sorry, there was an error sending your message. Please try again later or contact us directly at juliasimak@gmail.com.');
-      }
-    } finally {
-      setIsSubmitting(false);
+    // Create form data including reCAPTCHA token
+    const form = e.target as HTMLFormElement;
+    const formDataToSubmit = new FormData(form);
+    formDataToSubmit.append('g-recaptcha-response', captchaToken);
+    
+    // Submit using Formspree
+    await handleFormspreeSubmit(formDataToSubmit);
+    
+    // Reset form if submission was successful
+    if (state.succeeded) {
+      resetForm();
     }
   };
+
+  // Show success message if form was submitted successfully
+  if (state.succeeded) {
+    return (
+      <div className={styles.pageContainer}>
+        <section className={styles.section}>
+          <h1>Thank You!</h1>
+          <div className={styles.successMessage}>
+            <p>Your message has been sent successfully. We'll get back to you soon.</p>
+            <button 
+              onClick={() => window.location.reload()} 
+              className={styles.submitButton}
+            >
+              Send Another Message
+            </button>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.pageContainer}>
@@ -122,11 +103,10 @@ export default function ContactPage() {
         <h1>Contact Us</h1>
         <div className={styles.contactIntro}>
             <p>If you have any questions or would like to schedule a consultation, please reach out to us.</p>
-            <p><strong>Email:</strong> juliasimak@gmail.com</p>
+            <p><strong>Email:</strong> julia@purposefulmindsllc.com</p>
             {/* <p><strong>Phone:</strong> [123-456-7890]</p> */}
         </div>
 
-        {/* <h2>Send Us a Message</h2> */}
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.nameRow}>
             <div className={styles.formGroup}>
@@ -138,6 +118,11 @@ export default function ContactPage() {
                 value={formData.firstName}
                 onChange={handleInputChange}
               />
+              <ValidationError 
+                prefix="First Name" 
+                field="firstName"
+                errors={state.errors}
+              />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="lastName">Last Name</label>
@@ -147,6 +132,11 @@ export default function ContactPage() {
                 name="lastName" 
                 value={formData.lastName}
                 onChange={handleInputChange}
+              />
+              <ValidationError 
+                prefix="Last Name" 
+                field="lastName"
+                errors={state.errors}
               />
             </div>
           </div>
@@ -161,6 +151,11 @@ export default function ContactPage() {
               onChange={handleInputChange}
               required 
             />
+            <ValidationError 
+              prefix="Email" 
+              field="email"
+              errors={state.errors}
+            />
           </div>
           
           <div className={styles.formGroup}>
@@ -171,6 +166,11 @@ export default function ContactPage() {
               name="phone" 
               value={formData.phone}
               onChange={handleInputChange}
+            />
+            <ValidationError 
+              prefix="Phone" 
+              field="phone"
+              errors={state.errors}
             />
           </div>
           
@@ -191,6 +191,11 @@ export default function ContactPage() {
               <option value="insurance">Insurance Directory</option>
               <option value="other">Other</option>
             </select>
+            <ValidationError 
+              prefix="Hear About" 
+              field="hearAbout"
+              errors={state.errors}
+            />
           </div>
           
           <div className={styles.formGroup}>
@@ -202,6 +207,11 @@ export default function ContactPage() {
               value={formData.message}
               onChange={handleInputChange}
               required 
+            />
+            <ValidationError 
+              prefix="Message" 
+              field="message"
+              errors={state.errors}
             />
           </div>
           
@@ -216,22 +226,16 @@ export default function ContactPage() {
             <button 
               type="submit" 
               className={styles.submitButton}
-              disabled={isSubmitting || !captchaToken}
+              disabled={state.submitting || !captchaToken}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {state.submitting ? 'Sending...' : 'Send Message'}
             </button>
           </div>
         </form>
         
-        {submitStatus === 'success' && (
-          <div className={styles.successMessage}>
-            {submitMessage}
-          </div>
-        )}
-        
-        {submitStatus === 'error' && (
+        {state.errors && Object.keys(state.errors).length > 0 && (
           <div className={styles.errorMessage}>
-            {submitMessage}
+            There was an error sending your message. Please check the form and try again.
           </div>
         )}
       </section>
