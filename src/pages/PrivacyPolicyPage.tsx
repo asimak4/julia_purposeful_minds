@@ -38,10 +38,7 @@ export default function PrivacyPolicyPage() {
           <p>We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy. If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website.</p>
           
           <h3>Contact Us</h3>
-          <p>If you have any questions about this Privacy Policy, please contact us at</p>
-          <p>Purposeful Minds LLC.<br/>
-          443-474-0529<br/>
-          julia@purposefulmindsllc.com</p>
+          <p>If you have any questions about this Privacy Policy, please contact us.</p>
         </div>
       </section>
     </div>

@@ -40,10 +40,7 @@ export default function LegalTermsPage() {
           <p>We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of the Site after any changes constitutes your acceptance of the updated Terms.</p>
           
           <h3>8. Contact Information</h3>
-          <p>If you have questions about these Terms or the use of our Site, you may contact us at:</p>
-          <p>Purposeful Minds LLC<br/>
-          443-474-0529<br/>
-          julia@purposefulmindsllc.com</p>
+          <p>If you have questions about these Terms or the use of our Site, you may contact us.</p>
         </div>
 
         <div className={styles.subSection}>

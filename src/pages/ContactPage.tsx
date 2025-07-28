@@ -103,8 +103,6 @@ export default function ContactPage() {
         <h1>Contact Us</h1>
         <div className={styles.contactIntro}>
             <p>If you have any questions or would like to schedule a consultation, please reach out to us.</p>
-            <p><strong>Email:</strong> julia@purposefulmindsllc.com</p>
-            {/* <p><strong>Phone:</strong> [123-456-7890]</p> */}
         </div>
 
         <form className={styles.contactForm} onSubmit={handleSubmit}>
