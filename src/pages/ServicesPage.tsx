@@ -183,7 +183,7 @@ export default function ServicesPage() {
             </div>
             <div className={styles.cardContent}>
               <h3>Specialized Dyslexia Support</h3>
-              <p>At <i>Purposeful Minds</i>, our sessions are grounded in the Science of Reading, a research-based framework that highlights the skills students need to become confident, capable readers. We use the Orton-Gillingham approach, a structured, multisensory method that is especially effective for building phonics, decoding, and spelling skills. Before beginning instruction, we carefully review any previous evaluations and reports and conduct our own screenings to gain a clearer understanding of each student's strengths and weaknesses. This insight allows us to tailor our instruction to meet their individual needs. </p>
+              <p>At <i>Purposeful Minds</i>, our sessions are grounded in the Science of Reading, a research-based framework that highlights the skills students need to become confident, capable readers. We use the Orton-Gillingham philosophy, a structured, multisensory method that is especially effective for building phonics, decoding, and spelling skills. Before beginning instruction, we carefully review any previous evaluations and reports and conduct our own screenings to gain a clearer understanding of each student's strengths and weaknesses. This insight allows us to tailor our instruction to meet their individual needs. </p>
               <p><strong>Five Pillars of Literacy:</strong></p>
               <ul className={styles.list}>
                 <li className={styles.listItem}>Phonological Awareness</li>
