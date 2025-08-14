@@ -59,14 +59,12 @@ export default function ServicesPage() {
             animate="visible"
             transition={{ duration: 0.7, delay: 0.5 }}
           >
-            <motion.div 
-              // className={styles.introContent}
-              >
+            <motion.div>
               <div className={styles.contentWrapper}>
                 <h2>Our Approach & Services</h2>
                 <p>At <i>Purposeful Minds</i>, we meet each child where they are academically, emotionally, and with respect to their individual pace of learning. In sessions, we give them practical tools and strategies tailored to their needs, creating a foundation for steady progress and lasting growth. Sessions typically occur twice a week and focus on establishing routines, learning strategies, and building self-awareness.</p>
               </div>
-              <p className={styles.pricing}>All 50-minute therapy sessions are billed at $175.</p>
+              <p className={styles.pricing}> 50-minute therapy sessions are billed at $175. We offer a 6-month discount to clients who attend sessions twice a week at a rate of $160/session.</p>
             </motion.div>
           </motion.section>
 

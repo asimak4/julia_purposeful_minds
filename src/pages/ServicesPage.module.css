@@ -79,7 +79,7 @@
   padding: 0.8rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
-  margin-top: auto;
+  margin-top: 1rem;
   margin-bottom: 0;
   white-space: normal;
   overflow: visible;
@@ -102,7 +102,7 @@
   flex-direction: column;
   flex: 1;
   text-align: center;
-  height: 100%;
+  height: auto;
 }
 
 .contentWrapper h2 {
@@ -265,7 +265,7 @@
   
   .introSection,
   .consultationSection {
-    height: 100%;
+    height: auto;
   }
   
   .logoContainer {
