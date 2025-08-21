@@ -95,7 +95,7 @@ export default function HomePage() {
 
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
             <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
-            <p>At <i>Purposeful Minds</i>, all consultations are conducted virtually for your convenience. Following the consultation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at our Tenleytown-Friendship Heights location.</p> {/* Placeholder */}
+            <p>At <i>Purposeful Minds</i>, all consultations are conducted virtually for your convenience. Following the consultation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at our Bethesda location.</p> {/* Placeholder */}
           </motion.div>
         </div>
       </motion.section>
