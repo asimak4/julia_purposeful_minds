@@ -9,6 +9,7 @@ import ContactPage from './pages/ContactPage';
 import ClientLoginPage from './pages/ClientLoginPage';
 import LegalTermsPage from './pages/LegalTermsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Route>
       </Routes>
+      <Analytics />
     </Router>
   );
 }
