@@ -70,6 +70,7 @@ const Layout = () => {
       
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} <i>Purposeful Minds LLC.</i> All rights reserved.</p>
+        <p>julia@purposefulmindsllc.com | 4800 Hampden Ln #200, Bethesda, MD 20814</p>
         <p>
           <Link to="/legal" className={styles.footerLink} onClick={handleNavLinkClick}>
             Legal Terms
