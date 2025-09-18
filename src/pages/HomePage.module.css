@@ -145,6 +145,72 @@
   }
 }
 
+/* Testimonial Section Styles */
+.testimonialSection {
+  padding: 2.5rem 5%;
+  background-color: #f1e6d2; /* Light Lavender/Pink background */
+  text-align: center;
+}
+
+.testimonialContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonialQuote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #4A4A4A;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.quoteMark {
+  font-size: 1.4rem;
+  color: #8F9E8B; /* Muted Green/Olive accent */
+}
+
+.testimonialAuthor {
+  text-align: right;
+}
+
+.testimonialName {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333;
+  font-style: normal;
+}
+
+/* Responsive adjustments for Testimonial Section */
+@media (max-width: 768px) {
+  .testimonialSection {
+    padding: 2rem 5%;
+  }
+  .testimonialQuote {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .testimonialQuote::before {
+    font-size: 2rem;
+  }
+  .testimonialAuthor {
+    text-align: center;
+  }
+  .testimonialName {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonialSection {
+    padding: 1.5rem 5%;
+  }
+  .testimonialQuote {
+    font-size: 0.95rem;
+  }
+}
+
 /* Styles for "Welcome" Text & Image Section */
 .welcomeSection {
   padding: 2.5rem 5%; /* Reduced from 4rem to 2.5rem */
@@ -551,14 +617,6 @@
   flex-grow: 1; /* Allows quote to take available space */
 }
 
-.testimonialQuote::before {
-  content: '\201C'; /* Opening quote mark */
-  font-size: 2.5rem;
-  color: #8F9E8B; /* Muted Green/Olive accent */
-  display: block;
-  margin-bottom: -0.5rem; /* Adjust spacing with quote text */
-  line-height: 1;
-}
 
 .testimonialCite {
   font-size: 1rem;

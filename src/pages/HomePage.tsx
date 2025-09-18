@@ -100,6 +100,29 @@ export default function HomePage() {
         </div>
       </motion.section>
 
+      {/* Testimonial Section */}
+      <motion.section
+        className={styles.testimonialSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.1 }}
+        variants={sectionVariants}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.div 
+          className={styles.testimonialContent}
+          variants={itemVariants}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className={styles.testimonialQuote}>
+            <span className={styles.quoteMark}>"</span>Julia Simak and Purposeful Minds have helped our son learn how to manage his time and actually plan his school and extracurricular tasks so that he can complete his assignments and responsibilities well and on time. He is much more confident in his ability to handle the work-load, and his grades and self-esteem have both improved greatly!<span className={styles.quoteMark}>"</span>
+          </p>
+          <div className={styles.testimonialAuthor}>
+            <span className={styles.testimonialName}>Purposeful Minds Parent</span>
+          </div>
+        </motion.div>
+      </motion.section>
+
       {/* "Welcome" Text & Image Section */}
       <motion.section
         className={styles.welcomeSection}
