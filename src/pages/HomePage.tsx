@@ -150,8 +150,8 @@ export default function HomePage() {
                    <p>We ask that families provide any formal evaluations or standardized assessments at least 48 hours before the scheduled consultation. The therapist will carefully review all existing documentation and complete a virtual consultation to identify your child’s strengths and areas of need before beginning treatment.</p>
                </li>
                <li className={styles.stepItem}>
-                   <h4>Step 3: Individualized Plan of Care</h4>
-                   <p>Receive a personalized plan of care based on the evaluation results and your family's priorities.</p>
+                   <h4>Step 3: Individualized Treatment Plan</h4>
+                   <p>Receive a personalized treatment plan based on the evaluation results and your family's priorities.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 4: Service Arrangement &amp; Ongoing Sessions</h4>
