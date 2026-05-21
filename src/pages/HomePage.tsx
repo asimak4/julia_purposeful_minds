@@ -31,7 +31,7 @@ export default function HomePage() {
     }, 700);
 
     rail.scrollTo({
-      left: testimonial.offsetLeft - rail.offsetLeft,
+      left: testimonial.offsetLeft + testimonial.offsetWidth / 2 - rail.clientWidth / 2,
       behavior: 'smooth',
     });
   }, []);
@@ -69,10 +69,11 @@ export default function HomePage() {
         return closest;
       }
 
-      const currentDistance = Math.abs(rail.scrollLeft - (testimonial.offsetLeft - rail.offsetLeft));
+      const testimonialCenter = testimonial.offsetLeft + testimonial.offsetWidth / 2 - rail.clientWidth / 2;
+      const currentDistance = Math.abs(rail.scrollLeft - testimonialCenter);
       const closestTestimonial = testimonialRefs.current[closest];
       const closestDistance = closestTestimonial
-        ? Math.abs(rail.scrollLeft - (closestTestimonial.offsetLeft - rail.offsetLeft))
+        ? Math.abs(rail.scrollLeft - (closestTestimonial.offsetLeft + closestTestimonial.offsetWidth / 2 - rail.clientWidth / 2))
         : Number.POSITIVE_INFINITY;
 
       return currentDistance < closestDistance ? index : closest;
