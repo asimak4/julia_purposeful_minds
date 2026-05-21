@@ -2,7 +2,7 @@
 
 .pageContainer {
   padding: 1rem 0;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .section {
@@ -53,13 +53,17 @@
   flex: 2; /* Takes up less space, approx 40% */
   min-width: 250px; /* Minimum width before wrapping/stacking */
   /* order: 2; /* Explicitly second */
-  border-radius: 8px;
-  overflow: hidden; /* Ensure image respects border-radius */
   /* background-color: var(--color-accent-light); Removed */
-  align-self: flex-start;
+  align-self: stretch;
+}
+
+.profileImageSticky {
+  padding-top: 2rem;
+}
+
+.profileImageAnimation {
   display: flex;
   justify-content: flex-end;
-  padding-top: 2rem;
 }
 
 .profileImage {
@@ -69,6 +73,13 @@
   display: block; /* Remove extra space below image */
   border-radius: 8px; /* Keep rounded corners on the image itself */
   aspect-ratio: 3 / 4;
+}
+
+@media (min-width: 769px) {
+  .profileImageSticky {
+    position: sticky;
+    top: 6rem;
+  }
 }
 
 .licensingInfo {
@@ -178,8 +189,12 @@
     max-width: 300px; /* Max width for stacked image */
     margin-bottom: 1.5rem;
     height: auto; /* Let height be auto when stacked */
-    justify-content: center;
+  }
+  .profileImageSticky {
     padding-top: 0;
+  }
+  .profileImageAnimation {
+    justify-content: center;
   }
   .logoImage {
     width: 150px;

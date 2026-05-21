@@ -85,15 +85,19 @@ export default function AboutPage() {
               </p>
             </div>
           </motion.div>
-          <motion.div
-            className={styles.profileImagePlaceholder}
-            variants={slideInRightVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.7, delay: 0.6 }}
-          >
-            <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
-          </motion.div>
+          <div className={styles.profileImagePlaceholder}>
+            <div className={styles.profileImageSticky}>
+              <motion.div
+                className={styles.profileImageAnimation}
+                variants={slideInRightVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.7, delay: 0.6 }}
+              >
+                <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </motion.section>
 {/* 
