@@ -100,9 +100,9 @@ export default function ContactPage() {
   return (
     <div className={styles.pageContainer}>
       <section className={styles.section}>
-        <h1>Contact Us</h1>
+        <h1>Let's Connect</h1>
         <div className={styles.contactIntro}>
-            <p>If you have any questions or would like to schedule a consultation, please reach out to us.</p>
+            <p>If you have any questions or would like to schedule a consultation, please fill out the form below and I will get back to you as soon as possible.</p>
         </div>
 
         <form className={styles.contactForm} onSubmit={handleSubmit}>

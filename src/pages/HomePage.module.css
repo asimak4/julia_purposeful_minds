@@ -28,11 +28,13 @@
 }
 
 .heroOverlay h2 {
-  font-size: 1.8rem; /* Reduced from 2.8rem */
+  font-family: 'Caveat', cursive;
+  font-size: 2.8rem; /* Reduced from 2.8rem */
+  font-weight: 700;
   color: var(--color-heading); /* Ensure it uses the primary heading color */
   margin-top: 0;
   margin-bottom: 0.75rem; /* Reduced from 1rem */
-  line-height: 1.2;
+  line-height: 1;
   text-align: center;
 }
 
@@ -94,7 +96,7 @@
 /* Styles for Feature Section */
 .featureSection {
   background-color: var(--color-surface-dark);
-  padding: 2rem 5%; /* Reduced from 3rem to 2rem */
+  padding: 1.25rem 5%;
   color: var(--color-on-dark-muted);
   text-align: center; /* Center align the text within the section */
 }
@@ -102,32 +104,39 @@
 .featureGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 1.5rem; /* Reduced from 2.5rem to 1.5rem */
+  gap: 1.25rem;
+}
+
+.featureColumn {
+  padding: 0.25rem 0.75rem;
 }
 
 .featureColumn h3 {
-  font-size: 1.3rem; /* Reduced from 1.5rem */
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem; /* Reduced from 1.5rem */
+  font-weight: 700;
   color: var(--color-on-dark);
-  margin-bottom: 0.5rem; /* Reduced from 0.75rem */
-  padding-bottom: 0.25rem; /* Reduced from 0.5rem */
+  margin: 0 0 0.35rem;
+  padding-bottom: 0.15rem;
   border-bottom: 1px solid rgba(253, 252, 251, 0.45);
   display: inline-block; /* To make border-bottom only as wide as text */
 }
 
 .featureColumn p {
-  font-size: 0.9rem; /* Reduced from 1rem */
+  font-size: 1rem; /* Reduced from 1rem */
   line-height: 1.5; /* Reduced from 1.6 */
   color: var(--color-on-dark-muted);
+  margin: 0;
 }
 
 /* Responsive adjustments for Feature Section */
 @media (max-width: 992px) { /* Tablet */
   .featureSection {
-    padding: 1.5rem 5%; /* Reduced padding for tablet */
+    padding: 1.25rem 5%;
   }
   .featureGrid {
     grid-template-columns: 1fr; /* Stack to single column */
-    gap: 1.5rem; /* Reduced from 2rem */
+    gap: 1rem;
   }
   .featureColumn h3 {
     font-size: 1.2rem; /* Reduced from 1.4rem */
@@ -136,7 +145,13 @@
 
 @media (max-width: 576px) { /* Mobile */
   .featureSection {
-    padding: 1.5rem 5%; /* Reduced from 2rem */
+    padding: 1rem 5%;
+  }
+  .featureGrid {
+    gap: 0.9rem;
+  }
+  .featureColumn {
+    padding: 0.15rem 0;
   }
   .featureColumn h3 {
     font-size: 1.1rem; /* Reduced from 1.3rem */
@@ -336,7 +351,8 @@
 }
 
 .welcomeTextColumn h2 {
-  font-size: 2rem; /* Reduced from 2.5rem */
+  font-family: 'Caveat', cursive;
+  font-size: 3rem; /* Reduced from 2.5rem */
   color: var(--color-heading); /* Standard heading color */
   margin-top: 0;
   margin-bottom: 1rem; /* Reduced from 1.5rem */

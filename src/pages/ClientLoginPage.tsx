@@ -18,7 +18,7 @@ export default function ClientLoginPage() {
             Go to Client Portal
           </button>
         </div> 
-        <p className={styles.infoText}>Access your secure client portal to manage appointments, view documents, and communicate with us.</p>
+        <p className={styles.infoText}>Access your secure client portal to manage appointments, view documents, and communicate with me.</p>
         
         <p className={styles.infoText}>
           If you have trouble accessing the portal or have not yet set up an account, please click <a href="https://www.therapyappointment.com/faqs" target="_blank" rel="noopener noreferrer">this link</a> for assistance.

@@ -186,7 +186,7 @@ export default function HomePage() {
       >
         <div className={styles.featureGrid}> {/* Using a grid for easy column layout */}
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.2 }} className={styles.featureColumn}>
-            <h3>Who We Help</h3>
+            <h3>Clients</h3>
             <p>Julia supports clients at every stage, from late elementary to college and beyond. She addresses speech and language development, strengthens organizational skills in middle and high school, and supports college students as they tackle more complex academic challenges.
             </p> 
           </motion.div>
@@ -197,7 +197,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
-            <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
+            <h3>Location</h3> {/* Or keep "Why Work With Us" or similar */}
             <p>Sessions are conducted either virtually via a HIPAA-compliant Zoom platform or in person at 4800 Hampden Lane #200, Bethesda, MD 20814. Clients may select the format that best fits their needs and availability.</p>
           </motion.div>
         </div>
@@ -255,7 +255,7 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          {testimonials.length > 1 && (
+          {/* {testimonials.length > 1 && (
             <div className={styles.testimonialControls} aria-label="Testimonial controls">
               <button
                 aria-label="Previous testimonial"
@@ -274,7 +274,7 @@ export default function HomePage() {
                 <span aria-hidden="true">→</span>
               </button>
             </div>
-          )}
+          )} */}
         </motion.div>
       </motion.section>
 
@@ -293,7 +293,7 @@ export default function HomePage() {
             variants={welcomeTextVariants} // Use new variant
             transition={{ duration: 0.7, delay: 0.3 }}
            >
-            <h2>Welcome to Purposeful Minds</h2>
+            <h2>Getting Started</h2>
             
             <ol className={styles.stepsList}>
                <li className={styles.stepItem}>

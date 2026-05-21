@@ -14,10 +14,13 @@
 
 .section h1, /* Page title */
 .section h2 {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 1.5rem;
   border-bottom: 2px solid var(--color-accent); /* NEW: Muted Teal/Green accent */
   padding-bottom: 0.75rem;
+  font-size: 2.5rem;
 }
 
 .section h3 {
@@ -29,9 +32,9 @@
 
 .faqItem {
   margin-bottom: 1.25rem; /* Slightly more space between FAQ items */
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-primary);
   border-radius: 8px; /* More rounded corners */
-  background-color: var(--color-bg-elevated); /* White background for the card */
+  background-color: var(--color-primary);
   box-shadow: var(--shadow-sm);
   overflow: hidden; /* Ensures content respects border-radius */
 }
@@ -40,17 +43,17 @@
   padding: 1.25rem 1.5rem; /* Increased padding */
   font-weight: bold;
   cursor: pointer;
-  background-color: var(--color-bg-subtle); /* Lighter tint of Light Sky Blue or off-white */
+  background-color: var(--color-primary);
   /* border-radius: 3px; /* Remove if faqItem has overflow:hidden and rounded corners */
   display: flex; /* For custom arrow */
   justify-content: space-between; /* Push arrow to the right */
   align-items: center;
-  color: var(--color-heading);
+  color: var(--color-on-primary);
   transition: background-color 0.2s ease-in-out;
 }
 
 .faqItem[open] .faqSummary {
-  background-color: var(--color-bg-subtle); /* Slightly darker when open */
+  background-color: var(--color-primary);
 }
 
 .faqSummary::-webkit-details-marker,
@@ -63,7 +66,7 @@
   content: '\27A4'; /* Changed arrow to a more playful one (e.g., heavy right arrow head) */
   font-size: 1em; /* Made it slightly larger */
   transition: transform 0.3s ease-in-out;
-  color: var(--color-lavender);
+  color: var(--color-on-primary);
 }
 
 .faqItem[open] .faqSummary::after {
@@ -74,6 +77,7 @@
   padding: 1.5rem; /* Increased padding */
   border-top: 1px solid var(--color-border-subtle);
   background-color: var(--color-surface); /* Very light grey for content area */
+  color: var(--color-text);
 }
 
 /* Styles for new Two-Column Layouts */

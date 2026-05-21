@@ -36,9 +36,7 @@ export default function HelpfulInformationPage() {
         transition={{ duration: 0.6, delay: 0.2, staggerChildren: 0.15, delayChildren: 0.3 }}
       >
         <h2>Frequently Asked Questions (FAQs)</h2>
-        
-        <motion.h3 variants={itemVariants}>About Our Services</motion.h3>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <motion.details className={styles.faqItem} variants={itemVariants}>
           <summary className={styles.faqSummary}>What is executive functioning?</summary>
           <div className={styles.faqContent}>
             <p>
@@ -73,31 +71,6 @@ export default function HelpfulInformationPage() {
           </div>
         </motion.details>
         <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}>What is dyslexia?</summary>
-          <div className={styles.faqContent}>
-            <p>
-            Dyslexia is a language-based learning disability. Dyslexia refers to a cluster of symptoms, which result in people having difficulties with specific language skills, particularly reading. Students with dyslexia usually experience difficulties with other language skills such as spelling, writing, and pronouncing words. 
-            </p>
-            <a href="https://dyslexiaida.org/dyslexia-basics/" target="_blank" rel="noopener noreferrer">Learn more about dyslexia</a>
-          </div>
-        </motion.details>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
-          <summary className={styles.faqSummary}>What are common signs of dyslexia?</summary>
-          <div className={styles.faqContent}>
-            <p>Common signs of dyslexia can vary by age but may include:</p>
-            <ul>
-              <li>Difficulty learning the alphabet and letter sounds.</li>
-              <li>Trouble with rhyming or recognizing rhyming patterns.</li>
-              <li>Persistent difficulty sounding out words (decoding).</li>
-              <li>Reading slowly and with a lot of effort.</li>
-              <li>Frequent spelling errors, even with common words.</li>
-              <li>Mispronouncing familiar words or transposing sounds or letters.</li>
-              <li>Difficulty retrieving words (word finding).</li>
-              <li>Family history of dyslexia or reading difficulties.</li>
-            </ul>
-          </div>
-        </motion.details>
-        <motion.details className={styles.faqItem} variants={itemVariants}>
           <summary className={styles.faqSummary}>Why a Speech-Language Pathologist? </summary>
           <div className={styles.faqContent}>
             <p>
@@ -109,7 +82,7 @@ export default function HelpfulInformationPage() {
           <summary className={styles.faqSummary}> What is the youngest age you work with?  </summary>
           <div className={styles.faqContent}>
             <p>
-            Age 4 - We work with children ages 4 and up, when they’re better able to engage in structured, goal-focused sessions. For children under 3, we recommend early intervention services that specialize in supporting toddlers through play-based, parent-guided approaches. We’re happy to refer families of younger children to trusted early intervention providers who are better equipped to meet their needs at that stage.
+            Age 7 - We work with children ages 7 and up, when they’re better able to engage in structured, goal-focused sessions. For children under age 7, Julia is happy to provide referrals to therapists that specialize in supporting young children through play-based, parent-guided approaches. 
             </p>
           </div>
         </motion.details>
@@ -118,6 +91,14 @@ export default function HelpfulInformationPage() {
           <div className={styles.faqContent}>
             <p>
               Yes! At Purposeful Minds, college and graduate students build skills like time management, setting and maintaining priorities, handling intensive reading demands, studying effectively, and improving analytical writing.
+            </p>
+          </div>
+        </motion.details>        
+        <motion.details className={styles.faqItem} variants={itemVariants}>
+          <summary className={styles.faqSummary}> Do you work with adults?  </summary>
+          <div className={styles.faqContent}>
+            <p>
+            Yes, Julia does work with adult clients. She supports them in building strategies and tools to help manage daily life, work responsibilities, and a range of personal and functional challenges.
             </p>
           </div>
         </motion.details>
