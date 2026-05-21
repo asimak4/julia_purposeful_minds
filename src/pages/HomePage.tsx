@@ -1,10 +1,114 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './HomePage.module.css'; // Import CSS Module
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion'; // Import motion
+import testimonials from '../data/testimonials.json';
 
 // Placeholder for HomePage component
 export default function HomePage() {
   const heroBgImage = `${process.env.PUBLIC_URL}/childInTherapy1.png`; // Swapped: now childInTherapy.jpg
+  const testimonialRailRef = useRef<HTMLDivElement | null>(null);
+  const testimonialRefs = useRef<(HTMLElement | null)[]>([]);
+  const programmaticScrollTimeoutRef = useRef<number | null>(null);
+  const resumeRotationTimeoutRef = useRef<number | null>(null);
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
+  const [isTestimonialPaused, setIsTestimonialPaused] = useState(false);
+
+  const scrollToTestimonial = useCallback((index: number) => {
+    const rail = testimonialRailRef.current;
+    const testimonial = testimonialRefs.current[index];
+
+    if (!rail || !testimonial) {
+      return;
+    }
+
+    if (programmaticScrollTimeoutRef.current) {
+      window.clearTimeout(programmaticScrollTimeoutRef.current);
+    }
+
+    programmaticScrollTimeoutRef.current = window.setTimeout(() => {
+      programmaticScrollTimeoutRef.current = null;
+    }, 700);
+
+    rail.scrollTo({
+      left: testimonial.offsetLeft - rail.offsetLeft,
+      behavior: 'smooth',
+    });
+  }, []);
+
+  const pauseTestimonialRotation = useCallback((resumeAfterMs = 8000) => {
+    setIsTestimonialPaused(true);
+
+    if (resumeRotationTimeoutRef.current) {
+      window.clearTimeout(resumeRotationTimeoutRef.current);
+    }
+
+    resumeRotationTimeoutRef.current = window.setTimeout(() => {
+      setIsTestimonialPaused(false);
+      resumeRotationTimeoutRef.current = null;
+    }, resumeAfterMs);
+  }, []);
+
+  const goToTestimonial = (index: number) => {
+    pauseTestimonialRotation();
+    setActiveTestimonialIndex(index);
+    scrollToTestimonial(index);
+  };
+
+  const handleTestimonialScroll = () => {
+    const rail = testimonialRailRef.current;
+
+    if (!rail || programmaticScrollTimeoutRef.current) {
+      return;
+    }
+
+    pauseTestimonialRotation();
+
+    const closestIndex = testimonialRefs.current.reduce((closest, testimonial, index) => {
+      if (!testimonial) {
+        return closest;
+      }
+
+      const currentDistance = Math.abs(rail.scrollLeft - (testimonial.offsetLeft - rail.offsetLeft));
+      const closestTestimonial = testimonialRefs.current[closest];
+      const closestDistance = closestTestimonial
+        ? Math.abs(rail.scrollLeft - (closestTestimonial.offsetLeft - rail.offsetLeft))
+        : Number.POSITIVE_INFINITY;
+
+      return currentDistance < closestDistance ? index : closest;
+    }, 0);
+
+    setActiveTestimonialIndex(closestIndex);
+  };
+
+  useEffect(() => {
+    if (isTestimonialPaused || testimonials.length <= 1) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      setActiveTestimonialIndex((currentIndex) => {
+        const nextIndex = (currentIndex + 1) % testimonials.length;
+        scrollToTestimonial(nextIndex);
+        return nextIndex;
+      });
+    }, 6000);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [isTestimonialPaused, scrollToTestimonial]);
+
+  useEffect(() => {
+    return () => {
+      if (programmaticScrollTimeoutRef.current) {
+        window.clearTimeout(programmaticScrollTimeoutRef.current);
+      }
+      if (resumeRotationTimeoutRef.current) {
+        window.clearTimeout(resumeRotationTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 75, scale: 0.95 },
@@ -108,17 +212,69 @@ export default function HomePage() {
         variants={sectionVariants}
         transition={{ duration: 0.6 }}
       >
-        <motion.div 
+        <motion.div
           className={styles.testimonialContent}
           variants={itemVariants}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className={styles.testimonialQuote}>
-            <span className={styles.quoteMark}>"</span>Julia Simak and Purposeful Minds have helped our son learn how to manage his time and actually plan his school and extracurricular tasks so that he can complete his assignments and responsibilities well and on time. He is much more confident in his ability to handle the work-load, and his grades and self-esteem have both improved greatly!<span className={styles.quoteMark}>"</span>
-          </p>
-          <div className={styles.testimonialAuthor}>
-            <span className={styles.testimonialName}>Purposeful Minds Parent</span>
+          <div
+            className={styles.testimonialRail}
+            aria-label="Testimonials"
+            onMouseEnter={() => {
+              if (resumeRotationTimeoutRef.current) {
+                window.clearTimeout(resumeRotationTimeoutRef.current);
+                resumeRotationTimeoutRef.current = null;
+              }
+              setIsTestimonialPaused(true);
+            }}
+            onMouseLeave={() => setIsTestimonialPaused(false)}
+            onFocus={() => setIsTestimonialPaused(true)}
+            onBlur={() => setIsTestimonialPaused(false)}
+            onTouchStart={() => pauseTestimonialRotation()}
+            onScroll={handleTestimonialScroll}
+            ref={testimonialRailRef}
+          >
+            {testimonials.map((testimonial, index) => (
+              <article
+                aria-label={`Testimonial ${index + 1} of ${testimonials.length}`}
+                className={styles.testimonialSlide}
+                key={`${testimonial.author}-${testimonial.quote}-${index}`}
+                ref={(element) => {
+                  testimonialRefs.current[index] = element;
+                }}
+                tabIndex={0}
+              >
+                <p className={styles.testimonialQuote}>
+                  <span className={styles.quoteMark}>"</span>
+                  {testimonial.quote}
+                  <span className={styles.quoteMark}>"</span>
+                </p>
+                <div className={styles.testimonialAuthor}>
+                  <span className={styles.testimonialName}>{testimonial.author}</span>
+                </div>
+              </article>
+            ))}
           </div>
+          {testimonials.length > 1 && (
+            <div className={styles.testimonialControls} aria-label="Testimonial controls">
+              <button
+                aria-label="Previous testimonial"
+                className={styles.testimonialArrow}
+                onClick={() => goToTestimonial((activeTestimonialIndex - 1 + testimonials.length) % testimonials.length)}
+                type="button"
+              >
+                <span aria-hidden="true">←</span>
+              </button>
+              <button
+                aria-label="Next testimonial"
+                className={styles.testimonialArrow}
+                onClick={() => goToTestimonial((activeTestimonialIndex + 1) % testimonials.length)}
+                type="button"
+              >
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          )}
         </motion.div>
       </motion.section>
 
@@ -173,31 +329,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Testimonials Section */}
-      {/*       
-      <motion.section
-        className={styles.testimonialsSection}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1 }} // Trigger when 10% of the section is visible
-        variants={sectionVariants}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <h2 className={styles.testimonialsTitle}>What Our Families Say</h2>
-        <div className={styles.testimonialsGrid}>
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.3 }} className={styles.testimonialItem}>
-            <p className={styles.testimonialQuote}>"[Testimonial 1 - A brief, impactful quote about the positive experience and outcomes. Keep it concise and genuine.]"</p>
-            <cite className={styles.testimonialCite}>- [Person 1 Name/Role, e.g., Parent of a 5th Grader]</cite>
-          </motion.div>
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.5 }} className={styles.testimonialItem}>
-            <p className={styles.testimonialQuote}>"[Testimonial 2 - Another compelling quote highlighting different aspects of the service or the therapist's approach.]"</p>
-            <cite className={styles.testimonialCite}>- [Person 2 Name/Role, e.g., High School Student]</cite>
-          </motion.div>
-        </div>
-      </motion.section>
-      */}
-
 
       {/* Final Call to Action Section */}
       <motion.section
