@@ -11,7 +11,7 @@ export default function HomePage() {
   const testimonialRefs = useRef<(HTMLElement | null)[]>([]);
   const programmaticScrollTimeoutRef = useRef<number | null>(null);
   const resumeRotationTimeoutRef = useRef<number | null>(null);
-  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
+  const activeTestimonialIndexRef = useRef(0);
   const [isTestimonialPaused, setIsTestimonialPaused] = useState(false);
 
   const scrollToTestimonial = useCallback((index: number) => {
@@ -49,11 +49,6 @@ export default function HomePage() {
     }, resumeAfterMs);
   }, []);
 
-  const goToTestimonial = (index: number) => {
-    pauseTestimonialRotation();
-    setActiveTestimonialIndex(index);
-    scrollToTestimonial(index);
-  };
 
   const handleTestimonialScroll = () => {
     const rail = testimonialRailRef.current;
@@ -79,7 +74,7 @@ export default function HomePage() {
       return currentDistance < closestDistance ? index : closest;
     }, 0);
 
-    setActiveTestimonialIndex(closestIndex);
+    activeTestimonialIndexRef.current = closestIndex;
   };
 
   useEffect(() => {
@@ -88,11 +83,9 @@ export default function HomePage() {
     }
 
     const intervalId = window.setInterval(() => {
-      setActiveTestimonialIndex((currentIndex) => {
-        const nextIndex = (currentIndex + 1) % testimonials.length;
-        scrollToTestimonial(nextIndex);
-        return nextIndex;
-      });
+      const nextIndex = (activeTestimonialIndexRef.current + 1) % testimonials.length;
+      activeTestimonialIndexRef.current = nextIndex;
+      scrollToTestimonial(nextIndex);
     }, 6000);
 
     return () => {
