@@ -51,13 +51,12 @@ export default function HomePage() {
           transition={{ duration: 0.7, delay: 0.5 }} // Delay slightly after background
         >
           <motion.h2
-            style={{ marginTop: '0em' }}
             initial="hidden"
             animate="visible"
             variants={itemVariants} // Using itemVariants for a slight upward motion + fade
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            Executive Functioning, Speech, Language & Literacy
+            Executive Functioning & Speech and Language
           </motion.h2> 
           <motion.p
             initial="hidden"
@@ -65,7 +64,7 @@ export default function HomePage() {
             variants={itemVariants}
             transition={{ duration: 0.6, delay: 1.0 }}
           >
-            At <i> Purposeful Minds</i>, our sessions are driven by goals created to serve your child’s unique needs. After gathering information and learning about your child during a 1 hour consultation, we create an individualized plan targeting your child's specific areas of need. Then, we provide specialized support for your child in one or more of the following areas: executive functioning, speech, language, or literacy.
+            At <i> Purposeful Minds</i>, our sessions are driven by goals created to serve you or your child’s unique needs. After gathering information during a one hour consultation, Julia creates an individualized plan targeting you or your child’s specific areas of need. Then, she provides specialized support for you or your child in the areas of executive functioning and/or speech and language. 
           </motion.p>
           {/* Optionally, a call to action button can be added here */}
           {/* <button className={`button-style ${styles.heroCtaButton}`}>Learn More</button> */}
@@ -84,18 +83,18 @@ export default function HomePage() {
         <div className={styles.featureGrid}> {/* Using a grid for easy column layout */}
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.2 }} className={styles.featureColumn}>
             <h3>Who We Help</h3>
-            <p><i>Purposeful Minds</i> supports clients at every stage, from elementary to college. We address speech and language development, strengthen literacy and organizational skills in middle and high school, and support college students as they tackle more complex academic challenges.
+            <p>Julia supports clients at every stage, from late elementary to college and beyond. She addresses speech and language development, strengthens organizational skills in middle and high school, and supports college students as they tackle more complex academic challenges.
             </p> 
           </motion.div>
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.4 }} className={styles.featureColumn}>
             <h3>Areas of Focus</h3>
-            <p>Our therapists specialize in helping students overcome a variety of challenges, including difficulties with executive 
-              functioning skills, ADHD, expressive and receptive language and dyslexia. We support clients in organizing thoughts, processing language, managing attention, and building reading and writing skills.</p>
+            <p>Julia specializes in helping students overcome challenges with executive functioning, ADHD, and speech and language disorders. She supports clients in organizing thoughts, processing language, managing attention, and building reading and writing skills.
+            </p>
           </motion.div>
 
           <motion.div variants={itemVariants} transition={{ duration: 0.5, delay: 0.8 }} className={styles.featureColumn}>
             <h3>Where We See Clients</h3> {/* Or keep "Why Work With Us" or similar */}
-            <p>At <i>Purposeful Minds</i>, all consultations are conducted virtually for your convenience. Following the consultation, we work closely with you to determine the best fit for ongoing services, whether that's continuing virtually or in-person at 4800 Hampden Ln #200, Bethesda, MD 20814. </p> {/* Placeholder */}
+            <p>Sessions are conducted either virtually via a HIPAA-compliant Zoom platform or in person at 4800 Hampden Lane #200, Bethesda, MD 20814. Clients may select the format that best fits their needs and availability.</p>
           </motion.div>
         </div>
       </motion.section>
@@ -143,11 +142,11 @@ export default function HomePage() {
             <ol className={styles.stepsList}>
                <li className={styles.stepItem}>
                    <h4>Step 1: Initial Contact &amp; Brief Phone Call</h4>
-                   <p>Reach out via phone, email, or our website contact form to express interest or ask questions. We'll schedule a brief 15-minute phone call to learn more about your child's needs and answer any initial questions.</p>
+                   <p>Reach out via phone, email, or the website contact form to express interest or ask questions. We’ll schedule a free 15-minute phone call to learn more about you or your child’s needs and answer any initial questions.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 2: Comprehensive Virtual Consultation</h4>
-                   <p>We ask that families provide any formal evaluations or standardized assessments at least 48 hours before the scheduled consultation. The therapist will carefully review all existing documentation and complete a virtual consultation to identify your child’s strengths and areas of need before beginning treatment.</p>
+                   <p>Please provide any formal evaluations or standardized assessments at least 48 hours prior to the scheduled consultation. Julia will carefully review all existing documentation and complete a consultation with you to identify strengths and areas of need before beginning sessions.</p>
                </li>
                <li className={styles.stepItem}>
                    <h4>Step 3: Individualized Treatment Plan</h4>

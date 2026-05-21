@@ -18,7 +18,7 @@
 }
 
 .heroOverlay {
-  background-color: #f1e6d2; /* Light Lavender/Pink from our palette */
+  background-color: #f3ecde; /* Beige/Cream from our palette */
   padding: 1.5rem 2rem; /* Reduced from 2.5rem 3rem */
   border-radius: 8px;
   max-width: 450px; /* Reduced from 550px to 450px */
@@ -27,12 +27,13 @@
   overflow: hidden; /* Add this to clip animating children */
 }
 
-.heroOverlay h1 {
-  font-size: 2.2rem; /* Reduced from 2.8rem */
+.heroOverlay h2 {
+  font-size: 1.8rem; /* Reduced from 2.8rem */
   color: #333333; /* Ensure it uses the primary heading color */
   margin-top: 0;
   margin-bottom: 0.75rem; /* Reduced from 1rem */
   line-height: 1.2;
+  text-align: center;
 }
 
 .heroOverlay p {
@@ -62,7 +63,7 @@
     margin-left: 0; /* Remove specific margin if centered */
     padding: 1.5rem; /* Reduced from 2rem */
   }
-  .heroOverlay h1 {
+  .heroOverlay h2 {
     font-size: 1.8rem; /* Reduced from 2.2rem */
   }
   .heroOverlay p {
@@ -78,7 +79,7 @@
   .heroOverlay {
     padding: 1rem 1.5rem; /* Added overlay padding adjustment */
   }
-  .heroOverlay h1 {
+  .heroOverlay h2 {
     font-size: 1.6rem; /* Reduced from 1.8rem */
   }
   .heroOverlay p {
