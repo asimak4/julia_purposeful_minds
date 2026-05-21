@@ -59,7 +59,7 @@ const Layout = () => {
             </ul>
           </nav>
           <Link to="/contact" className={`${styles.ctaButton} button-style`} onClick={handleNavLinkClick}>
-            Contact Us
+            Let's Connect
           </Link>
         </div>
       </header>

@@ -7,12 +7,12 @@
 }
 
 .header {
-  background-color: #f1e9e0; /* NEW: Very Light Cream */
+  background-color: var(--color-bg-elevated);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #EAEAEA; /* NEW: Subtle border */
+  border-bottom: 1px solid var(--color-border-subtle); /* NEW: Subtle border */
   position: sticky; /* Changed from relative */
   top: 0; /* Make it stick to the top */
   width: 100%; /* Ensure full width */
@@ -23,7 +23,7 @@
 .logoLink {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333333; /* NEW: Dark Gray for logo */
+  color: var(--color-heading); /* NEW: Dark Gray for logo */
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@
 }
 
 .navLink {
-  color: #4A4A4A; /* NEW: Dark Gray for nav links */
+  color: var(--color-text-muted);
   text-decoration: none;
   font-weight: 500; /* Juniper has slightly bolder nav links */
   padding: 0.5rem 0;
@@ -59,7 +59,7 @@
 }
 
 .navLink:hover {
-  color: #8F9E8B; /* NEW: Muted Green/Olive on hover */
+  color: var(--color-heading);
   /* text-decoration: none; removed underline */
 }
 
@@ -75,7 +75,7 @@
   display: none;
   background: none;
   border: none;
-  color: #333333; /* NEW: Dark Gray */
+  color: var(--color-heading); /* NEW: Dark Gray */
   font-size: 2rem;
   cursor: pointer;
   order: 3; /* Ensure it comes after navWrapper in flex order on mobile if not hidden */
@@ -92,25 +92,25 @@
 .mainContent {
   padding: 2rem 2rem 2rem; /* Adjusted top padding for sticky header */ 
   flex-grow: 1;
-  background-color: #FAF7F5; /* Ensuring main content also has the base background */
+  background-color: var(--color-bg); /* Ensuring main content also has the base background */
 }
 
 .footer {
-  background-color: #8F9E8B; /* NEW: Muted Green/Olive */
-  color: #FFFFFF; /* NEW: White text on green background */
+  background-color: var(--color-surface-dark);
+  color: var(--color-on-dark);
   text-align: center;
   padding: 2rem 2rem; /* Increased padding */
   /* border-top: 1px solid #A1C8D4; removed */
 }
 
 .footerLink {
-  color: #F0E8F0; /* NEW: Light Lavender/Pink for footer links on green bg */
+  color: var(--color-on-dark-accent);
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .footerLink:hover {
-  color: #FFFFFF; /* White on hover */
+  color: var(--color-on-dark);
   text-decoration: underline;
 }
 
@@ -139,13 +139,13 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #FDFCFB; /* Mobile menu background */
+    background-color: var(--color-surface); /* Mobile menu background */
     z-index: 1000;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     padding: 0; /* Remove padding when hidden */
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid var(--color-border-subtle);
   }
 
   .navWrapper.active { /* Applied when mobile menu is open */
@@ -170,7 +170,7 @@
   .navLink {
     padding: 0.75rem 1rem;
     width: 100%;
-    border-bottom: 1px solid #f0f0f0; /* Separator for mobile links */
+    border-bottom: 1px solid var(--color-border-light); /* Separator for mobile links */
   }
   .navLink:last-child {
     border-bottom: none;

@@ -4,29 +4,30 @@
   padding-bottom: 2rem;
   max-width: 90vw;
   margin: 0 auto;
-  background-color: #FAF7F5;
+  background-color: var(--color-bg);
 }
 
 .section {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-bg-elevated);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px var(--shadow-sm);
 }
 
 .pageHeader {
-  background: linear-gradient(135deg, #8F9E8B 0%, #7A8975 100%);
-  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--color-surface-dark) 0%, var(--color-surface-dark-end) 100%);
+  color: var(--color-on-dark);
   padding: 1.5rem 2%;
   text-align: center;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .pageHeader h1 {
-  font-size: 2rem;
-  color: #FFFFFF;
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  color: var(--color-on-dark);
   margin: 0;
   line-height: 1.1;
   font-weight: 700;
@@ -63,9 +64,9 @@
 .introSection {
   padding: 1.5rem;
   margin: 0;
-  background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
+  background: linear-gradient(135deg, var(--color-bg-accent) 0%, var(--color-bg-accent) 100%);
   border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
 }
@@ -73,13 +74,13 @@
 
 .pricing {
   font-size: 1rem;
-  color: #8F9E8B;
+  color: var(--color-primary);
   font-weight: 600;
   text-align: center;
   padding: 0.8rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 6px;
-  margin-top: 1rem;
+  margin-top: auto;
   margin-bottom: 0;
   white-space: normal;
   overflow: visible;
@@ -89,13 +90,19 @@
 .consultationSection {
   padding: 1.5rem;
   margin: 0;
-  background: linear-gradient(135deg, #e6ddd2 0%, #e6ddd2 100%);
+  background: linear-gradient(135deg, var(--color-bg-accent) 0%, var(--color-bg-accent) 100%);
   border-radius: 12px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
 }
 
+.pricingCardContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+}
 
 .contentWrapper {
   display: flex;
@@ -106,8 +113,9 @@
 }
 
 .contentWrapper h2 {
-  font-size: 1.6rem;
-  color: #333333;
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  color: var(--color-heading);
   /* margin-bottom: 0.5rem; */
   margin-top: 0;
   font-weight: 600;
@@ -115,7 +123,7 @@
 
 .contentWrapper p {
   font-size: 0.95rem;
-  color: #4A4A4A;
+  color: var(--color-text);
   line-height: 1.5;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -132,10 +140,10 @@
 }
 
 .serviceCard {
-  background: #FFFFFF;
+  background: var(--color-on-primary);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -144,13 +152,13 @@
 
 .serviceCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-xl);
 }
 
 .cardImage {
   height: 80px;
   overflow: hidden;
-  background: linear-gradient(135deg, #c3d2bf 0%, #8F9E8B 100%);
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,18 +180,20 @@
 }
 
 .cardContent h3 {
-  font-size: 1.4rem;
-  color: #333333;
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem;
+  color: var(--color-heading);
+  margin-top: 0;
   margin-bottom: 0.8rem;
   font-weight: 600;
   text-align: center;
-  border-bottom: 2px solid #f1e6d2;
+  border-bottom: 2px solid var(--color-bg-accent);
   padding-bottom: 0.4rem;
 }
 
 .cardContent h4 {
   font-size: 1.1rem;
-  color: #8F9E8B;
+  color: var(--color-primary);
   margin-top: 1rem;
   margin-bottom: 0.6rem;
   font-weight: 600;
@@ -191,7 +201,7 @@
 
 .cardContent p {
   font-size: 0.9rem;
-  color: #4A4A4A;
+  color: var(--color-text);
   line-height: 1.5;
   margin-bottom: 1rem;
   text-align: left;
@@ -209,13 +219,13 @@
   position: relative;
   margin-bottom: 0.2rem;
   font-size: 0.85rem;
-  color: #4A4A4A;
+  color: var(--color-text);
   line-height: 1.4;
 }
 
 .listItem::before {
   content: '•';
-  color: #8F9E8B;
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.2em;
   position: absolute;
@@ -233,14 +243,14 @@
 }
 
 .serviceArea {
-  background: linear-gradient(135deg, #f8f6f3 0%, #f4f1ed 100%);
+  background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-muted) 100%);
   border-radius: 6px;
   padding: 1rem;
-  border-left: 3px solid #8F9E8B;
+  border-left: 3px solid var(--color-primary);
 }
 
 .serviceArea h4 {
-  color: #8F9E8B;
+  color: var(--color-primary);
   margin-top: 0;
   margin-bottom: 0.6rem;
   font-size: 1rem;

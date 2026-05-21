@@ -44,12 +44,15 @@ export default function AboutPage() {
         viewport={{ amount: 0.1 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Our Story</h1>
+        <h1>About Purposeful Minds</h1>
         
         <div className={styles.profileContainer}>
           <motion.div
             className={styles.profileText}
             variants={slideInLeftVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.5 }}
           >
             <p className={styles.bioIntro}>
               <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP. 
@@ -61,34 +64,38 @@ export default function AboutPage() {
             </p>
 
             <div className={styles.founderSection}>
-              <h2>Founder of Purposeful Minds</h2>
-              <p>
-                Julia Simak, M.S., CCC-SLP, began her career as a Speech-Language Pathologist in public elementary schools, where she provided speech and language therapy to students with diverse communication needs. Early on, she collaborated closely with reading specialists, which sparked her interest in literacy development, dyslexia, and structured spelling interventions such as the Orton-Gillingham approach.
-              </p>
-              <p>
-                During this time, Julia also gained valuable experience at Lindamood-Bell Learning Processes, where she provided intensive one-on-one intervention using programs such as Visualizing and Verbalizing (V&V) for reading comprehension and Seeing Stars for phonemic awareness and decoding. This work highlighted the connection between language processing and reading success, especially for students with dyslexia and other language-based learning differences.              </p>
-              <p>
-                As she continued her work with students, Julia became increasingly aware of how executive functioning challenges, such as disorganization, time management, and difficulty initiating tasks, often coexisted with language and literacy difficulties. These needs were often underserved, yet they had a significant impact on students' academic performance and emotional well-being.              </p>
-              <p>
-                Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning support. There, she worked with students from elementary through college, integrating speech-language therapy, reading intervention, and executive functioning strategies tailored to each student's strengths and needs.              </p>
-              <p>
-                Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded Purposeful Minds, a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support in executive functioning, literacy, and language.              </p>
-            </div>
-
-            <div className={styles.licensingInfo}>
+              <h2>Julia Simak, M.S., CCC-SLP</h2>
+              <div className={styles.licensingInfo}>
               <h3>Licensing Information</h3>
               <p>
                 Julia holds active licensure in Maryland, Washington, D.C., and Virginia, and is certified by the American Speech-Language-Hearing Association (ASHA).
               </p>
             </div>
+              <p>
+              Julia Simak, M.S., CCC-SLP began her career as a Speech-Language Pathologist in elementary schools, where she provided speech and language therapy to students with diverse communication needs. Early on, she collaborated closely with reading specialists and special education teachers, strengthening her knowledge on learning differences in students. She also gained valuable experience at Lindamood-Bell Learning Processes, where she provided intensive one-on-one intervention using programs such as Visualizing and Verbalizing and Seeing Stars. 
+              </p>
+              <p>
+              As she continued her work with students, Julia became increasingly aware of how executive functioning challenges, such as disorganization, time management, and difficulty initiating tasks, often coexisted with language difficulties. These needs were often underserved, yet they had a significant impact on students’ academic performance and emotional well-being. 
+              </p>
+              <p>
+              Motivated to support this underserved population, Julia joined Thinking Organized, a private practice in the D.C. area specializing in executive functioning. There, she worked with students from elementary through college, integrating speech-language therapy and executive functioning strategies tailored to each student’s strengths and needs. Recognizing the need for a practice that blends clinical expertise with personalized, practical support, she founded Purposeful Minds LLC, a private practice dedicated to helping students build confidence, independence, and lasting academic and life skills through targeted support.
+              </p>
+            </div>
+
           </motion.div>
-          <motion.div
-            className={styles.profileImagePlaceholder}
-            variants={slideInRightVariants}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
-          </motion.div>
+          <div className={styles.profileImagePlaceholder}>
+            <div className={styles.profileImageSticky}>
+              <motion.div
+                className={styles.profileImageAnimation}
+                variants={slideInRightVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.7, delay: 0.6 }}
+              >
+                <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </motion.section>
 {/* 
