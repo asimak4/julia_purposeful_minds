@@ -7,32 +7,32 @@
 .section {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #ffffff;
+  background-color: var(--color-bg-elevated);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px var(--shadow-sm);
 }
 
 .section h1, /* Page title */
 .section h2 {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #74A8A4; /* NEW: Muted Teal/Green accent */
+  border-bottom: 2px solid var(--color-accent); /* NEW: Muted Teal/Green accent */
   padding-bottom: 0.75rem;
 }
 
 .section h3 {
   margin-top: 1.5rem;
   margin-bottom: 1rem; /* Increased space before FAQ items slightly */
-  color: #335765; /* NEW: Dark Blue/Teal */
+  color: var(--color-heading);
   font-size: 1.35rem;
 }
 
 .faqItem {
   margin-bottom: 1.25rem; /* Slightly more space between FAQ items */
-  border: 1px solid #5a6e57; /* NEW: Light Sky Blue border */
+  border: 1px solid var(--color-border);
   border-radius: 8px; /* More rounded corners */
-  background-color: #fff; /* White background for the card */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.08); /* Softer, slightly larger shadow */
+  background-color: var(--color-bg-elevated); /* White background for the card */
+  box-shadow: var(--shadow-sm);
   overflow: hidden; /* Ensures content respects border-radius */
 }
 
@@ -40,17 +40,17 @@
   padding: 1.25rem 1.5rem; /* Increased padding */
   font-weight: bold;
   cursor: pointer;
-  background-color: #f1f2ef; /* Lighter tint of Light Sky Blue or off-white */
+  background-color: var(--color-bg-subtle); /* Lighter tint of Light Sky Blue or off-white */
   /* border-radius: 3px; /* Remove if faqItem has overflow:hidden and rounded corners */
   display: flex; /* For custom arrow */
   justify-content: space-between; /* Push arrow to the right */
   align-items: center;
-  color: #335765; /* NEW: Ensure text color matches headings */
+  color: var(--color-heading);
   transition: background-color 0.2s ease-in-out;
 }
 
 .faqItem[open] .faqSummary {
-  background-color: #f1f2ef; /* Slightly darker when open */
+  background-color: var(--color-bg-subtle); /* Slightly darker when open */
 }
 
 .faqSummary::-webkit-details-marker,
@@ -63,7 +63,7 @@
   content: '\27A4'; /* Changed arrow to a more playful one (e.g., heavy right arrow head) */
   font-size: 1em; /* Made it slightly larger */
   transition: transform 0.3s ease-in-out;
-  color: #74A8A4; /* NEW: Muted Teal/Green arrow */
+  color: var(--color-lavender);
 }
 
 .faqItem[open] .faqSummary::after {
@@ -72,8 +72,8 @@
 
 .faqContent {
   padding: 1.5rem; /* Increased padding */
-  border-top: 1px solid #8fa17b; /* NEW: Light Sky Blue separator */
-  background-color: #fdfdfd; /* Very light grey for content area */
+  border-top: 1px solid var(--color-border-subtle);
+  background-color: var(--color-surface); /* Very light grey for content area */
 }
 
 /* Styles for new Two-Column Layouts */
@@ -102,8 +102,8 @@
   width: 100%;
   max-width: 250px;
   height: 200px; /* This height will be filled by the image */
-  background-color: #e9eef1; /* Kept as a fallback or if images have transparency */
-  border: 2px solid #B6D9E0; /* Changed from dashed to solid for a cleaner look with images */
+  background-color: var(--color-bg-subtle); /* Kept as a fallback or if images have transparency */
+  border: 2px solid var(--color-lavender-soft);
   border-radius: 8px;
   display: flex; /* To center the image if it doesn't fill (though object-fit will handle it) */
   justify-content: center;

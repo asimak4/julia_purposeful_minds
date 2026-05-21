@@ -50,6 +50,9 @@ export default function AboutPage() {
           <motion.div
             className={styles.profileText}
             variants={slideInLeftVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.5 }}
           >
             <p className={styles.bioIntro}>
               <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP. 
@@ -85,7 +88,9 @@ export default function AboutPage() {
           <motion.div
             className={styles.profileImagePlaceholder}
             variants={slideInRightVariants}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.6 }}
           >
             <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
           </motion.div>

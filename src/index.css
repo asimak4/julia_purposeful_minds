@@ -2,6 +2,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap'); /* Added Quicksand with various weights */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  /* Brand — light moody pastels */
+  --brand-blush: #D4B8A8;
+  --brand-slate: #6C625A;
+  --brand-ink: #65584D;
+  --brand-sage: #8F9E8B;
+  --brand-moss-light: #C8D1C3;
+
+  /*
+   * ~70% linen/blush surfaces, soft cocoa type,
+   * sage = buttons/links/bands, light moss = small highlights,
+   * keep the site warm, natural, and away from purple/blue.
+   */
+
+  /* Surfaces — warm linen & soft blush, no cool fills */
+  --color-bg: #F7F5F3;
+  --color-bg-warm: var(--brand-blush);
+  --color-bg-accent: #E8DDD4;
+  --color-bg-elevated: #FDFCFB;
+  --color-bg-subtle: #EDE8E4;
+  --color-bg-muted: #D9CEC4;
+  --color-surface: #FAF8F6;
+  --color-hero-overlay: rgba(247, 245, 243, 0.92);
+
+  /* Typography */
+  --color-heading: var(--brand-ink);
+  --color-text: var(--brand-slate);
+  --color-text-muted: #61584F;
+  --color-text-secondary: #897F76;
+
+  /* Interactive — muted sage */
+  --color-primary: var(--brand-sage);
+  --color-primary-hover: #7E8D79;
+  --color-primary-dark: #687563;
+  --color-primary-light: #DCE4DA;
+  --color-primary-gradient-end: #7E8D79;
+  --color-primary-focus-ring: rgba(143, 158, 139, 0.38);
+
+  /* Accent bands — sage with light text */
+  --color-surface-dark: var(--brand-sage);
+  --color-surface-dark-end: #7E8D79;
+  --color-on-dark: #FDFCFB;
+  --color-on-dark-muted: rgba(253, 252, 251, 0.86);
+  --color-on-dark-accent: #F2E7DB;
+
+  /* Light overlay on imagery (parallax, hero accents) */
+  --color-overlay: rgba(247, 245, 243, 0.88);
+  --color-on-overlay: var(--color-heading);
+
+  /* Lines & UI chrome */
+  --color-line: var(--brand-sage);
+  --color-line-soft: rgba(143, 158, 139, 0.42);
+
+  /* Light moss — arrows, light borders only */
+  --color-lavender: var(--brand-moss-light);
+  --color-lavender-soft: rgba(200, 209, 195, 0.55);
+
+  /* Aliases used across module CSS */
+  --color-accent: var(--color-line);
+  --color-accent-dark: var(--color-heading);
+  --color-accent-light: var(--color-line-soft);
+  --color-accent-muted: var(--color-lavender-soft);
+  --color-on-primary: #FDFCFB;
+  --color-on-primary-muted: rgba(253, 252, 251, 0.9);
+
+  /* Borders */
+  --color-border: rgba(101, 88, 77, 0.24);
+  --color-border-subtle: rgba(101, 88, 77, 0.13);
+  --color-border-light: rgba(212, 184, 168, 0.55);
+  --color-placeholder: #C9BAB0;
+
+  /* Semantic */
+  --color-success-bg: #E8EFE9;
+  --color-success-border: var(--brand-sage);
+  --color-success-text: #3D5248;
+  --color-error-bg: #F5EBEA;
+  --color-error-border: #D4B4B0;
+  --color-error-text: #5C4040;
+  --color-disabled: #B8B2B8;
+
+  /* Overlays & elevation */
+  --color-overlay-dark: var(--color-overlay);
+  --shadow-sm: 0 2px 8px rgba(101, 88, 77, 0.05);
+  --shadow-md: 0 4px 20px rgba(101, 88, 77, 0.08);
+  --shadow-lg: 0 8px 32px rgba(101, 88, 77, 0.1);
+  --shadow-xl: 0 20px 60px rgba(101, 88, 77, 0.12);
+}
 
 html {
   height: 100%; /* Ensure html element takes full height */
@@ -9,56 +96,53 @@ html {
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-  font-family: 'Noto Sans', sans-serif; /* Body text */
+  font-family: 'Noto Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF7F5; /* NEW: Soft Off-White */
-  color: #4A4A4A; /* NEW: Dark Gray */
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
-  min-height: 100%; /* Ensure body takes at least full viewport height */
-  display: flex; /* Allow #root to flex-grow */
+  min-height: 100%;
+  display: flex;
   flex-direction: column;
 }
 
 #root {
-  flex: 1; /* Make #root fill the body */
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans', sans-serif; /* NEW: Headings changed to Quicksand */
-  color: #333333; /* NEW: Slightly darker gray */
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--color-heading);
   margin-top: 1.5em;
   margin-bottom: 0.75em;
 }
 
 a {
-  color: #8F9E8B; /* NEW: Muted Green/Olive */
+  color: var(--color-primary-dark);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #707e6c; /* Darker shade of Muted Green/Olive for hover */
+  color: var(--color-primary);
 }
 
 code {
   font-family: Noto Sans, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  background-color: #f0f0f0; /* Keeping this light for contrast */
+  background-color: var(--color-bg-subtle);
   padding: 2px 4px;
   border-radius: 4px;
-  color: #335765; /* Ensure code text is readable */
+  color: var(--color-text);
 }
 
 /* General button styling */
 button, .button-style {
-  background-color: #8F9E8B; /* NEW: Muted Green/Olive */
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -71,18 +155,16 @@ button, .button-style {
 }
 
 button:hover, .button-style:hover {
-  background-color: #707e6c; /* Darker shade for hover */
-  color: white; /* Ensure text remains white on hover */
+  background-color: var(--color-primary-hover);
+  color: var(--color-on-primary);
 }
 
-/* Utility class to hide scrollbar when mobile menu is open */
 .no-scroll {
   overflow: hidden;
 }
 
-/* Basic responsive images */
 img {
   max-width: 100%;
   height: auto;
-  display: block; /* Removes extra space below image */
+  display: block;
 }
