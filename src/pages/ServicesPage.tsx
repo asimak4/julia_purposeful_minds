@@ -21,89 +21,60 @@ export default function ServicesPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* <motion.div
-          className={styles.logoContainer}
-          variants={slideInRightVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <img src={`${process.env.PUBLIC_URL}/PurposefulMindsLogo.png`} alt="Purposeful Minds logo" className={styles.logoImage}/>
-      </motion.div> */}
-      
-      <motion.section
-        className={styles.section}
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 0.6 }}
-      >
+      <section className={styles.section}>
         <header className={styles.pageHeader}>
           <h1>Services</h1>
         </header>
 
-        {/* Introduction and Consultation Grid */}
         <motion.div
-          className={styles.topSectionsGrid}
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          {/* Introduction Section */}
-          <motion.section
-            className={styles.introSection}
-            variants={slideInLeftVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.7, delay: 0.5 }}
-          >
-            <motion.div className={styles.pricingCardContent}>
-              <div className={styles.contentWrapper}>
-                <h2>Approach</h2>
-                <p>At <i>Purposeful Minds</i>, Julia meets each client where they are academically, emotionally, and with respect to their individual pace of learning. In sessions, she gives them practical tools and strategies tailored to their needs, creating a foundation for steady progress and lasting growth. Clients are encouraged to participate in sessions twice weekly to support consistent progress.</p>
-              </div>
-              <p className={styles.pricing}> 50-minute therapy sessions are billed at $175. We offer a 6-month discount to clients who attend sessions twice a week at a rate of $160/session.</p>
-            </motion.div>
-          </motion.section>
-
-          {/* Consultation Section */}
-          <motion.section
-            className={styles.consultationSection}
-            variants={slideInRightVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.7, delay: 0.6 }}
-          >
-            <motion.div 
-              className={styles.pricingCardContent}
+          {/* Introduction and Consultation Grid */}
+          <div className={styles.topSectionsGrid}>
+            {/* Introduction Section */}
+            <motion.section
+              className={styles.introSection}
+              variants={slideInLeftVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.7, delay: 0.5 }}
             >
-              <div className={styles.contentWrapper}>
-                <h2>Consultations</h2>
-                <p> Families are asked to provide formal evaluations, standardized assessments, IEP/504 plans, or other relevant documentation at least 48 hours prior to the scheduled consultation. Julia will carefully review all existing documentation and hold a one hour consultation to identify strengths and areas of need before beginning sessions. Following the consultation, she will develop a personalized treatment plan that identifies targeted areas for growth and informs subsequent sessions. </p>
-              </div>
-              <p className={styles.pricing}>1 hour consultation (including treatment plan) is billed at $300</p>
-            </motion.div>
-          </motion.section>
-        </motion.div>
+              <motion.div className={styles.pricingCardContent}>
+                <div className={styles.contentWrapper}>
+                  <h2>Approach</h2>
+                  <p>At <i>Purposeful Minds</i>, Julia meets each client where they are academically, emotionally, and with respect to their individual pace of learning. In sessions, she gives them practical tools and strategies tailored to their needs, creating a foundation for steady progress and lasting growth. Clients are encouraged to participate in sessions twice weekly to support consistent progress.</p>
+                </div>
+                <p className={styles.pricing}> 50-minute therapy sessions are billed at $175. We offer a 6-month discount to clients who attend sessions twice a week at a rate of $160/session.</p>
+              </motion.div>
+            </motion.section>
 
-        {/* Services Grid */}
-        <motion.section
-          className={styles.servicesGrid}
-          variants={sectionVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          {/* Executive Functioning Card */}
-          <motion.div
-            className={styles.serviceCard}
-            variants={slideInLeftVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.7, delay: 1.0 }}
-          >
+            {/* Consultation Section */}
+            <motion.section
+              className={styles.consultationSection}
+              variants={slideInRightVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <motion.div 
+                className={styles.pricingCardContent}
+              >
+                <div className={styles.contentWrapper}>
+                  <h2>Consultations</h2>
+                  <p> Families are asked to provide formal evaluations, standardized assessments, IEP/504 plans, or other relevant documentation at least 48 hours prior to the scheduled consultation. Julia will carefully review all existing documentation and hold a one hour consultation to identify strengths and areas of need before beginning sessions. Following the consultation, she will develop a personalized treatment plan that identifies targeted areas for growth and informs subsequent sessions. </p>
+                </div>
+                <p className={styles.pricing}>1 hour consultation (including treatment plan) is billed at $300</p>
+              </motion.div>
+            </motion.section>
+          </div>
+
+          {/* Services Grid */}
+          <div className={styles.servicesGrid}>
+            {/* Executive Functioning Card */}
+            <section className={styles.serviceCard}>
             <div className={styles.cardImage}>
               <img src={`${process.env.PUBLIC_URL}/todolist.png`} alt="Children happily engaged in a play-based activity" />
             </div>
@@ -128,16 +99,10 @@ export default function ServicesPage() {
                 <li className={styles.listItem}>Enhancing follow-through and completion of long-term projects</li>
               </ul>
             </div>
-          </motion.div>
+            </section>
 
-          {/* Speech-Language Services Card */}
-          <motion.div
-            className={styles.serviceCard}
-            variants={slideInRightVariants}
-            initial="hidden"
-            animate="visible"
-            transition={{ duration: 0.7, delay: 1.2 }}
-          >
+            {/* Speech-Language Services Card */}
+            <section className={styles.serviceCard}>
             <div className={styles.cardImage}>
               <img src={`${process.env.PUBLIC_URL}/speak.png`} alt="Scrabble tiles spelling out words, representing language" />
             </div>
@@ -174,7 +139,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+            </section>
 
           {/* Dyslexia Support Card */}
           {/* <motion.div
@@ -200,8 +165,9 @@ export default function ServicesPage() {
               </ul>
             </div>
           </motion.div> */}
-        </motion.section>
-      </motion.section>
+          </div>
+        </motion.div>
+      </section>
 
     </div>
   );
