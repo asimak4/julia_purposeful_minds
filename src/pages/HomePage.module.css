@@ -154,7 +154,7 @@
     padding: 0.25rem 0;
   }
   .featureColumn h3 {
-    font-size: 1.1rem; /* Reduced from 1.3rem */
+    font-size: 1.35rem;
   }
   .featureColumn p {
     font-size: 0.85rem; /* Reduced from 0.95rem */
@@ -302,12 +302,13 @@
     padding: 1.5rem 5%;
   }
   .testimonialRail {
-    margin-inline: -5%;
-    padding-inline: 5%;
-    scroll-padding-inline: 5%;
+    margin-inline: 0;
+    padding-inline: 0;
+    scroll-padding-inline: 0;
   }
   .testimonialSlide {
-    flex-basis: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 0.25rem 0.75rem;
   }
   .testimonialQuote {
@@ -459,7 +460,7 @@
     padding: 1.5rem 5%; /* Reduced from 2.5rem */
   }
   .stepItem {
-    padding-left: 35px; /* Further reduced for mobile */
+    padding-left: 48px;
   }
   .welcomeTextColumn h2 {
     font-size: 1.6rem; /* Reduced from 1.8rem */

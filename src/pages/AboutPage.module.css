@@ -201,12 +201,18 @@
     max-width: 300px; /* Max width for stacked image */
     margin-bottom: 1.5rem;
     height: auto; /* Let height be auto when stacked */
+    align-self: center;
   }
   .profileImageSticky {
     padding-top: 0;
   }
   .profileImageAnimation {
     justify-content: center;
+    width: 100%;
+  }
+  .profileImage {
+    margin-left: auto;
+    margin-right: auto;
   }
   .logoImage {
     width: 150px;

@@ -133,7 +133,7 @@
        and the CTA button. The button might need to be part of the mobile menu itself, 
        or styled to appear appropriately if it remains outside. */
     flex-direction: column; /* Stack nav and CTA if shown outside collapsed menu */
-    align-items: flex-start; /* Align to left if stacked */
+    align-items: center;
     width: 100%; /* Take full width for mobile menu behavior */
     position: absolute;
     top: 100%;
@@ -168,6 +168,7 @@
   }
 
   .navLink {
+    box-sizing: border-box;
     padding: 0.75rem 1rem;
     width: 100%;
     border-bottom: 1px solid var(--color-border-light); /* Separator for mobile links */
@@ -179,6 +180,7 @@
   .ctaButton {
     /* How the CTA button appears in mobile view */
     display: block; /* Make it full width for tapping */
+    box-sizing: border-box;
     text-align: center;
     margin: 1rem auto; /* Center it if it's part of the expanded mobile menu flow */
     width: calc(100% - 2rem); /* Full width with some padding */
