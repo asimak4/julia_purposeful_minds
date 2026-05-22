@@ -334,9 +334,9 @@ export default function HomePage() {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <h2>Ready to Take the First Step?</h2>
-        <p>Contact us to schedule a complimentary 15-minute phone consultation to explore how our services may support your child's needs.</p>
+        <p>Contact us to schedule a complimentary 15-minute phone call to explore how our services may support your child's needs.</p>
         <Link to="/contact" className={`button-style ${styles.finalCtaButton}`}> 
-          Free 15 Minute Consultation
+          Free 15 Minute Call
         </Link>
       </motion.section>
 
