@@ -68,7 +68,7 @@ export default function AboutPage() {
               <div className={styles.licensingInfo}>
               <h3>Licensing Information</h3>
               <p>
-                Julia holds active licensure in Maryland, Washington, D.C., and Virginia, and is certified by the American Speech-Language-Hearing Association (ASHA).
+                Julia holds active licensure in Maryland, Washington, D.C., Virginia, and New Jersey, and is certified by the American Speech-Language-Hearing Association (ASHA).
               </p>
             </div>
               <p>
