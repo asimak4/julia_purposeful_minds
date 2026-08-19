@@ -12,6 +12,8 @@ interface FormData {
   lastName: string;
   email: string;
   phone: string;
+  childName: string;
+  childDob: string;
   hearAbout: string;
   message: string;
 }
@@ -24,6 +26,8 @@ export default function ContactPage() {
     lastName: '',
     email: '',
     phone: '',
+    childName: '',
+    childDob: '',
     hearAbout: '',
     message: ''
   });
@@ -48,6 +52,8 @@ export default function ContactPage() {
       lastName: '',
       email: '',
       phone: '',
+      childName: '',
+      childDob: '',
       hearAbout: '',
       message: ''
     });
@@ -172,6 +178,38 @@ export default function ContactPage() {
             />
           </div>
           
+          <div className={styles.formGroup}>
+            <label htmlFor="childName">Your child's first and last name</label>
+            <input
+              type="text"
+              id="childName"
+              name="childName"
+              value={formData.childName}
+              onChange={handleInputChange}
+            />
+            <ValidationError
+              prefix="Child Name"
+              field="childName"
+              errors={state.errors}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label htmlFor="childDob">Your child's date of birth</label>
+            <input
+              type="date"
+              id="childDob"
+              name="childDob"
+              value={formData.childDob}
+              onChange={handleInputChange}
+            />
+            <ValidationError
+              prefix="Child Date of Birth"
+              field="childDob"
+              errors={state.errors}
+            />
+          </div>
+
           <div className={styles.formGroup}>
             <label htmlFor="hearAbout">How did you hear about us?</label>
             <select 
