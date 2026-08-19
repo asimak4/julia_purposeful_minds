@@ -196,13 +196,19 @@ export default function ContactPage() {
 
           <div className={styles.formGroup}>
             <label htmlFor="childDob">Your child's date of birth</label>
-            <input
-              type="date"
-              id="childDob"
-              name="childDob"
-              value={formData.childDob}
-              onChange={handleInputChange}
-            />
+            <div className={styles.dateFieldWrap}>
+              <input
+                type="date"
+                id="childDob"
+                name="childDob"
+                value={formData.childDob}
+                onChange={handleInputChange}
+                className={formData.childDob ? styles.dateHasValue : ''}
+              />
+              {!formData.childDob && (
+                <span className={styles.datePlaceholder} aria-hidden="true">mm/dd/yyyy</span>
+              )}
+            </div>
             <ValidationError
               prefix="Child Date of Birth"
               field="childDob"
