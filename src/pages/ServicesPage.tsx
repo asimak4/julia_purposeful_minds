@@ -5,18 +5,18 @@ import { motion } from 'framer-motion'; // Import motion
 export default function ServicesPage() {
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 75, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const slideInLeftVariants = {
-    hidden: { opacity: 0, x: -100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
+    hidden: { opacity: 0, x: -24 },
+    visible: { opacity: 1, x: 0 },
   };
 
   const slideInRightVariants = {
-    hidden: { opacity: 0, x: 100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
+    hidden: { opacity: 0, x: 24 },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -30,7 +30,7 @@ export default function ServicesPage() {
           variants={sectionVariants}
           initial="hidden"
           animate="visible"
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Introduction and Consultation Grid */}
           <div className={styles.topSectionsGrid}>
@@ -40,14 +40,17 @@ export default function ServicesPage() {
               variants={slideInLeftVariants}
               initial="hidden"
               animate="visible"
-              transition={{ duration: 0.7, delay: 0.5 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               <motion.div className={styles.pricingCardContent}>
                 <div className={styles.contentWrapper}>
                   <h2>Approach</h2>
                   <p>At <i>Purposeful Minds</i>, Julia meets each client where they are academically, emotionally, and with respect to their individual pace of learning. In sessions, she gives them practical tools and strategies tailored to their needs, creating a foundation for steady progress and lasting growth. Clients are encouraged to participate in sessions twice weekly to support consistent progress.</p>
                 </div>
-                <p className={styles.pricing}> 50-minute therapy sessions are billed at $175. We offer a 6-month discount to clients who attend sessions twice a week at a rate of $160/session.</p>
+                <p className={styles.pricing}>
+                  <span className={styles.pricingLabel}>Pricing</span>
+                  <span>50-minute therapy sessions are billed at <strong>$175</strong>. We offer a 6-month discount to clients who attend sessions twice a week at a rate of <strong>$160/session</strong>.</span>
+                </p>
               </motion.div>
             </motion.section>
 
@@ -57,7 +60,7 @@ export default function ServicesPage() {
               variants={slideInRightVariants}
               initial="hidden"
               animate="visible"
-              transition={{ duration: 0.7, delay: 0.6 }}
+              transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             >
               <motion.div 
                 className={styles.pricingCardContent}
@@ -66,7 +69,10 @@ export default function ServicesPage() {
                   <h2>Consultations</h2>
                   <p> Families are asked to provide formal evaluations, standardized assessments, IEP/504 plans, or other relevant documentation at least 48 hours prior to the scheduled consultation. Julia will carefully review all existing documentation and hold a one hour consultation to identify strengths and areas of need before beginning sessions. Following the consultation, she will develop a personalized treatment plan that identifies targeted areas for growth and informs subsequent sessions. </p>
                 </div>
-                <p className={styles.pricing}>1 hour consultation (including treatment plan) is billed at $300</p>
+                <p className={styles.pricing}>
+                  <span className={styles.pricingLabel}>Pricing</span>
+                  <span>1 hour consultation (including treatment plan) is billed at <strong>$300</strong></span>
+                </p>
               </motion.div>
             </motion.section>
           </div>

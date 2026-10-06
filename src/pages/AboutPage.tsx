@@ -5,18 +5,18 @@ import { motion } from 'framer-motion'; // Import motion
 export default function AboutPage() {
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 75, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const slideInLeftVariants = {
-    hidden: { opacity: 0, x: -100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
+    hidden: { opacity: 0, x: -24 },
+    visible: { opacity: 1, x: 0 },
   };
 
   const slideInRightVariants = {
-    hidden: { opacity: 0, x: 100, scale: 0.95 },
-    visible: { opacity: 1, x: 0, scale: 1 },
+    hidden: { opacity: 0, x: 24 },
+    visible: { opacity: 1, x: 0 },
   };
 
   // const itemVariants = { // For list items or other general items
@@ -41,8 +41,8 @@ export default function AboutPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
       >
         <h1>About Purposeful Minds</h1>
         
@@ -52,7 +52,7 @@ export default function AboutPage() {
             variants={slideInLeftVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.7, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className={styles.bioIntro}>
               <i>Purposeful Minds LLC</i> was founded by Julia Simak, M.S., CCC-SLP. 
@@ -90,7 +90,7 @@ export default function AboutPage() {
                 variants={slideInRightVariants}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.7, delay: 0.6 }}
+                transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               >
                 <img src={`${process.env.PUBLIC_URL}/JuliaFront.png`} alt="Julia Simak" className={styles.profileImage} />
               </motion.div>

@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'; // Import motion
 export default function HelpfulInformationPage() {
 
   const sectionVariants = {
-    hidden: { opacity: 0, y: 75, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0 },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 12 },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -32,8 +32,8 @@ export default function HelpfulInformationPage() {
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 0.6, delay: 0.2, staggerChildren: 0.15, delayChildren: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.65, staggerChildren: 0.08, delayChildren: 0.1 }}
       >
         <h2>Frequently Asked Questions (FAQs)</h2>
           <motion.details className={styles.faqItem} variants={itemVariants}>
