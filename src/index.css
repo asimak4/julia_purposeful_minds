@@ -1,170 +1,166 @@
-/* Import a playful cursive for accents and sans-serif fonts for body/headings from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Noto+Sans:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap'); /* Added Quicksand with various weights */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap');
 
 :root {
-  /* Brand — light moody pastels */
-  --brand-blush: #D4B8A8;
-  --brand-slate: #6C625A;
-  --brand-ink: #65584D;
-  --brand-sage: #8F9E8B;
-  --brand-moss-light: #C8D1C3;
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Newsreader', serif;
+  --page-width: 1180px;
 
-  /*
-   * ~70% linen/blush surfaces, soft cocoa type,
-   * sage = buttons/links/bands, light moss = small highlights,
-   * keep the site warm, natural, and away from purple/blue.
-   */
-
-  /* Surfaces — warm linen & soft blush, no cool fills */
-  --color-bg: #F7F5F3;
-  --color-bg-warm: var(--brand-blush);
-  --color-bg-accent: #E8DDD4;
-  --color-bg-elevated: #FDFCFB;
-  --color-bg-subtle: #EDE8E4;
-  --color-bg-muted: #D9CEC4;
-  --color-surface: #FAF8F6;
-  --color-hero-overlay: rgba(247, 245, 243, 0.92);
-
-  /* Typography */
-  --color-heading: var(--brand-ink);
-  --color-text: var(--brand-slate);
-  --color-text-muted: #61584F;
-  --color-text-secondary: #897F76;
-
-  /* Interactive — muted sage */
-  --color-primary: var(--brand-sage);
-  --color-primary-hover: #7E8D79;
-  --color-primary-dark: #687563;
-  --color-primary-light: #DCE4DA;
-  --color-primary-gradient-end: #7E8D79;
-  --color-primary-focus-ring: rgba(143, 158, 139, 0.38);
-
-  /* Accent bands — sage with light text */
-  --color-surface-dark: var(--brand-sage);
-  --color-surface-dark-end: #7E8D79;
-  --color-on-dark: #FDFCFB;
-  --color-on-dark-muted: rgba(253, 252, 251, 0.86);
-  --color-on-dark-accent: #F2E7DB;
-
-  /* Light overlay on imagery (parallax, hero accents) */
-  --color-overlay: rgba(247, 245, 243, 0.88);
-  --color-on-overlay: var(--color-heading);
-
-  /* Lines & UI chrome */
-  --color-line: var(--brand-sage);
-  --color-line-soft: rgba(143, 158, 139, 0.42);
-
-  /* Light moss — arrows, light borders only */
-  --color-lavender: var(--brand-moss-light);
-  --color-lavender-soft: rgba(200, 209, 195, 0.55);
-
-  /* Aliases used across module CSS */
-  --color-accent: var(--color-line);
+  --color-bg: #f6f3ed;
+  --color-bg-elevated: #fffdf9;
+  --color-bg-subtle: #ece8df;
+  --color-bg-accent: #e8ded2;
+  --color-bg-muted: #ddd8ce;
+  --color-surface: #fbf8f2;
+  --color-surface-dark: #405348;
+  --color-surface-dark-end: #35463d;
+  --color-heading: #24342c;
+  --color-text: #566159;
+  --color-text-muted: #687169;
+  --color-text-secondary: #817f77;
+  --color-primary: #708777;
+  --color-primary-hover: #5f7566;
+  --color-primary-dark: #4e6557;
+  --color-primary-light: #dce5dc;
+  --color-primary-focus-ring: rgba(112, 135, 119, 0.25);
+  --color-on-primary: #fffdf9;
+  --color-on-dark: #fffdf9;
+  --color-on-dark-muted: rgba(255, 253, 249, 0.76);
+  --color-on-dark-accent: #e8ded2;
+  --color-border: rgba(36, 52, 44, 0.2);
+  --color-border-subtle: rgba(36, 52, 44, 0.1);
+  --color-border-light: rgba(36, 52, 44, 0.14);
+  --color-line: var(--color-primary);
+  --color-line-soft: rgba(112, 135, 119, 0.34);
+  --color-accent: var(--color-primary);
   --color-accent-dark: var(--color-heading);
   --color-accent-light: var(--color-line-soft);
-  --color-accent-muted: var(--color-lavender-soft);
-  --color-on-primary: #FDFCFB;
-  --color-on-primary-muted: rgba(253, 252, 251, 0.9);
+  --color-disabled: #aaa9a2;
+  --color-success-bg: #e6eee7;
+  --color-success-border: #8ba18f;
+  --color-success-text: #34503c;
+  --color-error-bg: #f4e8e5;
+  --color-error-border: #cba7a1;
+  --color-error-text: #65413c;
+  --shadow-sm: 0 4px 18px rgba(39, 50, 43, 0.05);
+  --shadow-md: 0 12px 36px rgba(39, 50, 43, 0.08);
+  --shadow-lg: 0 22px 60px rgba(39, 50, 43, 0.1);
+  --shadow-xl: 0 32px 80px rgba(39, 50, 43, 0.12);
+}
 
-  /* Borders */
-  --color-border: rgba(101, 88, 77, 0.24);
-  --color-border-subtle: rgba(101, 88, 77, 0.13);
-  --color-border-light: rgba(212, 184, 168, 0.55);
-  --color-placeholder: #C9BAB0;
-
-  /* Semantic */
-  --color-success-bg: #E8EFE9;
-  --color-success-border: var(--brand-sage);
-  --color-success-text: #3D5248;
-  --color-error-bg: #F5EBEA;
-  --color-error-border: #D4B4B0;
-  --color-error-text: #5C4040;
-  --color-disabled: #B8B2B8;
-
-  /* Overlays & elevation */
-  --color-overlay-dark: var(--color-overlay);
-  --shadow-sm: 0 2px 8px rgba(101, 88, 77, 0.05);
-  --shadow-md: 0 4px 20px rgba(101, 88, 77, 0.08);
-  --shadow-lg: 0 8px 32px rgba(101, 88, 77, 0.1);
-  --shadow-xl: 0 20px 60px rgba(101, 88, 77, 0.12);
+* {
+  box-sizing: border-box;
 }
 
 html {
-  height: 100%; /* Ensure html element takes full height */
+  background: var(--color-bg);
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-bg);
+  min-width: 320px;
+  background: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-heading);
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 a {
   color: var(--color-primary-dark);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 180ms ease;
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-heading);
 }
 
-code {
-  font-family: Noto Sans, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  background-color: var(--color-bg-subtle);
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: var(--color-text);
-}
-
-/* General button styling */
-button, .button-style {
-  background-color: var(--color-primary);
+button,
+.button-style {
+  align-items: center;
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 999px;
   color: var(--color-on-primary);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-align: center;
+  display: inline-flex;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.45rem;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-button:hover, .button-style:hover {
-  background-color: var(--color-primary-hover);
+button:hover,
+.button-style:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
   color: var(--color-on-primary);
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primary-focus-ring);
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .no-scroll {
   overflow: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+::selection {
+  background: var(--color-primary-light);
+  color: var(--color-heading);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

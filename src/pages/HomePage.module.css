@@ -1,753 +1,353 @@
-/* src/pages/HomePage.module.css */
-
-.pageWrapper {
-  /* Styles for the main page container if needed, e.g., max-width and centering for overall page content */
-  /* For now, specific sections will manage their own width and padding */
-  overflow: hidden; /* Prevent all overflow, was overflow-x: hidden */
+.page {
+  overflow: hidden;
 }
 
-.heroSection {
-  min-height: 50vh; /* Reduced from 70vh to 50vh */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center; /* Vertically center the overlay box */
-  justify-content: flex-start; /* Align overlay box to the left */
-  padding: 1.5rem 5%; /* Reduced from 2rem to 1.5rem */
-  position: relative; /* For potential pseudo-elements or advanced positioning if needed later */
-}
-
-.heroOverlay {
-  background-color: var(--color-hero-overlay);
-  padding: 1.5rem 2rem; /* Reduced from 2.5rem 3rem */
-  border-radius: 8px;
-  max-width: 450px; /* Reduced from 550px to 450px */
-  border: 1px solid var(--color-border-light);
-  box-shadow: var(--shadow-md);
-  overflow: hidden; /* Add this to clip animating children */
-}
-
-.heroOverlay h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 2.8rem; /* Reduced from 2.8rem */
-  font-weight: 700;
-  color: var(--color-heading); /* Ensure it uses the primary heading color */
-  margin-top: 0;
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
-  line-height: 1;
-  text-align: center;
-}
-
-.heroOverlay p {
-  font-size: 1rem; /* Reduced from 1.1rem */
-  color: var(--color-text); /* Body text color */
-  line-height: 1.6; /* Reduced from 1.7 */
-  margin-bottom: 0; /* Remove bottom margin if no button follows immediately */
-}
-
-/* Optional: Styles for a CTA button within the hero overlay */
-.heroCtaButton {
-  margin-top: 1.5rem;
-  padding: 12px 25px;
-  font-size: 1.1rem;
-}
-
-/* Responsive adjustments for Hero Section */
-@media (max-width: 992px) { /* Tablet and below */
-  .heroSection {
-    min-height: 45vh; /* Reduced from 60vh */
-    padding: 1.5rem 3%;
-    justify-content: center; /* Center overlay on tablets */
-    text-align: center;
-  }
-  .heroOverlay {
-    max-width: 85%; /* Reduced from 90% */
-    margin-left: 0; /* Remove specific margin if centered */
-    padding: 1.5rem; /* Reduced from 2rem */
-  }
-  .heroOverlay h2 {
-    font-size: 1.8rem; /* Reduced from 2.2rem */
-  }
-  .heroOverlay p {
-    font-size: 0.9rem; /* Reduced from 1rem */
-  }
-}
-
-@media (max-width: 576px) { /* Mobile */
-  .heroSection {
-    min-height: 40vh; /* Reduced from 50vh */
-    padding: 1rem 5%; /* Reduced from 1.5rem */
-  }
-  .heroOverlay {
-    padding: 1rem 1.5rem; /* Added overlay padding adjustment */
-  }
-  .heroOverlay h2 {
-    font-size: 1.6rem; /* Reduced from 1.8rem */
-  }
-  .heroOverlay p {
-    font-size: 0.85rem; /* Reduced from 0.95rem */
-  }
-  .heroCtaButton {
-    padding: 8px 16px; /* Reduced from 10px 20px */
-    font-size: 0.9rem; /* Reduced from 1rem */
-  }
-}
-
-/* Styles for Feature Section */
-.featureSection {
-  background-color: var(--color-surface-dark);
-  padding: 2rem 5%;
-  color: var(--color-on-dark-muted);
-  text-align: center; /* Center align the text within the section */
-}
-
-.featureGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 2rem;
-}
-
-.featureColumn {
-  padding: 0.5rem 1rem;
-}
-
-.featureColumn h3 {
-  font-family: 'Caveat', cursive;
-  font-size: 2.4rem; /* Reduced from 1.5rem */
-  font-weight: 700;
-  color: var(--color-on-dark);
-  margin: 0 0 0.35rem;
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid rgba(253, 252, 251, 0.45);
-  display: inline-block; /* To make border-bottom only as wide as text */
-}
-
-.featureColumn p {
-  font-size: 1rem; /* Reduced from 1rem */
-  line-height: 1.5; /* Reduced from 1.6 */
-  color: var(--color-on-dark-muted);
-  margin: 0;
-}
-
-/* Responsive adjustments for Feature Section */
-@media (max-width: 992px) { /* Tablet */
-  .featureSection {
-    padding: 1.75rem 5%;
-  }
-  .featureGrid {
-    grid-template-columns: 1fr; /* Stack to single column */
-    gap: 1.5rem;
-  }
-  .featureColumn h3 {
-    font-size: 1.2rem; /* Reduced from 1.4rem */
-  }
-}
-
-@media (max-width: 576px) { /* Mobile */
-  .featureSection {
-    padding: 1.5rem 5%;
-  }
-  .featureGrid {
-    gap: 1.25rem;
-  }
-  .featureColumn {
-    padding: 0.25rem 0;
-  }
-  .featureColumn h3 {
-    font-size: 1.35rem;
-  }
-  .featureColumn p {
-    font-size: 0.85rem; /* Reduced from 0.95rem */
-  }
-}
-
-/* Testimonial Section Styles */
-.testimonialSection {
-  padding: 2rem 5%;
+.hero {
   background:
-    linear-gradient(135deg, rgba(232, 221, 212, 0.88), rgba(253, 252, 251, 0.96)),
-    var(--color-bg-elevated);
-  text-align: center;
-}
-
-.testimonialContent {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.testimonialRail {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  padding: 0;
-  scroll-padding-inline: 0;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
-
-.testimonialRail::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonialSlide {
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 0 100%;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 8rem;
-  padding: 0.25rem 6%;
+    radial-gradient(circle at 8% 10%, rgba(220, 229, 220, 0.7), transparent 30rem),
+    var(--color-bg);
+  padding: clamp(2.75rem, 6vw, 5.5rem) 2rem;
   position: relative;
-  scroll-snap-align: center;
 }
 
-.testimonialSlide:focus-visible {
-  outline: none;
+.hero::after {
+  border: 1px solid var(--color-line-soft);
+  border-radius: 50%;
+  content: '';
+  height: 32rem;
+  left: -24rem;
+  position: absolute;
+  top: -13rem;
+  width: 32rem;
 }
 
-.testimonialSlide:focus-visible .testimonialQuote {
-  text-decoration: underline;
-  text-decoration-color: var(--color-line-soft);
-  text-underline-offset: 0.35rem;
+.heroInner,
+.servicesSection,
+.processSection,
+.testimonialsInner,
+.ctaInner {
+  margin: 0 auto;
+  max-width: var(--page-width);
 }
 
-.testimonialQuote {
-  font-size: clamp(1rem, 1.35vw, 1.3rem);
-  font-style: italic;
-  color: var(--color-text);
-  line-height: 1.5;
-  margin: 0 auto 0.75rem;
-  max-width: 820px;
-  text-align: center;
+.heroInner {
+  align-items: center;
+  display: grid;
+  gap: clamp(3.5rem, 8vw, 8rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.72fr);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(3.5rem, 6.6vw, 6.4rem);
+  margin: 0;
+  max-width: 780px;
+}
+
+.heroText {
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.8;
+  margin: 2rem 0 0;
+  max-width: 650px;
+}
+
+.heroVisual {
+  padding: 1rem 0 0 1rem;
+}
+
+.imageFrame {
+  border-radius: 48% 48% 1.5rem 1.5rem;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+}
+
+.imageFrame::before {
+  border: 1px solid var(--color-line-soft);
+  border-radius: inherit;
+  content: '';
+  inset: -1rem 1rem 1rem -1rem;
+  position: absolute;
+  z-index: -1;
+}
+
+.imageFrame img {
+  aspect-ratio: 4 / 5;
+  border-radius: inherit;
+  filter: saturate(0.7);
+  object-fit: cover;
   width: 100%;
 }
 
-.quoteMark {
-  font-size: 1.2rem;
-  color: var(--color-primary); /* Muted Green/Olive accent */
+.servicesSection,
+.processSection {
+  padding: clamp(5rem, 9vw, 8rem) 2rem;
 }
 
-.testimonialAuthor {
-  text-align: center;
-}
-
-.testimonialName {
-  font-size: 0.95rem;
-  font-weight: bold;
-  color: var(--color-heading);
-  font-style: normal;
-}
-
-.testimonialControls {
-  align-items: center;
-  display: flex;
-  gap: 0.85rem;
-  justify-content: center;
-  margin-top: 0.25rem;
-}
-
-.testimonialArrow {
-  align-items: center;
-  background-color: rgba(253, 252, 251, 0.7);
-  border: 1px solid rgba(143, 158, 139, 0.45);
-  border-radius: 50%;
-  box-shadow: var(--shadow-sm);
-  color: var(--color-primary-dark);
-  display: inline-flex;
-  font-size: 1.1rem;
-  height: 2.25rem;
-  justify-content: center;
-  line-height: 1;
-  padding: 0;
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  width: 2.25rem;
-}
-
-.testimonialArrow:hover,
-.testimonialArrow:focus-visible {
-  background-color: var(--color-bg-elevated);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-md);
-  color: var(--color-heading);
-  transform: translateY(-1px);
-}
-
-/* Responsive adjustments for Testimonial Section */
-@media (max-width: 768px) {
-  .testimonialSection {
-    padding: 1.75rem 5%;
-  }
-  .testimonialSlide {
-    padding: 0.25rem 6%;
-  }
-  .testimonialQuote {
-    font-size: 1rem;
-    text-align: center;
-  }
-  .testimonialQuote::before {
-    font-size: 2rem;
-  }
-  .testimonialAuthor {
-    text-align: center;
-  }
-  .testimonialName {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 576px) {
-  .testimonialSection {
-    padding: 1.5rem 5%;
-  }
-  .testimonialRail {
-    margin-inline: 0;
-    padding-inline: 0;
-    scroll-padding-inline: 0;
-  }
-  .testimonialSlide {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 0.25rem 0.75rem;
-  }
-  .testimonialQuote {
-    font-size: 0.95rem;
-  }
-  .testimonialControls {
-    gap: 0.7rem;
-  }
-  .testimonialArrow {
-    font-size: 1rem;
-    height: 2rem;
-    width: 2rem;
-  }
-}
-
-/* Styles for "Welcome" Text & Image Section */
-.welcomeSection {
-  padding: 2.5rem 5%; /* Reduced from 4rem to 2.5rem */
-  background-color: var(--color-bg); /* Ensuring it's on the main soft off-white */
-}
-
-.welcomeGrid {
+.serviceGrid {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* Text column wider (e.g., 60%), image column (e.g., 40%) */
-  gap: 2rem; /* Reduced from 3rem to 2rem */
-  align-items: center; /* Vertically align items if columns have different heights */
+  gap: 1px;
 }
 
-.welcomeTextColumn .welcomeIntro {
+.threeColumnGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.serviceCard {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  min-height: 0;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.serviceCard:first-child {
+  border-radius: 1.4rem 0 0 1.4rem;
+}
+
+.serviceCard:last-child {
+  border-radius: 0 1.4rem 1.4rem 0;
+}
+
+.serviceCard:hover {
+  background: #f1f3ec;
+  transform: translateY(-4px);
+}
+
+.serviceCard h3 {
+  font-size: clamp(2rem, 3vw, 2.9rem);
+  margin: 0 0 0.85rem;
+}
+
+.serviceCard p {
   font-size: 0.9rem;
-  color: var(--color-primary); /* Muted Green/Olive for the intro line */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  line-height: 1.75;
+  margin: 0;
 }
 
-.welcomeTextColumn h2 {
-  font-family: 'Caveat', cursive;
-  font-size: 3rem; /* Reduced from 2.5rem */
-  color: var(--color-heading); /* Standard heading color */
-  margin-top: 0;
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
-  line-height: 1.3;
+.processSection {
+  background: var(--color-bg-elevated);
+  max-width: none;
 }
 
-.welcomeTextColumn p {
-  font-size: 0.9rem; /* Reduced from 1rem */
-  color: var(--color-text); /* Standard body text */
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
-  line-height: 1.6; /* Reduced from 1.7 */
+.processSection > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--page-width);
 }
 
-.stepsList {
+.sectionHeading {
+  margin-bottom: 3rem;
+}
+
+.sectionHeading h2,
+.ctaInner h2 {
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  margin: 0;
+}
+
+.processContent {
+  align-items: start;
+  display: grid;
+  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+}
+
+.processGrid {
   list-style: none;
-  padding-left: 0;
-  /* margin-top: 2rem; */
-  /* margin-bottom: 2.5rem; */
-  counter-reset: steps-counter;
-}
-
-.stepItem {
-  position: relative;
-  padding-left: 45px; /* Reduced from 55px */
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
-  text-align: left;
-}
-
-.stepItem:last-child {
-  margin-bottom: 0;
-}
-
-.stepItem::before {
-  content: counter(steps-counter);
-  counter-increment: steps-counter;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem; /* Reduced from 1.5rem */
-  font-weight: bold;
-  color: var(--color-primary); /* Muted Green/Olive */
-  background-color: var(--color-bg-elevated);
-  border: 2px solid var(--color-line-soft);
-  width: 32px; /* Reduced from 40px */
-  height: 32px; /* Reduced from 40px */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
-
-.stepItem h4 {
-  font-size: 1.1rem; /* Reduced from 1.2rem */
-  color: var(--color-heading);
-  margin-top: 0;
-  margin-bottom: 0.25rem;
-}
-
-.stepItem p {
-  font-size: 0.9rem; /* Reduced from 1rem */
-  color: var(--color-text);
   margin: 0;
   padding: 0;
-  line-height: 1.5; /* Reduced from 1.6 */
 }
 
-.welcomeCtaButton {
-  /* Uses .button-style from index.css */
-  margin-top: 1rem; /* Space above the button */
-  padding: 12px 25px; /* Consistent with hero CTA if we add one */
-  font-size: 1.1rem;
+.processGrid li {
+  align-items: start;
+  border-top: 1px solid var(--color-border-subtle);
+  display: grid;
+  gap: 0.7rem 1.25rem;
+  grid-template-columns: 52px 1fr;
+  padding: 1.6rem 0;
 }
 
-.welcomeImageColumn img {
+.processGrid span {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.processGrid h3 {
+  font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+  margin: 0;
+}
+
+.processGrid p {
+  font-size: 0.92rem;
+  grid-column: 2;
+  margin: 0;
+}
+
+.processVisual {
+  position: sticky;
+  top: 8rem;
+}
+
+.processIllustration {
+  filter: sepia(0.2) saturate(0.5);
+  margin: 0;
+  opacity: 0.8;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
 }
 
-/* Responsive adjustments for Welcome Section */
-@media (max-width: 992px) { /* Tablet */
-  .welcomeSection {
-    padding: 2rem 5%; /* Reduced from default */
-  }
-  .welcomeGrid {
-    grid-template-columns: 1fr; /* Stack to single column */
-    gap: 1.5rem; /* Reduced from 2.5rem */
-    text-align: center; /* Center text content when stacked */
-  }
-  .stepItem {
-    padding-left: 40px; /* Reduced from 50px */
-  }
-  .welcomeTextColumn .welcomeIntro {
-    text-align: center;
-  }
-  .welcomeTextColumn h2 {
-    font-size: 1.8rem; /* Reduced from 2.2rem */
-  }
-  .welcomeImageColumn {
-    order: -1; /* Optional: move image above text on tablet/mobile */
-    margin-bottom: 1.5rem; /* Reduced from 2rem */
-  }
+.testimonialsSection {
+  background: var(--color-bg-accent);
+  padding: clamp(5rem, 9vw, 8rem) 2rem;
 }
 
-@media (max-width: 576px) { /* Mobile */
-  .welcomeSection {
-    padding: 1.5rem 5%; /* Reduced from 2.5rem */
-  }
-  .stepItem {
-    padding-left: 48px;
-  }
-  .welcomeTextColumn h2 {
-    font-size: 1.6rem; /* Reduced from 1.8rem */
-  }
-  .welcomeTextColumn p {
-    font-size: 0.85rem; /* Reduced from 0.95rem */
-  }
-   .welcomeImageColumn img {
-    max-width: 300px; /* Reduced from 350px */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.pageContainer {
-  padding: 1rem 0; /* Add some padding at the top and bottom of the page content */
-}
-
-.section {
-  padding: 2rem 1rem; /* Padding within each section */
-  margin-bottom: 2rem; /* Space between sections */
-  background-color: var(--color-bg-elevated); /* White background for sections to stand out slightly from cream body */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-sm); /* Subtle shadow for depth */
-}
-
-.section h2 {
-  margin-top: 0; /* Remove default top margin for section titles */
-  margin-bottom: 1.5rem; /* Space below section titles */
-  border-bottom: 2px solid var(--color-accent); /* NEW: Muted Teal/Green accent */
-  padding-bottom: 0.75rem;
-}
-
-.list {
-  list-style-type: none; /* Remove default bullets */
-  padding-left: 0;
-}
-
-.listItem {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
-  position: relative;
-  margin-bottom: 0.5rem;
-}
-
-/* Custom bullet using pseudo-element */
-.listItem::before {
-  content: '\2713'; /* Checkmark icon */
-  color: var(--color-accent); /* NEW: Muted Teal/Green */
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  top: 0.5rem; /* Adjust vertical alignment */
-  font-size: 1em;
+.testimonialGrid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .testimonial {
-  font-style: italic;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-left: 4px solid var(--color-line);
-  background-color: var(--color-bg-subtle); /* Slightly different background for testimonials */
+  background: rgba(255, 253, 249, 0.72);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 1.2rem;
+  margin: 0;
+  padding: clamp(2rem, 4vw, 3.25rem);
 }
 
-.testimonialCite {
+.testimonial > span {
+  color: var(--color-primary);
   display: block;
-  text-align: right;
-  font-style: normal;
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 4rem;
+  height: 2.7rem;
+  line-height: 1;
 }
 
-/* Two-column layout for hero/feature sections */
-.twoColumnSection {
-  display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  align-items: center; /* Vertically align items in the center */
-  gap: 2rem; /* Space between columns */
-}
-
-.column {
-  flex: 1; /* Each column takes equal space by default */
-  min-width: 280px; /* Minimum width before wrapping */
-  max-width: 100%; /* Ensure columns don't overflow their container */
-}
-
-.imageColumn {
-  display: flex;
-  justify-content: center; /* Center image horizontally */
-  align-items: center;   /* Center image vertically if column is taller */
-  /* Let's explicitly set a flex-basis or max-width to constrain it */
-  flex-basis: 30%; /* Example: aim for image column to be around 30% of the container width */
-  max-width: 350px; /* Added explicit max-width for the column */
-  /* Or use max-width: 400px; (or whatever pixel value you prefer) if flex-basis is tricky */
-  /* max-width: 400px; */ 
-  /* Ensure it doesn't shrink too much if text is very short */
-  flex-shrink: 0; 
-}
-
-.imagePlaceholder {
-  width: 100%;
-  max-width: 400px; /* Max width for the image placeholder */
-  height: 300px;    /* Fixed height for placeholder */
-  background-color: var(--color-placeholder);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-text-muted);
-  font-style: italic;
-  text-align: center;
-}
-
-/* Style for the actual image replacing the placeholder */
-.responsiveImage {
-  max-width: 100%; /* Image will be at most the width of .imageColumn */
-  width: 100%; /* Force image to fill the constrained .imageColumn width */
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  box-shadow: var(--shadow-sm);
-}
-
-/* Parallax Section Styles */
-.parallaxSection {
-  /* background-image will be set via inline style in the component */
-  min-height: 45vh;
-  position: relative;
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-.parallaxContent {
-  background-color: var(--color-overlay);
-  color: var(--color-text);
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 600px;
-  box-shadow: var(--shadow-md);
-}
-
-.parallaxContent h2 {
-  color: var(--color-on-overlay);
-  border-bottom: 1px solid var(--color-line-soft);
-  margin-top: 0;
-}
-
-/* Responsive adjustments for sections */
-@media (max-width: 768px) {
-  .section {
-    padding: 1.5rem 0.75rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-  .section h2 {
-    font-size: 1.75rem; /* Slightly smaller section titles on mobile */
-  }
-  .twoColumnSection {
-    flex-direction: column; /* Stack columns on smaller screens */
-  }
-  .column {
-    min-width: 100%; /* Allow columns to take full width when stacked */
-    max-width: 100%; /* Reset max-width for stacked layout */
-    flex-basis: auto; /* Reset flex-basis for stacked layout */
-  }
-  .imageColumn {
-    flex-basis: auto; /* Reset for stacked layout */
-    /* max-width: 100%; /* Ensure it can go full width if needed when stacked */
-  }
-  .responsiveImage {
-    max-width: 350px; /* You might want to cap the width on mobile when stacked */
-    width: auto; /* Let aspect ratio control width based on max-width */
-    margin: 1rem auto 0; /* Center the image and add top margin when stacked */
-  }
-  .imagePlaceholder {
-    height: 250px; /* Adjust placeholder height for mobile */
-    margin-top: 1rem; /* Add some space above image when stacked */
-  }
-  .parallaxSection {
-    min-height: 35vh; /* Adjusted for mobile */
-    /* background-attachment: scroll; /* Consider uncommenting if parallax is poor on mobile */
-    background-size: cover; /* Revert to cover on mobile if 100% auto doesn't look good or is too small */
-  }
-  .parallaxContent {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: 1rem 0.5rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-    border-radius: 4px;
-  }
-  .section h2 {
-    font-size: 1.5rem;
-  }
-  .listItem::before {
-    top: 0.4rem;
-  }
-  .imagePlaceholder {
-    height: 200px;
-  }
-  .responsiveImage {
-    max-width: 100%; /* Allow full width on very small screens within padding */
-  }
-  .parallaxSection {
-    min-height: 30vh; /* Adjusted for small mobile */
-  }
-  .parallaxContent {
-    padding: 1rem;
-  }
-  .parallaxContent h2 {
-    font-size: 1.5rem;
-  }
-}
-
-/* Final CTA Section Styles */
-.finalCtaSection {
-  padding: 2rem 5%; /* Reduced from 3rem to 2rem */
-  background-color: var(--color-bg); /* Main soft off-white background */
-  text-align: center;
-}
-
-.finalCtaSection h2 {
-  font-size: 1.8rem; /* Reduced from 2.2rem */
+.testimonial p {
   color: var(--color-heading);
-  margin-bottom: 0.75rem; /* Reduced from 1rem */
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.45;
+  margin: 0 0 1.5rem;
 }
 
-.finalCtaSection p {
-  font-size: 1rem; /* Reduced from 1.1rem */
-  color: var(--color-text);
-  max-width: 600px; /* Reduced from 700px */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem; /* Reduced from 2rem */
-  line-height: 1.6; /* Reduced from 1.7 */
+.testimonial cite {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.finalCtaButton {
-  /* Uses .button-style from index.css */
-  padding: 12px 30px;
-  font-size: 1.1rem;
-  font-weight: bold;
+.ctaSection {
+  background: var(--color-surface-dark);
+  color: var(--color-on-dark-muted);
+  padding: clamp(4.5rem, 8vw, 7rem) 2rem;
 }
 
-/* Responsive adjustments for Final CTA Section */
-@media (max-width: 768px) {
-  .finalCtaSection {
-    padding: 1.5rem 5%; /* Reduced padding for tablet */
-  }
-  .finalCtaSection h2 {
-    font-size: 1.6rem; /* Reduced from 1.8rem */
-  }
-  .finalCtaSection p {
-    font-size: 0.9rem; /* Reduced from 1rem */
-  }
-  .finalCtaButton {
-    font-size: 1rem; /* Reduced from 1.1rem */
-    padding: 10px 24px; /* Reduced from 12px 28px */
-  }
+.ctaInner {
+  align-items: end;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: 1.25fr 0.75fr;
 }
 
-@media (max-width: 480px) { /* Further adjustments for smaller mobile screens */
-  .finalCtaSection {
-    padding: 1.5rem 5%; /* Ensure consistent mobile padding */
+.ctaInner h2 {
+  color: var(--color-on-dark);
+}
+
+.ctaInner p {
+  margin: 0 0 1.5rem;
+}
+
+.lightButton {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-bg-elevated);
+  color: var(--color-heading);
+  gap: 0.6rem;
+}
+
+.lightButton:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  color: var(--color-heading);
+}
+
+@media (max-width: 950px) {
+  .heroInner {
+    gap: 4rem;
+    grid-template-columns: 1fr 0.8fr;
   }
-  .finalCtaSection h2 {
-    font-size: 1.4rem; /* Reduced from 1.6rem */
+
+  .threeColumnGrid {
+    grid-template-columns: 1fr;
   }
-  .finalCtaSection p {
-    font-size: 0.85rem; /* Reduced from 0.95rem */
+
+  .serviceCard {
+    min-height: auto;
   }
-  .finalCtaButton {
-    font-size: 0.9rem; /* Reduced from 1rem */
-    padding: 8px 16px; /* Further reduced padding */
-    /* Consider width: 90%; max-width: 300px; if it still breaks, to allow it to fit better */
+
+  .serviceCard:first-child {
+    border-radius: 1.2rem 1.2rem 0 0;
   }
-} 
+
+  .serviceCard:last-child {
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .servicesSection,
+  .processSection,
+  .testimonialsSection,
+  .ctaSection {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .heroInner,
+  .processContent,
+  .testimonialGrid,
+  .ctaInner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+
+  .heroVisual {
+    margin: 0 auto;
+    max-width: 520px;
+    width: calc(100% - 1rem);
+  }
+
+  .processGrid li {
+    gap: 0.75rem 1rem;
+    grid-template-columns: 48px 1fr;
+  }
+
+  .processGrid p {
+    grid-column: 2;
+  }
+
+  .processVisual {
+    margin: 1rem auto 0;
+    max-width: 360px;
+    position: static;
+    width: 75%;
+  }
+
+  .ctaInner {
+    align-items: start;
+    gap: 2rem;
+  }
+}
