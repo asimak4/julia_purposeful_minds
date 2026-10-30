@@ -130,7 +130,6 @@
   display: flex;
   justify-content: flex-start;
   margin: 0 0 1.5rem;
-  overflow-x: auto;
 }
 
 .submitButton {
